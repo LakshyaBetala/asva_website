@@ -1,0 +1,44 @@
+# ASVA
+
+> ASVA is a Windows desktop app for Indian distributors that connects to
+> TallyPrime and automatically sends bills and payment reminders on WhatsApp
+> from the shop's own number, so they collect outstanding payments faster
+> without chasing. Tagline: Collect faster. Stop chasing.
+
+## What kind of app it is
+ASVA is a Windows desktop application (Windows 10 or 11) that you install on the same computer where you run TallyPrime. It is not a mobile app and not a plugin inside Tally. Customers do not install anything; they receive normal WhatsApp messages from the shop's own number. Setup takes about five minutes: run one installer, type a short pairing code, pick the Tally company, and scan WhatsApp.
+
+## What ASVA does
+- Reads sales, receipts and outstanding balances directly from TallyPrime (read-only, books never leave the PC).
+- Sends new bills with the PDF and timed payment reminders on WhatsApp, from the owner's own number, each with a UPI pay link.
+- Runs the reminder cadence automatically, scaled to each party's credit terms, and stops the moment a customer replies.
+- Reconciles payments from Tally automatically (oldest bills first) and sends the owner a nightly WhatsApp digest.
+- Growth plan and above include a WhatsApp owner assistant: list debtors, check a party's balance, snap a paper bill for AI reading, or send a reminder by chat.
+
+## How ASVA is different
+- Sends from the shop's own WhatsApp number, not a generic brand number customers do not trust.
+- Flat price by active debtors, with no per-message coins or credits.
+- Never holds or routes the money: every reminder carries a UPI link straight to the shop's own account, and ASVA takes no cut.
+- Plugin-free: it reads TallyPrime over its own HTTP server, so nothing is installed inside Tally.
+
+## Who it is for
+Distributors and wholesalers selling on credit in India: electrical, hardware, chemical, steel, paint, and pipe trades running TallyPrime on Windows, typically carrying 30 to 160 days of credit.
+
+## Pricing (INR per month, priced by active debtors)
+- Basic: Rs 699, up to 300 debtors, bills and reminders and digest (no assistant).
+- Growth: Rs 1,099, up to 500 debtors, adds the WhatsApp owner assistant.
+- Pro: Rs 1,999, up to 1,000 debtors.
+- Custom: for 1,000+ debtors and multiple companies.
+Billing is direct by UPI, no setup fee, cancel anytime.
+
+## Key pages
+- Home: https://tryasva.com/
+- How it works: https://tryasva.com/how-it-works
+- Features: https://tryasva.com/features
+- Pricing: https://tryasva.com/pricing
+- Use cases: https://tryasva.com/use-cases
+- Download (Windows): https://tryasva.com/download
+
+## Contact
+- WhatsApp: https://wa.me/919344110272
+- Email: almmatix@gmail.com
