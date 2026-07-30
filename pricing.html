@@ -59,6 +59,18 @@ img{max-width:100%}
 .promo:hover .go{color:var(--accent)}
 @media(max-width:540px){.promo{font-size:.8rem;padding:8px 12px}.promo .tag{display:none}}
 
+/* COMMAND REFERENCE (guide) */
+.cmdgrp{margin:22px 0}
+.cmdgrp h3{font-size:1.05rem;font-weight:800;margin:0 0 12px}
+.cmds{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.cmd{border:2px solid var(--ink);border-radius:12px;padding:14px 16px;background:#fff}
+.cmd .c{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+.cmd code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9rem;font-weight:700;
+  background:var(--paper-2,#f1efe8);border-radius:6px;padding:3px 8px}
+.cmd .hi{font-size:.72rem;font-weight:700;color:var(--accent-d);background:#eef7f0;
+  border-radius:999px;padding:2px 8px}
+.cmd p{margin:0;font-size:.88rem;color:var(--muted)}
+
 /* NAV */
 header.nav{position:sticky;top:0;z-index:50;background:rgba(249,248,245,.82);
   backdrop-filter:blur(12px);border-bottom:2px solid var(--ink)}
@@ -320,7 +332,7 @@ a:focus-visible,.btn:focus-visible,.buy:focus-visible,.navcta:focus-visible,summ
   <span class="go">Start free &rarr;</span></span></a>
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><span class="mark">A</span>ASVA</a>
-  <nav class="navlinks"><a class="hidem" href="/">Home</a><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/use-cases">Use cases</a>
+  <nav class="navlinks"><a class="hidem" href="/">Home</a><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/guide">Guide</a><a class="hidem" href="/use-cases">Use cases</a>
     <a class="navcta" href="/download">Download app</a>
   </nav></div></div></header>
 <main><div class="wrap">
