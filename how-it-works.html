@@ -47,6 +47,18 @@ img{max-width:100%}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 @keyframes glow{0%,100%{opacity:.45}50%{opacity:.85}}
 
+/* PROMO BAR */
+.promo{display:block;background:var(--ink);color:#fff;text-decoration:none;
+  font-size:.86rem;font-weight:600;text-align:center;padding:9px 14px;
+  border-bottom:2px solid var(--accent)}
+.promo .wrap{display:inline-flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:center}
+.promo b{color:var(--accent);font-weight:800}
+.promo .tag{background:var(--accent);color:var(--ink);font-weight:800;font-size:.72rem;
+  letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.promo .go{font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.promo:hover .go{color:var(--accent)}
+@media(max-width:540px){.promo{font-size:.8rem;padding:8px 12px}.promo .tag{display:none}}
+
 /* NAV */
 header.nav{position:sticky;top:0;z-index:50;background:rgba(249,248,245,.82);
   backdrop-filter:blur(12px);border-bottom:2px solid var(--ink)}
@@ -302,6 +314,10 @@ a:focus-visible,.btn:focus-visible,.buy:focus-visible,.navcta:focus-visible,summ
 .soon.live{background:var(--wash);color:var(--accent-d);border-color:var(--accent)}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "HowTo", "name": "How ASVA collects outstanding payments from Tally on WhatsApp", "description": "Connect TallyPrime, send bills and timed reminders on WhatsApp from your own number, and reconcile payments from Tally.", "step": [{"@type": "HowToStep", "position": 1, "name": "Connect TallyPrime", "text": "A small ASVA app installs next to Tally on your Windows PC and reads it directly: sales, receipts, and each customer's outstanding balance. It is read-only. Your books never leave your machine and nothing is uploaded to the cloud."}, {"@type": "HowToStep", "position": 2, "name": "Bills go out on WhatsApp", "text": "The moment a new sales bill is raised in Tally, ASVA sends it to that customer on WhatsApp with the PDF attached, from your own number. If you already export a bill from Tally, ASVA picks it up and delivers it."}, {"@type": "HowToStep", "position": 3, "name": "Reminders chase the overdue accounts", "text": "ASVA works out who is overdue using each party's credit terms and sends polite, timed reminders with a UPI pay link. It respects a daily limit, spaces messages out like a human, and stops the moment a customer replies."}, {"@type": "HowToStep", "position": 4, "name": "Payments reconcile from Tally", "text": "When you record a receipt in Tally, ASVA reads it and marks the right bills paid, oldest first. You never update two places. Tally stays the single source of truth."}, {"@type": "HowToStep", "position": 5, "name": "You stay in control on WhatsApp", "text": "Every night you get a digest: new bills, money collected, and the accounts worth a call. On Growth and above you can ask ASVA by chat: list debtors, check a party's balance, or send a reminder on demand."}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tryasva.com/"}, {"@type": "ListItem", "position": 2, "name": "How it works", "item": "https://tryasva.com/how-it-works"}]}</script>
 </head><body>
+<a class="promo" href="/download">
+  <span class="wrap"><span class="tag">Open pilot</span>
+  ASVA is <b>free for every shop till 15 September</b>. Limited spots.
+  <span class="go">Start free &rarr;</span></span></a>
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><span class="mark">A</span>ASVA</a>
   <nav class="navlinks"><a class="hidem" href="/">Home</a><a class="hidem on" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/use-cases">Use cases</a>
