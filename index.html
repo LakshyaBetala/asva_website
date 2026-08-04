@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light"><meta name="theme-color" content="#16a34a">
+<meta name="color-scheme" content="dark"><meta name="theme-color" content="#080f0b">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
@@ -27,14 +27,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
 <style>
 :root{
- --bg:#f9f8f5;--paper:#fff;--ink:#0c1a10;--dark:#0b1a10;
- --muted:#37473c;--faint:#8a968d;
- --accent:#16a34a;--accent-d:#0f7a37;--wash:#eaf7ee;--wa:#25d366;
- --line:#0c1a10;--hair:#e2e6e0;
+ --bg:#080f0b;--paper:#0f1f18;--ink:#edf4ef;--dark:#050b08;
+ --muted:#9fb6a8;--faint:#6b8177;
+ --accent:#22c55e;--accent-d:#16a34a;--wash:rgba(34,197,94,.10);--wa:#25d366;
+ --line:rgba(255,255,255,.08);--hair:rgba(255,255,255,.08);
  --mono:'JetBrains Mono','SF Mono',ui-monospace,Consolas,monospace;
  --sans:'Inter','SF Pro Display','Segoe UI',system-ui,-apple-system,sans-serif;
- --maxw:1120px;
- --sh:0 6px 22px rgba(12,26,16,.07);--sh-lift:0 14px 34px rgba(12,26,16,.13);
+ --maxw:1180px;
+ --sh:0 8px 28px rgba(0,0,0,.5);--sh-lift:0 18px 46px rgba(0,0,0,.7);
  --display:'Bricolage Grotesque','Inter','SF Pro Display',system-ui,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -77,8 +77,10 @@ img{max-width:100%}
 .cmd p{margin:0;font-size:.88rem;color:var(--muted)}
 
 /* NAV */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(249,248,245,.82);
-  backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(8,15,11,.72);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+.logo{color:var(--ink)}
+.navlinks a{color:var(--ink)}
 .nav .row{display:flex;align-items:center;gap:20px;height:64px}
 .logo{display:flex;align-items:center;gap:9px;color:var(--ink);font-weight:900;
   font-size:1.25rem;letter-spacing:-.03em}
@@ -336,90 +338,927 @@ a:focus-visible,.btn:focus-visible,.buy:focus-visible,.navcta:focus-visible,summ
   text-transform:uppercase;background:#fbf3db;color:#8a6100;border:2px solid #e2c46a;border-radius:999px;
   padding:3px 10px;margin-bottom:12px}
 .soon.live{background:var(--wash);color:var(--accent-d);border-color:var(--accent)}
+
+/* ============= Visual v2 (shared additions) ============= */
+/* SVG icon container */
+.svgico{width:44px;height:44px;border-radius:12px;background:var(--wash);border:1px solid var(--hair);
+  display:grid;place-items:center;color:var(--accent-d);flex:none}
+.svgico svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.svgico.lg{width:56px;height:56px;border-radius:14px}
+.svgico.lg svg{width:28px;height:28px}
+.svgico.dark{background:#0f2417;color:var(--wa);border-color:#1e3a29}
+
+/* Hero split visual: ledger card + phone */
+.herovis{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;min-height:380px}
+@media(max-width:820px){.herovis{grid-template-columns:1fr;gap:20px;min-height:0}}
+.herovis .arrow{color:var(--accent);font-family:var(--mono);font-weight:800;font-size:1.5rem;text-align:center}
+@media(max-width:820px){.herovis .arrow{transform:rotate(90deg)}}
+.ledger{background:var(--paper);border:1px solid var(--hair);border-radius:16px;padding:18px;box-shadow:var(--sh)}
+.ledger .lh{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--faint);margin-bottom:12px}
+.ledger .lh .live{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:glow 2s ease-in-out infinite}
+.ledger .lh b{color:var(--ink);font-weight:800}
+.ledger table{width:100%;border-collapse:collapse;font-size:.83rem}
+.ledger td{padding:9px 4px;border-top:1px solid var(--hair);color:var(--muted)}
+.ledger tr:first-child td{border-top:0}
+.ledger td:first-child{color:var(--ink);font-weight:600}
+.ledger td:last-child{text-align:right;font-family:var(--mono);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.ledger tr.hot td{background:#fff7d6}
+.ledger tr.hot td:last-child{color:var(--accent-d)}
+.ledger .foot{margin-top:10px;padding-top:10px;border-top:1px solid var(--hair);display:flex;
+  justify-content:space-between;font-family:var(--mono);font-size:.74rem;color:var(--faint)}
+.ledger .foot b{color:var(--accent-d);font-weight:800}
+
+/* Pain tiles */
+.pains{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media(max-width:820px){.pains{grid-template-columns:1fr}}
+.pain{background:var(--paper);border:1px solid var(--hair);border-radius:16px;padding:26px;
+  box-shadow:var(--sh);display:flex;flex-direction:column;gap:14px;transition:transform .16s,box-shadow .16s}
+.pain:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
+.pain .n{font-family:var(--display);font-size:clamp(2rem,4vw,2.6rem);font-weight:800;
+  letter-spacing:-.03em;color:var(--ink);line-height:1}
+.pain h3{font-size:1.06rem;font-weight:800;margin:0}
+.pain p{color:var(--muted);font-size:.94rem;margin:0;line-height:1.5}
+
+/* Before / After panels */
+.baf{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:760px){.baf{grid-template-columns:1fr}}
+.baf .side{border:1px solid var(--hair);border-radius:16px;padding:26px;box-shadow:var(--sh)}
+.baf .before{background:#faf7ee;border-color:#e2c46a}
+.baf .after{background:var(--wash);border-color:var(--accent)}
+.baf .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:700;margin-bottom:8px}
+.baf .before .k{color:#8a6100}.baf .after .k{color:var(--accent-d)}
+.baf h3{font-size:1.24rem;margin:0 0 16px}
+.baf ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.baf li{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:var(--muted);line-height:1.5}
+.baf li::before{content:"";width:18px;height:18px;border-radius:50%;flex:none;margin-top:2px}
+.baf .before li::before{background:#fbf3db;border:2px solid #e2c46a}
+.baf .after li::before{background:var(--accent);border:2px solid var(--accent);
+  box-shadow:inset 0 0 0 3px var(--wash)}
+
+/* Horizontal flow diagram */
+.hflow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;align-items:stretch}
+@media(max-width:900px){.hflow{grid-template-columns:1fr 1fr;gap:14px}}
+@media(max-width:520px){.hflow{grid-template-columns:1fr;gap:14px}}
+.hnode{background:var(--paper);border:1px solid var(--hair);border-radius:16px;padding:20px;box-shadow:var(--sh);
+  display:flex;flex-direction:column;gap:12px;margin:0 10px;position:relative;
+  transition:transform .16s,box-shadow .16s,border-color .16s}
+.hnode:first-child{margin-left:0}.hnode:last-child{margin-right:0}
+.hnode:hover{transform:translateY(-3px);box-shadow:var(--sh-lift);border-color:var(--accent)}
+.hnode .step{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent-d);font-weight:800}
+.hnode h3{font-size:1.02rem;margin:0;font-weight:800}
+.hnode p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
+.hnode:not(:last-child)::after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);
+  color:var(--accent);font-family:var(--mono);font-weight:800;font-size:1.1rem;
+  background:var(--bg);padding:0 4px;line-height:1}
+@media(max-width:900px){.hnode{margin:0}
+  .hnode:not(:last-child)::after{display:none}}
+
+/* Compact version timeline */
+.vtime{position:relative;padding-left:22px}
+.vtime::before{content:"";position:absolute;left:6px;top:6px;bottom:6px;width:2px;background:var(--hair)}
+.vtime .item{position:relative;padding:14px 16px;background:var(--paper);border:1px solid var(--hair);
+  border-radius:12px;box-shadow:var(--sh);margin-bottom:10px}
+.vtime .item::before{content:"";position:absolute;left:-22px;top:22px;width:14px;height:14px;border-radius:50%;
+  background:var(--paper);border:3px solid var(--hair)}
+.vtime .item.live::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--wash)}
+.vtime .item.coming::before{background:#fbf3db;border-color:#e2c46a}
+.vtime .item summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.vtime .item summary::-webkit-details-marker{display:none}
+.vtime .item summary .v{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--accent-d);
+  font-weight:800;background:var(--wash);border:1px solid var(--hair);padding:3px 9px;border-radius:999px}
+.vtime .item.coming summary .v{background:#fbf3db;color:#8a6100;border-color:#e2c46a}
+.vtime .item summary .t{font-size:1rem;font-weight:800;color:var(--ink);flex:1;letter-spacing:-.01em}
+.vtime .item summary::after{content:"+";color:var(--accent);font-family:var(--mono);font-weight:800;font-size:1.1rem}
+.vtime .item[open] summary::after{content:"−"}
+.vtime .item p{margin:12px 0 0;color:var(--muted);font-size:.92rem;line-height:1.55}
+
+/* SVG requirement tiles (replaces emoji .req) */
+.reqv{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media(max-width:720px){.reqv{grid-template-columns:1fr}}
+.reqv .r{display:flex;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--hair);
+  border-radius:14px;padding:16px 18px;box-shadow:var(--sh);transition:transform .16s,box-shadow .16s,border-color .16s}
+.reqv .r:hover{transform:translateY(-2px);box-shadow:var(--sh-lift);border-color:var(--accent)}
+.reqv .r .txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.reqv .r .txt b{font-size:.98rem;font-weight:800;color:var(--ink)}
+.reqv .r .txt span{font-size:.82rem;color:var(--muted)}
+
+/* Feature-card SVG icon */
+.card .cico{margin-bottom:8px}
+
+/* Annotated message thread (dark band) */
+.thread{display:grid;gap:12px;margin-top:22px}
+.thread .step{background:#0f2417;border:2px solid #1e3a29;border-radius:14px;padding:14px 16px;
+  display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
+.thread .step .sn{font-family:var(--mono);font-weight:800;color:var(--dark);background:var(--wa);
+  width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:.82rem}
+.thread .step .who{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:var(--wa);
+  font-weight:700;margin-bottom:6px}
+.thread .step .who.cust{color:#8fb6a0}
+.thread .step .bub{background:#dcf8c6;color:var(--ink);border-radius:12px;padding:9px 12px;font-size:.88rem;
+  line-height:1.5;border-bottom-right-radius:4px;display:inline-block}
+.thread .step .bub.in{background:#fff;border-bottom-left-radius:4px;border-bottom-right-radius:12px}
+.thread .step .note{margin-top:6px;color:#8fb6a0;font-size:.76rem;font-family:var(--mono)}
+
+/* ============= v3: Dramatic hero + full-bleed problem ============= */
+
+/* Refined promo bar */
+.promo.v3{background:#050e08;color:#e6f4ec;padding:10px 14px;border-bottom:1px solid rgba(37,211,102,.28);
+  font-size:.86rem;line-height:1.4}
+.promo.v3 .wrap{gap:12px;align-items:center;line-height:1.4}
+.promo.v3 .tag{display:inline-flex;align-items:center;height:20px;line-height:1;
+  background:transparent;color:var(--wa);border:1px solid rgba(37,211,102,.4);
+  padding:0 9px;font-size:.66rem;letter-spacing:.14em;border-radius:6px}
+.promo.v3 > .wrap > span:not(.tag):not(.go){color:#e6f4ec}
+.promo.v3 b{color:#fff;font-weight:700}
+.promo.v3 .go{color:var(--wa);text-decoration:none;border-bottom:1px solid rgba(37,211,102,.5);padding-bottom:1px}
+.promo.v3:hover .go{color:#fff;border-bottom-color:#fff}
+
+/* Full-bleed dark hero */
+.dhero{background:var(--dark);color:#fff;padding:140px 0 120px;position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(37,211,102,.2)}
+@media(max-width:820px){.dhero{padding:110px 0 80px}}
+.dhero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(1000px 460px at 85% 15%, rgba(37,211,102,.20), transparent 60%),
+    radial-gradient(600px 300px at 10% 85%, rgba(22,163,74,.12), transparent 70%)}
+.dhero::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:40px 40px;
+  mask-image:radial-gradient(700px 500px at 30% 40%, #000 40%, transparent 80%)}
+.dhero .wrap{position:relative;z-index:1}
+.dhero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:60px;align-items:stretch}
+.dhero-grid > .reveal:first-child{display:flex;flex-direction:column;justify-content:center}
+.dhero-grid > .feed{align-self:center}
+@media(max-width:960px){.dhero-grid{grid-template-columns:1fr;gap:44px}
+  .dhero-grid > .reveal:first-child{justify-content:flex-start}}
+.dhero .eyebrow{color:var(--wa);display:inline-flex;align-items:center;gap:10px;
+  font-size:.72rem;letter-spacing:.14em;margin-bottom:24px}
+.dhero .eyebrow::before{content:"";width:32px;height:1px;background:var(--wa)}
+.dhero h1{font-size:clamp(2.8rem,8vw,6.4rem);line-height:.96;letter-spacing:-.05em;color:#fff;margin:0 0 28px}
+.dhero h1 .brk{display:block}
+.dhero h1 .accent{background:linear-gradient(180deg,#fff 55%, var(--wa) 55%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  padding:0 .04em}
+.dhero .lede{color:#b7c6bc;font-size:clamp(1.05rem,1.6vw,1.24rem);max-width:44ch;line-height:1.5;margin:0 0 30px}
+.dhero .cta-row .btn-p{background:var(--wa);color:#062416;box-shadow:0 12px 28px rgba(37,211,102,.28)}
+.dhero .cta-row .btn-p:hover{background:#4be089;color:#062416;transform:translateY(-2px)}
+.dhero .cta-row .btn-s{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.18)}
+.dhero .cta-row .btn-s:hover{border-color:var(--wa);background:rgba(37,211,102,.06)}
+
+/* Live-tick chip under CTAs */
+.livetick{margin-top:34px;display:inline-flex;align-items:center;gap:16px;padding:12px 18px;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;
+  backdrop-filter:blur(6px)}
+.livetick .dot{width:9px;height:9px;background:var(--wa);border-radius:50%;
+  box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:pulseDot 1.8s ease-out infinite}
+.livetick .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#8fb6a0}
+.livetick .n{font-family:var(--display);font-weight:800;color:#fff;font-size:1.1rem;letter-spacing:-.02em}
+.livetick .n b{color:var(--wa)}
+@keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 12px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* Live feed visual on the right */
+.feed{position:relative;background:linear-gradient(180deg, #0f2417, #0a1a10);
+  border:1px solid rgba(255,255,255,.09);border-radius:22px;padding:22px;
+  box-shadow:0 30px 80px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.05)}
+.feed::before{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;
+  background:linear-gradient(135deg, rgba(37,211,102,.4), transparent 40%, transparent 60%, rgba(37,211,102,.2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.feed .fh{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.feed .fh .l{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.68rem;
+  letter-spacing:.1em;text-transform:uppercase;color:#8fb6a0}
+.feed .fh .l .p{width:8px;height:8px;background:var(--wa);border-radius:50%;animation:pulseDot 1.8s ease-out infinite}
+.feed .fh .r{font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;color:#8fb6a0}
+.feed .fh .r b{color:var(--wa)}
+
+.frow{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;
+  padding:12px 14px;margin-bottom:9px;opacity:0;transform:translateY(8px);
+  animation:frowIn .55s ease forwards}
+.frow:nth-child(1){animation-delay:.05s}
+.frow:nth-child(2){animation-delay:.6s}
+.frow:nth-child(3){animation-delay:1.15s}
+.frow:nth-child(4){animation-delay:1.7s}
+.frow:nth-child(5){animation-delay:2.25s}
+.frow .badgeicon{width:32px;height:32px;border-radius:8px;background:rgba(37,211,102,.12);
+  color:var(--wa);display:grid;place-items:center;font-family:var(--mono);font-weight:800;font-size:.78rem}
+.frow.paid .badgeicon{background:rgba(37,211,102,.18)}
+.frow.sent .badgeicon{background:rgba(255,255,255,.08);color:#fff}
+.frow.reply .badgeicon{background:rgba(255,255,255,.05);color:#8fb6a0}
+.frow .meta{min-width:0}
+.frow .meta .who{color:#fff;font-weight:700;font-size:.9rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.frow .meta .sub{color:#8fb6a0;font-family:var(--mono);font-size:.66rem;letter-spacing:.06em;
+  text-transform:uppercase;margin-top:2px}
+.frow .amt{font-family:var(--mono);font-weight:800;color:#fff;font-size:.98rem;
+  font-variant-numeric:tabular-nums;text-align:right}
+.frow.paid .amt{color:var(--wa)}
+.frow.paid .amt::after{content:" ✓";color:var(--wa);font-weight:800}
+@keyframes frowIn{to{opacity:1;transform:none}}
+
+.feed .foot{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;align-items:center}
+.feed .foot .label{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#8fb6a0}
+.feed .foot .val{font-family:var(--display);font-weight:800;font-size:1.4rem;color:#fff;letter-spacing:-.02em}
+.feed .foot .val b{color:var(--wa)}
+
+/* Trust logos strip */
+.tstrip{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:44px;
+  padding-top:24px;border-top:1px solid rgba(255,255,255,.08);flex-wrap:wrap;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#8fb6a0}
+.tstrip .l{color:#8fb6a0}
+.tstrip .items{display:flex;gap:28px;flex-wrap:wrap}
+.tstrip .items span{color:#e6f4ec}
+
+/* Full-bleed dramatic PROBLEM section */
+.hurt{background:var(--dark);color:#fff;position:relative;overflow:hidden;padding:110px 0}
+.hurt::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.7;
+  background:radial-gradient(700px 400px at 20% 80%, rgba(163,74,22,.15), transparent 60%),
+             radial-gradient(600px 300px at 90% 20%, rgba(37,211,102,.08), transparent 60%)}
+.hurt .wrap{position:relative;z-index:1}
+.hurt .eyebrow{color:var(--wa)}
+.hurt h2{color:#fff;font-size:clamp(2.2rem,5.5vw,4rem);letter-spacing:-.035em;line-height:1.02;max-width:20ch;margin:14px 0 22px}
+.hurt h2 em{font-style:normal;background:linear-gradient(180deg, transparent 65%, rgba(255,90,90,.35) 65%);padding:0 .06em}
+.hurt .subhurt{color:#b7c6bc;font-size:clamp(1.05rem,1.6vw,1.2rem);max-width:64ch;line-height:1.55}
+
+.hurtgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:56px;
+  border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden;
+  background:rgba(255,255,255,.02)}
+@media(max-width:820px){.hurtgrid{grid-template-columns:1fr}}
+.hurtcell{padding:44px 34px;border-right:1px solid rgba(255,255,255,.08);position:relative}
+.hurtcell:last-child{border-right:0}
+@media(max-width:820px){.hurtcell{border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .hurtcell:last-child{border-bottom:0}}
+.hurtcell .bignum{font-family:var(--display);font-weight:800;font-size:clamp(3.2rem,7vw,5rem);
+  letter-spacing:-.05em;line-height:.95;color:#fff;margin-bottom:14px}
+.hurtcell .bignum .unit{font-size:.42em;color:#8fb6a0;font-weight:700;margin-left:6px;letter-spacing:0}
+.hurtcell h3{color:#fff;font-size:1.05rem;font-weight:800;margin:0 0 8px}
+.hurtcell p{color:#8fb6a0;font-size:.94rem;margin:0;line-height:1.55}
+.hurtcell .k{position:absolute;top:20px;right:20px;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;color:#8fb6a0}
+
+/* Money quote below problem */
+.money-quote{margin-top:50px;padding:34px;border:1px solid rgba(37,211,102,.28);border-radius:18px;
+  background:linear-gradient(180deg, rgba(37,211,102,.06), transparent);text-align:center}
+.money-quote .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--wa);margin-bottom:8px}
+.money-quote p{font-size:clamp(1.15rem,2vw,1.5rem);color:#fff;font-weight:700;line-height:1.4;letter-spacing:-.01em;margin:0 auto;max-width:44ch}
+.money-quote p mark{background:none;color:var(--wa)}
+
+/* ============= v3 dark-theme cascade overrides ============= */
+body{background:var(--bg);color:var(--ink);background-image:
+  radial-gradient(1200px 500px at 90% -10%, rgba(37,211,102,.06), transparent 60%),
+  radial-gradient(900px 500px at 10% 110%, rgba(37,211,102,.04), transparent 60%)}
+
+/* Cards on dark */
+.card{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.08)}
+.card:hover{border-color:rgba(37,211,102,.4);background:linear-gradient(180deg, rgba(37,211,102,.05), rgba(255,255,255,.02))}
+.card p{color:var(--muted)}
+.card h3{color:var(--ink)}
+
+/* SVG icon on dark cards */
+.svgico{background:rgba(37,211,102,.10);border-color:rgba(37,211,102,.24);color:var(--wa)}
+
+/* Buttons on dark */
+.btn-p{background:var(--wa);color:#062416;box-shadow:0 10px 28px rgba(37,211,102,.24)}
+.btn-p:hover{background:#4be089;color:#062416}
+.btn-s{background:rgba(255,255,255,.04);color:var(--ink);border-color:rgba(255,255,255,.14)}
+.btn-s:hover{border-color:var(--wa);background:rgba(37,211,102,.06)}
+
+/* Section headings */
+.sechead h2{color:var(--ink)}
+.sechead p{color:var(--muted)}
+h1,h2,h3{color:var(--ink)}
+.hl{color:var(--wa);background:none;padding:0}
+
+/* Stats bar */
+.stats{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.stats .s{border-right-color:rgba(255,255,255,.08)}
+.stats .n{color:var(--ink)}
+.stats .l{color:var(--muted)}
+@media(max-width:720px){.stats .s:nth-child(1),.stats .s:nth-child(2){border-bottom-color:rgba(255,255,255,.08)}}
+
+/* Plain-words strip: dark quote card */
+.plain{background:linear-gradient(180deg, rgba(37,211,102,.06), transparent);
+  border-color:rgba(37,211,102,.22)}
+.plain .k{color:var(--wa)}
+.plain p{color:var(--ink)}
+.plain p b{background:var(--wa);color:#062416}
+
+/* Marquee, text color needs to be light against dark bg */
+.marq{background:#050b08;color:#e6f4ec;
+  border-top:1px solid rgba(37,211,102,.28);border-bottom:1px solid rgba(255,255,255,.06)}
+.marq .track span{color:#e6f4ec}
+.marq .di{color:var(--wa)}
+
+/* Before/After on dark: keep the amber/green language, tune surfaces */
+.baf .before{background:rgba(226,196,106,.06);border-color:rgba(226,196,106,.35)}
+.baf .after{background:rgba(37,211,102,.08);border-color:rgba(37,211,102,.35)}
+.baf .before .k{color:#e2c46a}
+.baf .after .k{color:var(--wa)}
+.baf h3{color:var(--ink)}
+.baf li{color:var(--muted)}
+.baf .before li::before{background:rgba(226,196,106,.15);border-color:rgba(226,196,106,.6)}
+.baf .after li::before{background:var(--wa);border-color:var(--wa);box-shadow:inset 0 0 0 3px rgba(37,211,102,.15)}
+
+/* Horizontal flow */
+.hnode{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.hnode:hover{border-color:rgba(37,211,102,.4)}
+.hnode:not(:last-child)::after{color:var(--wa);background:var(--bg)}
+.hnode .step{color:var(--wa)}
+.hnode p{color:var(--muted)}
+
+/* Timeline */
+.vtime::before{background:rgba(255,255,255,.1)}
+.vtime .item{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.vtime .item::before{background:var(--bg);border-color:rgba(255,255,255,.15)}
+.vtime .item.live::before{background:var(--wa);border-color:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,.15)}
+.vtime .item summary .v{background:rgba(37,211,102,.10);color:var(--wa);border-color:rgba(37,211,102,.28)}
+.vtime .item summary .t{color:var(--ink)}
+.vtime .item p{color:var(--muted)}
+.vtime .item.coming::before{background:rgba(226,196,106,.2);border-color:rgba(226,196,106,.6)}
+.vtime .item.coming summary .v{background:rgba(226,196,106,.15);color:#e2c46a;border-color:rgba(226,196,106,.4)}
+
+/* Requirement tiles */
+.reqv .r{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.reqv .r:hover{border-color:rgba(37,211,102,.4)}
+.reqv .r .txt b{color:var(--ink)}
+.reqv .r .txt span{color:var(--muted)}
+
+/* Panel (used across pages) */
+.panel{background:linear-gradient(180deg, rgba(37,211,102,.06), transparent);
+  border-color:rgba(37,211,102,.22)}
+.panel .h{color:var(--wa)}
+.panel li{color:var(--muted)}
+
+/* Compare table (features page), safe here too */
+.compare{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.compare thead tr{background:#050b08}
+.compare td{border-top-color:rgba(255,255,255,.08);color:var(--muted)}
+.compare tbody tr:nth-child(even){background:rgba(255,255,255,.02)}
+.compare td.c{color:var(--faint)}
+
+/* Simple 3-step (used on guide) */
+.simple .st{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.simple .st h3{color:var(--ink)}
+.simple .st p{color:var(--muted)}
+
+/* Flow rows (used on how-it-works) */
+.flow .row{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.flow .row h3{color:var(--ink)}
+.flow .row p{color:var(--muted)}
+
+/* FAQ */
+.faq details{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.faq summary{color:var(--ink)}
+.faq details p{color:var(--muted)}
+
+/* Command reference */
+.cmd{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.cmd code{background:rgba(37,211,102,.10);color:var(--wa)}
+.cmd p{color:var(--muted)}
+.cmd .line{color:var(--muted)}
+.cmd .hi{background:rgba(37,211,102,.10);color:var(--wa)}
+
+/* Ledger card (hero, if kept on other pages) */
+.ledger{background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.ledger .lh b{color:var(--ink)}
+.ledger td{border-top-color:rgba(255,255,255,.08);color:var(--muted)}
+.ledger td:first-child{color:var(--ink)}
+.ledger td:last-child{color:var(--ink)}
+.ledger tr.hot td{background:rgba(255,247,214,.06)}
+.ledger tr.hot td:last-child{color:var(--wa)}
+.ledger .foot{border-top-color:rgba(255,255,255,.08)}
+.ledger .foot b{color:var(--wa)}
+
+/* Chips (if any remain) */
+.chips span{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);color:var(--muted)}
+
+/* Step-number pill fix */
+.simple .st .n{background:var(--wa);color:#062416}
+
+/* Compare table header */
+.compare thead tr{color:#fff;background:#050b08}
+
+/* Darkband + msgs (any page) */
+.darkband{color:#e6f4ec}
+.darkband h2{color:#fff}
+.darkband p.sub{color:#b7c6bc}
+.msg{background:rgba(37,211,102,.05);border-color:rgba(37,211,102,.2)}
+.msg .k{color:var(--wa)}.msg .k.cust{color:#8fb6a0}
+.msg .t.out{background:#dcf8c6;color:#0c1a10}
+.msg .t.in{background:#fff;color:#0c1a10}
+
+/* Phone bubble safety */
+.bub.in,.bub.out{color:#0c1a10}
+
+/* ============= Bento grid (Why ASVA) ============= */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(180px,auto);gap:16px}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.bento{grid-template-columns:1fr}}
+.bcell{position:relative;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:26px;overflow:hidden;
+  transition:transform .28s cubic-bezier(.16,1,.3,1), border-color .2s, box-shadow .28s;
+  display:flex;flex-direction:column;justify-content:space-between;gap:14px}
+.bcell:hover{transform:translateY(-4px);border-color:rgba(37,211,102,.35);
+  box-shadow:0 20px 44px rgba(0,0,0,.4), 0 0 0 1px rgba(37,211,102,.14) inset}
+.bcell h3{font-size:1.14rem;font-weight:800;color:var(--ink);margin:0;letter-spacing:-.01em;line-height:1.25}
+.bcell p{font-size:.9rem;color:var(--muted);margin:0;line-height:1.5}
+
+.b-hero{grid-column:span 2;grid-row:span 2;background:
+  radial-gradient(600px 300px at 100% 0%, rgba(37,211,102,.22), transparent 60%),
+  linear-gradient(180deg, rgba(37,211,102,.10), rgba(37,211,102,.03));
+  border-color:rgba(37,211,102,.28);padding:34px}
+.b-hero h3{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.05;letter-spacing:-.02em}
+.b-hero p{font-size:1rem}
+.b-hero .glow{color:var(--wa);position:relative}
+.b-hero .glow::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;
+  background:linear-gradient(90deg, transparent, var(--wa), transparent);border-radius:2px;opacity:.7}
+.bnum{font-family:var(--display);font-size:clamp(3.5rem,7vw,5.2rem);font-weight:800;
+  color:#fff;letter-spacing:-.05em;line-height:1}
+
+.b-timed{grid-column:span 1;grid-row:span 1}
+.b-truth{grid-column:span 1;grid-row:span 1}
+.b-digest{grid-column:span 2;grid-row:span 1;background:
+  linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));position:relative}
+.b-digest h3{font-size:1.24rem}
+@media(max-width:900px){.b-hero,.b-digest{grid-column:span 2}}
+@media(max-width:560px){.b-hero,.b-digest{grid-column:span 1;grid-row:auto}}
+
+.digest-preview{display:grid;gap:6px;font-family:var(--mono);font-size:.86rem;color:var(--muted)}
+.digest-preview .dline{display:flex;justify-content:space-between;padding:8px 12px;
+  background:rgba(255,255,255,.03);border-radius:8px;border:1px solid rgba(255,255,255,.05)}
+.digest-preview .dline b{color:var(--ink);font-weight:800}
+.digest-preview .dline.hot{background:rgba(37,211,102,.10);border-color:rgba(37,211,102,.28)}
+.digest-preview .dline.hot b{color:var(--wa)}
+
+.bsticker{position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;background:var(--wa);color:#062416;
+  padding:5px 10px;border-radius:6px;transform:rotate(4deg);font-weight:800;
+  box-shadow:0 4px 12px rgba(37,211,102,.25);z-index:2}
+.bsticker.sec{background:#e2c46a;color:#4a3800;transform:rotate(-3deg);box-shadow:0 4px 12px rgba(226,196,106,.25)}
+
+.bento-sec .sechead h2{font-size:clamp(2.2rem,5vw,3.6rem);letter-spacing:-.035em}
+
+/* ============= Motion v2: richer reveal + hero letter animation ============= */
+.reveal{opacity:0;transform:translateY(24px) scale(.98);filter:blur(4px);
+  transition:opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1), filter .8s}
+.reveal.in{opacity:1;transform:none;filter:none}
+
+/* Hero letter-by-letter animation */
+.dhero h1 .brk{overflow:hidden;padding-bottom:.05em}
+.dhero h1 .word{display:inline-block;transform:translateY(110%);opacity:0;
+  animation:wordUp .9s cubic-bezier(.16,1,.3,1) forwards}
+.dhero h1 .brk:nth-child(1) .word{animation-delay:.05s}
+.dhero h1 .brk:nth-child(2) .word{animation-delay:.22s}
+@keyframes wordUp{to{transform:translateY(0);opacity:1}}
+
+/* Hero pulse behind headline */
+.dhero .lede{opacity:0;transform:translateY(14px);animation:fadeUp .8s .55s cubic-bezier(.16,1,.3,1) forwards}
+.dhero .cta-row{opacity:0;transform:translateY(14px);animation:fadeUp .8s .7s cubic-bezier(.16,1,.3,1) forwards}
+.dhero .livetick{opacity:0;transform:translateY(14px);animation:fadeUp .8s .9s cubic-bezier(.16,1,.3,1) forwards}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* Card hover tilt (subtle) */
+.card,.hnode,.bcell,.reqv .r,.pain,.vtime .item,.frow{will-change:transform}
+
+/* Cursor spotlight on the hero */
+.dhero{position:relative}
+.dhero .spot{position:absolute;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle, rgba(37,211,102,.14), transparent 60%);
+  pointer-events:none;transform:translate(-50%,-50%);top:0;left:0;opacity:0;
+  transition:opacity .3s;z-index:0;mix-blend-mode:screen}
+.dhero:hover .spot{opacity:1}
+
+/* Marquee, layered speeds for depth */
+.marq{padding:20px 0}
+.marq .track{animation-duration:28s}
+
+/* Section spacing tightening */
+section{padding:64px 0}
+@media(max-width:820px){section{padding:44px 0}}
+
+/* Badge */
+.badge{background:rgba(37,211,102,.10);border-color:rgba(37,211,102,.4);color:var(--wa)}
+
+/* CTA band, deepen */
+.band{background:linear-gradient(180deg,#0c1a12,#050b08);
+  border:1px solid rgba(37,211,102,.28);box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.band .eyebrow{color:var(--wa)}
+.band h2{color:#fff}
+.band p{color:var(--muted)}
+
+/* Footer */
+footer.ft{border-top-color:rgba(255,255,255,.1)}
+.ft .brand p{color:var(--muted)}
+.ft .col .h{color:var(--ink)}
+.ft .col a{color:var(--muted)}
+.ft .col a:hover{color:var(--wa)}
+.ft .base{border-top-color:rgba(255,255,255,.08);color:var(--faint)}
+
+/* Language pills (how-it-works dark band) */
+.langpills span{color:var(--wa);border-color:var(--wa)}
+
+/* Guide morelink and undernote */
+.morelink{color:var(--wa)}
+.undernote{color:var(--muted)}
+.muted{color:var(--muted)}
+
+/* Pricing plans */
+.plan{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+  border-color:rgba(255,255,255,.08)}
+.plan .name,.plan .amt{color:var(--ink)}
+.plan li{color:var(--muted)}
+.plan li::before{background:rgba(37,211,102,.15);border-color:var(--wa)}
+.plan.best{border-color:var(--wa);box-shadow:0 12px 40px rgba(37,211,102,.16)}
+.buy{background:rgba(255,255,255,.04);color:var(--ink);border-color:rgba(255,255,255,.14)}
+.buy:hover{color:var(--ink);border-color:var(--wa)}
+
+/* Refined nav: pill active, spaced download CTA with arrow */
+.navlinks{gap:6px}
+.navlinks a{border-bottom:0 !important;padding:8px 14px;border-radius:10px;
+  transition:color .16s, background .16s, border-color .16s}
+.navlinks a:hover{background:rgba(255,255,255,.04);color:var(--ink)}
+.navlinks a.on{background:rgba(37,211,102,.10);color:var(--wa) !important;
+  border:1px solid rgba(37,211,102,.28);padding:7px 13px}
+.navcta{margin-left:22px !important;display:inline-flex !important;align-items:center !important;
+  gap:8px !important;padding:9px 16px !important;border-radius:11px !important;
+  background:var(--wa) !important;color:#062416 !important;
+  box-shadow:0 10px 26px rgba(37,211,102,.32) !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+  transition:transform .16s, box-shadow .16s !important}
+.navcta:hover{transform:translateY(-1px);
+  box-shadow:0 14px 32px rgba(37,211,102,.42) !important;color:#062416 !important}
+.navcta::before{content:"↓";font-family:var(--mono);font-weight:800;font-size:.95rem;
+  line-height:1;display:inline-block;transform:translateY(-1px)}
+
+/* ============= v4: status-bar promo + floating pill nav ============= */
+.promo.v3{position:relative;padding:0 !important;height:36px;display:block;
+  background:linear-gradient(180deg, #050e08, #030805);
+  border-bottom:1px solid rgba(37,211,102,.22);
+  font-family:var(--mono);overflow:hidden;line-height:1 !important}
+.promo.v3::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px 30px at 50% 100%, rgba(37,211,102,.14), transparent 60%)}
+.promo.v3 .wrap{max-width:none !important;padding:0 !important;display:flex;
+  align-items:stretch;height:100%;gap:0;line-height:1 !important;position:relative}
+.promo.v3 .seg{display:inline-flex;align-items:center;gap:9px;padding:0 18px;
+  border-right:1px solid rgba(255,255,255,.06);color:#a0b9ac;font-size:.7rem;letter-spacing:.05em;
+  height:100%;white-space:nowrap}
+.promo.v3 .seg.live{color:var(--wa);text-transform:uppercase;font-weight:800;letter-spacing:.16em;
+  padding-left:22px;padding-right:18px}
+.promo.v3 .seg.live::before{content:"";width:8px;height:8px;background:var(--wa);border-radius:50%;
+  box-shadow:0 0 12px rgba(37,211,102,.7);animation:pulseDot 1.8s ease-out infinite;flex:none}
+.promo.v3 .seg .l{opacity:.55;font-size:.62rem;text-transform:uppercase;letter-spacing:.16em;margin-right:2px}
+.promo.v3 .seg .v{color:#e6f4ec;font-weight:700;font-size:.74rem;letter-spacing:.02em}
+.promo.v3 .seg .v b{color:var(--wa);font-weight:800}
+.promo.v3 .seg.cta{margin-left:auto;border-right:0;color:var(--wa);font-weight:800;
+  text-transform:uppercase;letter-spacing:.16em;font-size:.7rem;padding-right:22px;
+  background:linear-gradient(90deg, transparent, rgba(37,211,102,.12))}
+.promo.v3 .seg.cta::after{content:"→";margin-left:2px;transition:transform .18s;
+  font-family:var(--mono);font-weight:800;font-size:.86rem}
+.promo.v3:hover .seg.cta::after{transform:translateX(4px)}
+.promo.v3:hover .seg.cta{color:#fff}
+@media(max-width:820px){.promo.v3 .seg.hidem{display:none}}
+@media(max-width:520px){.promo.v3{height:32px}
+  .promo.v3 .seg{padding:0 10px;font-size:.62rem}
+  .promo.v3 .seg .l{display:none}}
+
+/* Floating pill nav */
+header.nav{position:sticky;top:14px;z-index:100;background:transparent !important;
+  border:0 !important;padding:0 20px;
+  backdrop-filter:none !important;-webkit-backdrop-filter:none !important;
+  margin-bottom:-72px}
+header.nav .wrap{max-width:1060px;padding:0}
+header.nav .row{height:60px;
+  background:rgba(8,15,11,.75);
+  backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;padding:0 8px 0 20px;
+  box-shadow:0 16px 44px rgba(0,0,0,.5),
+             0 0 0 1px rgba(37,211,102,.05),
+             inset 0 1px 0 rgba(255,255,255,.05);
+  position:relative;overflow:hidden}
+header.nav .row::before{content:"";position:absolute;left:-40%;top:0;width:80%;height:100%;
+  background:linear-gradient(90deg, transparent, rgba(37,211,102,.06), transparent);
+  animation:navSheen 9s linear infinite;pointer-events:none}
+@keyframes navSheen{0%{transform:translateX(0)}100%{transform:translateX(200%)}}
+header.nav .logo,header.nav .navlinks{position:relative;z-index:1}
+
+/* Nav v5: smaller pill, LIVE chip, refined CTA, hero pill */
+header.nav{margin-bottom:-64px}
+header.nav .wrap{max-width:1080px}
+header.nav .row{height:52px !important;border-radius:26px !important;padding:0 6px 0 18px !important}
+header.nav .logo{font-size:1.1rem}
+header.nav .logo .mark{width:26px;height:26px}
+.navlinks{gap:2px !important}
+.navlinks a{padding:6px 12px !important;border-radius:999px !important;font-size:.88rem}
+.navlinks a.on{background:rgba(37,211,102,.14);color:#fff !important;
+  border:1px solid rgba(37,211,102,.4);box-shadow:0 0 20px rgba(37,211,102,.15);
+  padding:5px 12px !important}
+.navcta{padding:7px 14px !important;border-radius:999px !important;margin-left:8px !important;font-size:.84rem !important}
+.navcta::before{font-size:.86rem}
+
+/* LIVE chip inside nav */
+.navlive{display:inline-flex !important;align-items:center;gap:7px;padding:5px 11px !important;
+  border-radius:999px !important;background:rgba(37,211,102,.08) !important;
+  border:1px solid rgba(37,211,102,.28) !important;color:var(--wa) !important;
+  font-family:var(--mono);font-size:.62rem !important;letter-spacing:.14em !important;
+  text-transform:uppercase;font-weight:800;margin-left:10px !important;
+  transition:background .16s;text-decoration:none}
+.navlive:hover{background:rgba(37,211,102,.14) !important;color:var(--wa) !important}
+.navlive .d{width:6px;height:6px;border-radius:50%;background:var(--wa);
+  box-shadow:0 0 10px rgba(37,211,102,.6);animation:pulseDot 1.8s ease-out infinite;flex:none}
+.navlive b{color:#fff;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+@media(max-width:900px){.navlive{display:none !important}}
+
+/* Hero pill, eye-catcher above H1 (single line, CTA pushed right) */
+/* Hero artwork frame */
+.heroart{position:relative;margin:0;border-radius:22px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 30px 80px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05)}
+.heroart::before{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;
+  background:linear-gradient(135deg, rgba(37,211,102,.4), transparent 40%, transparent 60%, rgba(37,211,102,.2));
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;z-index:2}
+.heroart img{display:block;width:100%;height:auto;object-fit:cover}
+.heroart .caption{position:absolute;left:16px;bottom:16px;z-index:3;margin:0;
+  background:rgba(8,15,11,.75);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.10);border-radius:999px;padding:7px 14px 7px 12px;
+  font-family:var(--mono);font-size:.66rem;color:#e6f4ec;letter-spacing:.14em;
+  text-transform:uppercase;font-weight:800;display:inline-flex;align-items:center;gap:8px}
+.heroart .caption .d{width:7px;height:7px;background:var(--wa);border-radius:50%;
+  box-shadow:0 0 10px rgba(37,211,102,.6);animation:pulseDot 1.8s ease-out infinite;flex:none}
+
+.hero-pill{display:inline-flex;align-items:center;gap:14px;padding:6px 8px 6px 22px;
+  border-radius:999px;background:rgba(37,211,102,.06);
+  border:1px solid rgba(37,211,102,.28);color:#e6f4ec;
+  font-family:var(--mono);font-size:.74rem;margin:0 0 44px;
+  transition:transform .18s cubic-bezier(.16,1,.3,1), background .18s, border-color .18s;
+  text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,.10);
+  white-space:nowrap;flex-wrap:nowrap;width:auto;max-width:100%}
+.hero-pill:hover{background:rgba(37,211,102,.10);transform:translateY(-2px);
+  border-color:rgba(37,211,102,.5);color:#fff}
+.hero-pill .d{width:8px;height:8px;border-radius:50%;background:var(--wa);
+  box-shadow:0 0 12px rgba(37,211,102,.6);animation:pulseDot 1.8s ease-out infinite;flex:none}
+.hero-pill .k{color:var(--wa);font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+  font-size:.62rem;white-space:nowrap;flex:none}
+.hero-pill .sep{color:rgba(255,255,255,.18);font-weight:400;flex:none}
+.hero-pill .m{color:rgba(230,244,236,.85);white-space:nowrap;flex:none}
+.hero-pill .m b{color:#fff;font-weight:700}
+.hero-pill .go{margin-left:24px;background:var(--wa);color:#062416;padding:8px 18px;border-radius:999px;
+  font-weight:800;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:6px;transition:transform .16s;
+  white-space:nowrap;flex:none}
+.hero-pill .go::after{content:"→";transition:transform .16s}
+.hero-pill:hover .go::after{transform:translateX(3px)}
+@media(max-width:860px){.hero-pill .m:nth-of-type(2), .hero-pill .sep:nth-of-type(2){display:none}}
+@media(max-width:520px){.hero-pill .m:first-of-type, .hero-pill .sep:first-of-type{display:none}}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://tryasva.com/#org", "name": "ASVA", "url": "https://tryasva.com", "email": "almmatix@gmail.com", "slogan": "Collect faster. Stop chasing.", "logo": "https://tryasva.com/og.png", "description": "ASVA is a Windows desktop app that connects to TallyPrime and sends bills and payment reminders on WhatsApp from the shop's own number, for Indian distributors."}, {"@type": "WebSite", "@id": "https://tryasva.com/#website", "url": "https://tryasva.com", "name": "ASVA", "publisher": {"@id": "https://tryasva.com/#org"}, "inLanguage": "en-IN"}, {"@type": "SoftwareApplication", "name": "ASVA", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows 10, Windows 11", "description": "ASVA is a small Windows desktop app installed next to TallyPrime. It automatically sends bills and payment reminders on WhatsApp from the shop's own number and reconciles payments back to Tally, for Indian distributors selling on credit.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free for every shop until 15 September 2026"}, "featureList": ["Tally sync", "WhatsApp bills and reminders", "WhatsApp owner assistant", "UPI pay links", "End-of-day digest", "Photo-bill capture"]}]}</script>
 </head><body>
-<a class="promo" href="/download">
-  <span class="wrap"><span class="tag">Open pilot</span>
-  ASVA is <b>free for every shop till 15 September</b>. Limited spots.
-  <span class="go">Start free &rarr;</span></span></a>
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><img class="mark" src="/logo.png" alt="ASVA logo" width="30" height="30">ASVA</a>
   <nav class="navlinks"><a class="hidem on" href="/">Home</a><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/guide">Guide</a><a class="hidem" href="/use-cases">Use cases</a>
+    <a class="navlive" href="/download"><span class="d"></span>LIVE <b data-countdown="2026-09-15T23:59:59+05:30">42d</b></a>
     <a class="navcta" href="/download">Download app</a>
   </nav></div></div></header>
-<main><div class="wrap">
- <section class="page-hero reveal herogrid" style="max-width:none;padding-top:56px">
-  <div>
-   <span class="badge"><span class="d"></span> AI recovery agent for TallyPrime</span>
-   <h1 style="margin-top:20px">The all-in-one AI agent that gets your <span class="hl">udhaar back.</span></h1>
-   <p class="lede">Bills, reminders, reading every reply, and who to chase today, all automatic,
-     from your own WhatsApp number, straight off your Tally. You chase no one.</p>
-   <div class="cta-row">
-     <a class="btn btn-p" href="https://app.tryasva.com/download/ASVA-Setup.exe" download>Download for Windows</a>
-     <a class="btn btn-s" href="/how-it-works">See how it works</a>
+<main>
+ <section class="dhero">
+  <div class="spot"></div>
+  <div class="wrap">
+    <a class="hero-pill reveal" href="/download">
+      <span class="d"></span>
+      <span class="k">Live pilot</span>
+      <span class="sep">/</span>
+      <span class="m">free till <b>15 Sep 2026</b></span>
+      <span class="sep">/</span>
+      <span class="m"><b data-countdown="2026-09-15T23:59:59+05:30">42d</b> left</span>
+      <span class="go">start free</span>
+    </a>
+    <div class="dhero-grid">
+      <div class="reveal">
+        <h1>
+          <span class="brk"><span class="word">Stop</span> <span class="word">chasing.</span></span>
+          <span class="brk"><span class="word accent">Get&nbsp;paid.</span></span>
+        </h1>
+        <p class="lede">The AI collector that reads your Tally and closes the loop on WhatsApp, from your own number, while you sleep.</p>
+        <div class="cta-row">
+          <a class="btn btn-p" href="https://app.tryasva.com/download/ASVA-Setup.exe" download>Download for Windows</a>
+          <a class="btn btn-s" href="/how-it-works">See how it works &rarr;</a>
+        </div>
+        <div class="livetick">
+          <span class="dot"></span>
+          <span class="k">Live in pilot</span>
+          <span class="n"><b>&#8377;43,00,000+</b> pulled back</span>
+        </div>
+      </div>
+
+      <figure class="heroart reveal">
+        <img src="/hero-artwork.png" alt="A weary distributor at his shop counter checking his phone while an indifferent customer scrolls beside him, WhatsApp reminder bubbles glowing between them.">
+        <figcaption class="caption"><span class="d"></span> Every day, every shop</figcaption>
+      </figure>
+    </div>
+  </div>
+ </section>
+
+<div class="marq"><div class="track"><div class="g"><span>PLUGIN-FREE TALLY</span><span class="di">&#9670;</span><span>SHOP'S OWN NUMBER</span><span class="di">&#9670;</span><span>UPI PAY LINKS</span><span class="di">&#9670;</span><span>HINDI · GUJARATI · MARATHI</span><span class="di">&#9670;</span><span>NEVER TOUCHES THE MONEY</span><span class="di">&#9670;</span><span>FIFO RECONCILE</span><span class="di">&#9670;</span></div><div class="g"><span>PLUGIN-FREE TALLY</span><span class="di">&#9670;</span><span>SHOP'S OWN NUMBER</span><span class="di">&#9670;</span><span>UPI PAY LINKS</span><span class="di">&#9670;</span><span>HINDI · GUJARATI · MARATHI</span><span class="di">&#9670;</span><span>NEVER TOUCHES THE MONEY</span><span class="di">&#9670;</span><span>FIFO RECONCILE</span><span class="di">&#9670;</span></div></div></div>
+
+ <section class="hurt">
+  <div class="wrap">
+   <span class="eyebrow">The problem</span>
+   <h2>You already earned it. <em>Where is it?</em></h2>
+   <p class="subhurt">Indian distributors carry 30 to 160 days of credit. That's your cash, sold, invoiced, delivered, sitting in someone else's account. Every day you don't chase, you're their unpaid banker.</p>
+
+   <div class="hurtgrid">
+    <div class="hurtcell">
+      <span class="k">01 &middot; Credit cycle</span>
+      <div class="bignum">160<span class="unit">days</span></div>
+      <h3>You're their banker</h3>
+      <p>Every rupee sold sits stuck for weeks, sometimes months, before it comes home. Interest-free.</p>
+    </div>
+    <div class="hurtcell">
+      <span class="k">02 &middot; Ledger</span>
+      <div class="bignum">1,966</div>
+      <h3>Too many to chase</h3>
+      <p>Debtors in a single Tally test. Manual follow-up breaks: small parties slip through, big ones get chased twice.</p>
+    </div>
+    <div class="hurtcell">
+      <span class="k">03 &middot; Live pilot</span>
+      <div class="bignum">&#8377;43L<span class="unit">+</span></div>
+      <h3>Recovered already</h3>
+      <p>In the first live pilot. Money the distributor already earned, just waiting to be asked for from the right number, at the right time.</p>
+    </div>
    </div>
-   <div class="chips">
-     <span>Windows 10 or 11</span><span>Works with TallyPrime</span><span>Your own WhatsApp number</span><span>5-min setup</span>
+
+   <div class="money-quote">
+    <div class="k">The one line</div>
+    <p>ASVA is a small helper on your Tally computer that sends your customers their bills and reminders on WhatsApp all day, so your money comes in <mark>without a single phone call</mark>.</p>
    </div>
   </div>
-  <div class="mock reveal">
-  <div class="halo"></div>
-  <div class="phone"><div class="scr">
-    <div class="top"><div class="av">ST</div>
-      <div><div class="nm">Sharma Traders</div><div class="st">via your shop &middot; online</div></div></div>
-    <div class="body"><div class="bub out">Hello 🙏 Bill #4021 from Sharma Traders, &#8377;18,400, due 15 Aug. Pay via UPI 👇</div><div class="bub out">Reminder: &#8377;18,400 is still pending on bill #4021.</div><div class="bub in">paisa 5 tareek ko bhej dunga sir 🙏</div><div class="bub out">Noted, thank you. Reminders paused, we will follow up around the 5th. ✅</div></div>
-  </div></div>
-  <div class="tag2">reads replies, holds reminders</div>
-</div>
  </section>
-</div>
-<div class="wrap"><div class="plain reveal">
-  <div class="k">In plain words</div>
-  <p>ASVA is a small helper on your Tally computer that sends your customers their bills and
-    payment reminders on WhatsApp all day, so your money comes in <b>without a single phone call</b>.</p>
-</div></div>
-<div class="wrap"><div class="stats reveal"><div class="s"><div class="n">&#8377;43L+</div><div class="l">receivables in the first live pilot</div></div><div class="s"><div class="n">1,966</div><div class="l">debtors handled in one Tally test</div></div><div class="s"><div class="n">30-160</div><div class="l">days of credit distributors carry</div></div><div class="s"><div class="n">Free</div><div class="l">for every shop till 15 Sep 2026</div></div></div></div>
-<div class="marq"><div class="track"><div class="g"><span>PLUGIN-FREE TALLY</span><span class="di">&#9670;</span><span>SHOP'S OWN NUMBER</span><span class="di">&#9670;</span><span>UPI PAY LINKS</span><span class="di">&#9670;</span><span>HINDI · GUJARATI · MARATHI</span><span class="di">&#9670;</span><span>NEVER TOUCHES THE MONEY</span><span class="di">&#9670;</span><span>FIFO RECONCILE</span><span class="di">&#9670;</span></div><div class="g"><span>PLUGIN-FREE TALLY</span><span class="di">&#9670;</span><span>SHOP'S OWN NUMBER</span><span class="di">&#9670;</span><span>UPI PAY LINKS</span><span class="di">&#9670;</span><span>HINDI · GUJARATI · MARATHI</span><span class="di">&#9670;</span><span>NEVER TOUCHES THE MONEY</span><span class="di">&#9670;</span><span>FIFO RECONCILE</span><span class="di">&#9670;</span></div></div></div>
-<div class="wrap">
+
+ <div class="wrap">
+
+ <section>
+  <div class="sechead"><span class="eyebrow">The fix</span>
+   <h2>What ASVA changes.</h2>
+   <p>Same Tally. Same WhatsApp. A quiet loop between them that runs by itself.</p></div>
+  <div class="baf reveal">
+    <div class="side before">
+      <div class="k">Before ASVA</div>
+      <h3>Chase, forget, chase again</h3>
+      <ul>
+        <li>Staff sits with a call list and dials one by one</li>
+        <li>The same customer gets nudged twice, or not at all</li>
+        <li>Someone paid last week, you don't know until you check</li>
+        <li>Bills sent by email, most never opened</li>
+        <li>Reminders sent from an unknown number, ignored</li>
+        <li>Evenings spent on the phone, mornings on Tally</li>
+      </ul>
+    </div>
+    <div class="side after">
+      <div class="k">After ASVA</div>
+      <h3>A quiet, self-running loop</h3>
+      <ul>
+        <li>Bills go out on WhatsApp the moment they're raised in Tally</li>
+        <li>Reminders time themselves to each party's credit terms</li>
+        <li>A customer replies "paid", reminders pause automatically</li>
+        <li>Messages come from your own number, so they get read</li>
+        <li>Payments post to Tally in one tap, no double entry</li>
+        <li>One evening WhatsApp digest: who paid, who to call tomorrow</li>
+      </ul>
+    </div>
+  </div>
+ </section>
+
  <section>
   <div class="sechead"><span class="eyebrow">How it works</span>
-   <h2>Three steps, then it runs on its own.</h2>
+   <h2>Four steps. Then it runs on its own.</h2>
    <p>No new habits. You keep using Tally and WhatsApp exactly as you do today.</p></div>
-  <div class="simple reveal"><div class="st"><div class="n">1</div><h3>Put it on your Tally computer</h3><p>Download one file, run it, and type the short code we read out to you on the phone. About 5 minutes, and there is nothing else to install.</p></div><div class="st"><div class="n">2</div><h3>It messages your customers</h3><p>From your own WhatsApp number, in clear English (or Hindi, Gujarati and Marathi if you prefer). Bills go out with the PDF, reminders are polite and timed, and they stop the moment a customer replies.</p></div><div class="st"><div class="n">3</div><h3>You get paid faster</h3><p>Payments update from Tally on their own. Every night ASVA sends you one WhatsApp: who paid today, and who to call.</p></div></div>
+  <div class="hflow reveal">
+    <div class="hnode">
+      <div class="svgico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="step">Step 01 &middot; Read</div>
+      <h3>Tally is the truth</h3>
+      <p>ASVA sits next to Tally and reads what's outstanding. Nothing is uploaded, nothing is edited.</p>
+    </div>
+    <div class="hnode">
+      <div class="svgico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M8 12l3 3 5-6"/></svg></div>
+      <div class="step">Step 02 &middot; Decide</div>
+      <h3>ASVA composes</h3>
+      <p>It picks who to nudge today by each party's credit terms, then drafts a message in their language.</p>
+    </div>
+    <div class="hnode">
+      <div class="svgico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+      <div class="step">Step 03 &middot; Send</div>
+      <h3>Your own WhatsApp</h3>
+      <p>The bill and reminder go out from your shop's number, with a UPI pay link. Customers install nothing.</p>
+    </div>
+    <div class="hnode">
+      <div class="svgico"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="step">Step 04 &middot; Reconcile</div>
+      <h3>Payment posts back</h3>
+      <p>A "paid" reply pauses reminders. You confirm the amount and post the receipt into Tally in one tap.</p>
+    </div>
+  </div>
   <a class="morelink" href="/how-it-works">See the full walkthrough &rarr;</a>
  </section>
 
- <section>
-  <div class="sechead"><span class="eyebrow">What you need</span>
-   <h2>If you can use WhatsApp, you can use ASVA</h2>
-   <p>Nothing new to learn, and your customers install nothing.</p></div>
-  <div class="req reveal"><div class="r"><span class="e">🖥️</span>Windows 10 or 11 computer</div><div class="r"><span class="e">📘</span>TallyPrime installed</div><div class="r"><span class="e">📱</span>Your own WhatsApp</div></div>
- </section>
-
- <section>
-  <div class="sechead"><span class="eyebrow">Why ASVA</span>
-   <h2>A recovery agent, not another reminder app</h2>
-   <p>One job: getting your outstanding paid, without annoying your customers.</p></div>
-  <div class="grid g2 reveal"><div class="card"><h3><span class="dot"></span>From your own number</h3><p>Customers hear from your shop, not an unknown brand. Trust and relationships stay intact.</p></div><div class="card"><h3><span class="dot"></span>Timed, never spammy</h3><p>Reminders follow each party's credit terms and back off the moment they reply. No blasting, no bans.</p></div><div class="card"><h3><span class="dot"></span>Tally stays the truth</h3><p>ASVA never edits your books. It reads what is outstanding and confirms payments back from Tally.</p></div><div class="card"><h3><span class="dot"></span>End-of-day digest</h3><p>One clean WhatsApp summary each night: new bills, collections, and the accounts worth a call.</p></div></div>
-  <a class="morelink" href="/features">Explore all features &rarr;</a>
- </section>
-
- <section>
-  <div class="sechead"><span class="eyebrow">Free pilot</span>
-   <h2>Free for every shop, till 15 September</h2>
-   <p>Join the open pilot and use the full ASVA free until 15 September 2026. No card, no setup fee.
-     Get your stuck money back first, decide later.</p></div>
-  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
-    <a class="btn btn-p" href="/download">Download and start free</a>
-    <a class="btn" href="https://wa.me/919344110272?text=I%20want%20to%20try%20ASVA">Talk to us on WhatsApp</a>
+ <section class="bento-sec">
+  <div class="sechead">
+   <span class="eyebrow">Why ASVA</span>
+   <h2>Not another reminder app.</h2>
+   <p>One job: getting your outstanding paid, without annoying your customers.</p>
   </div>
+  <div class="bento reveal">
+    <div class="bcell b-hero">
+      <span class="bsticker">Your number</span>
+      <div class="bnum">100%</div>
+      <h3>From <span class="glow">your own</span> WhatsApp.</h3>
+      <p>Customers hear from your shop, not an unknown brand. Trust and relationships stay intact.</p>
+    </div>
+    <div class="bcell b-timed">
+      <div class="svgico cico lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+      <h3>Timed, never spammy</h3>
+      <p>Reminders follow each party's credit terms and back off the moment they reply.</p>
+    </div>
+    <div class="bcell b-truth">
+      <div class="svgico cico lg"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
+      <h3>Tally stays the truth</h3>
+      <p>ASVA reads what's outstanding and confirms payments back from Tally. Never edits your books.</p>
+    </div>
+    <div class="bcell b-digest">
+      <span class="bsticker sec">Every night</span>
+      <div class="digest-preview">
+        <div class="dline"><span>Bills sent</span><b>7</b></div>
+        <div class="dline"><span>Reminders</span><b>12</b></div>
+        <div class="dline hot"><span>Collected</span><b>&#8377;36,650</b></div>
+      </div>
+      <h3>One WhatsApp. Then you sleep.</h3>
+    </div>
+  </div>
+  <a class="morelink" href="/features">Explore all features &rarr;</a>
  </section>
 
  <section>
   <div class="sechead"><span class="eyebrow">What's new</span>
    <h2>Shipping improvements, version after version.</h2>
-   <p>The last few updates, and what is coming next. Your app updates itself, so you always have the latest.</p></div>
-  <div class="grid g3 reveal"><div class="card"><span class="soon live">Latest &middot; v1.9.0</span><h3>See your cash coming in, know who pays on time</h3><p>Three things that make ASVA a full recovery system, not just reminders. A weekly Cash Coming In view shows how much is likely to arrive: what customers have promised plus what is due this week. A monthly Recovery Report Card shows, in plain numbers, how much ASVA helped bring back this month versus last. And every customer now has a reliability grade, built only from real data (how late their bills actually run, promises kept or broken, payments recorded), so you can see at a glance who pays on time and who to watch. Ask any time on WhatsApp with CASH, CARD or SCORE, and the report card also arrives on its own at month-end. WhatsApp is steadier too: it rides out small hiccups instead of logging out and asking for a new QR. And the app no longer trips up if two customers were saved with the same phone number: a payment goes to whichever party actually owes money, the Payments tab always loads, and a leftover or test party always deletes cleanly.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.10</span><h3>Your shop WhatsApp stays quiet with customers</h3><p>Your shop's own WhatsApp number now never auto-replies to a customer. When someone messages it, ASVA quietly checks whether that number is one of your customers and whether they still owe you money, and only then reads a 'paid' message or a payment screenshot, matches the amount to that party, and drops it into your Payments tab, telling you privately. Your customers only ever hear from you, never from a bot. The ASVA assistant number (where you type LIST, PAID and BILL) keeps working exactly as before.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.9</span><h3>Steadier WhatsApp, and payments capture themselves</h3><p>WhatsApp now rides out a brief hiccup on its own instead of logging out and asking for a new QR scan (both the shop number and the ASVA bot number). Customer replies now reach ASVA reliably, so when someone messages that they paid, or sends a payment screenshot, ASVA reads the amount, matches the customer by their number, and drops it into your Payments tab ready to post into Tally. Reminders, bills and Send Now also go out in the evening now, and the daily summary lists up to five people worth calling with their numbers, plus a month-end total collected.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.8</span><h3>New customers sync on their own</h3><p>Add a new customer in Tally and make their first bill, and ASVA now picks them up automatically on the next refresh, along with the bill, with no need to re-import. ASVA also reads the customer's number in the order you expect: the WhatsApp field first, then the Primary Mobile, then the address. Together this means a party you just created starts getting its bill and reminders on its own.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.7</span><h3>Smoother payments, clearer chat, a guided tour</h3><p>Recording a payment into Tally is now rock solid: confirm the amount and account in one tap, with no accidental double entries, and the form no longer refreshes while you fill it. When a name matches more than one party, ASVA shows a numbered list so you just reply a number, and a mistyped command gets a friendly suggestion. The phone app is redesigned clean and simple, with a Chase-today list and one-tap calling. New owners get a short, skippable guided tour that walks through every feature, and you can reopen it anytime.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.6</span><h3>Enter a payment into Tally in one tap</h3><p>When a customer says they have paid, it shows up in a new Payments tab. Check the amount and the deposit account, your own Cash or bank, and the exact bill it clears, then post the receipt straight into Tally with one tap. ASVA never posts on its own. Reminders can now lead with a chosen UPI or your bank account and always carry your bank details, so customers stop asking for them. The phone app gains search, sort and pages for who to chase, plus each party's promise-to-pay and latest replies.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.5</span><h3>Speaks your language, finds the right party</h3><p>ASVA now replies in your chosen language, English or Hinglish, in the app and on WhatsApp. It finds the right party even from a short name or a small typo, keeps same-name shops apart, and asks you when it is unsure instead of guessing. Reply-reading is steadier, it remembers what each customer said, and a new RECOVERED command shows how much money came back this month.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.4</span><h3>Knows when a customer promises to pay</h3><p>When a customer replies that they have paid, or promises a date, ASVA pauses that party's reminders and shows you exactly why on the party page, with the customer's own message. So you never chase someone who just told you they will pay.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8.3</span><h3>Steadier, and updates itself</h3><p>ASVA now updates on its own. When a new version is ready it downloads quietly and you just press Restart, with your data and WhatsApp still connected. This build also adds a dark mode, a clearer dashboard showing your party and outstanding count, a do-not-chase list, and a one tap connection check that tells you in plain words if anything needs fixing.</p></div><div class="card"><span class="soon">Shipped &middot; v1.8</span><h3>Promise-to-Pay</h3><p>ASVA now reads your customer's WhatsApp reply. If they say they have paid, or promise a date like '5 tareek', it pauses the reminders and nudges you to record it in Tally, so you never chase someone who already paid.</p></div><div class="card"><span class="soon">Shipped &middot; v1.7</span><h3>Morning checkpoint</h3><p>Before the day's reminders go out, ASVA shows you the list so you can hold anyone who already paid. Plus a welcome message for new shops and steadier one-code setup.</p></div><div class="card"><span class="soon">Shipped &middot; v1.6</span><h3>One-click installer</h3><p>A single Windows installer with no keys to type. Type a short code, pick your Tally company, scan WhatsApp, and you are live in about five minutes.</p></div></div><div class="grid g2 reveal" style="margin-top:16px"><div class="card"><span class="soon">Coming next</span><h3>Reads payment screenshots</h3><p>Soon ASVA will read the amount off a UPI screenshot the customer sends, so recording it in Tally is one tap.</p></div></div>
+   <p>The last few updates, newest first. Your app updates itself, so you always have the latest.</p></div>
+  <div class="vtime reveal">
+    <details class="item live" open><summary><span class="v">v1.9.0 &middot; latest</span><span class="t">See your cash coming in, know who pays on time</span></summary>
+      <p>A weekly Cash Coming In view shows how much is likely to arrive. A monthly Recovery Report Card shows how much came back versus last month. Every customer gets a reliability grade built from real data. Ask on WhatsApp with CASH, CARD or SCORE. WhatsApp is steadier, and duplicate phone numbers no longer trip up the Payments tab.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.10</span><span class="t">Shop WhatsApp stays quiet with customers</span></summary>
+      <p>Your shop's own WhatsApp number never auto-replies to a customer. It quietly reads paid confirmations and payment screenshots, matches them to the right party, and drops them into your Payments tab, telling you privately. Customers only ever hear from you.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.9</span><span class="t">Steadier WhatsApp, payments capture themselves</span></summary>
+      <p>WhatsApp rides out brief hiccups without asking for a new QR scan. Customer "paid" messages and UPI screenshots are read automatically, amounts matched, and dropped into Payments ready to post into Tally.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.8</span><span class="t">New customers sync on their own</span></summary>
+      <p>Add a customer in Tally and raise their first bill, ASVA picks them up on the next refresh with the bill. It reads the customer's number in the expected order: WhatsApp field, then Primary Mobile, then address.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.7</span><span class="t">Smoother payments, clearer chat, a guided tour</span></summary>
+      <p>Recording a payment into Tally is rock solid, with no double entries. Same-name parties show a numbered list. The phone app is redesigned with a Chase-today list and one-tap calling. A skippable guided tour walks new owners through every feature.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.6</span><span class="t">Enter a payment into Tally in one tap</span></summary>
+      <p>Customer "paid" replies show up in a new Payments tab. Confirm the amount, the deposit account and the bill it clears, then post the receipt straight into Tally in one tap. Reminders now always carry your bank details.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.5</span><span class="t">Speaks your language, finds the right party</span></summary>
+      <p>English or Hinglish, in the app and on WhatsApp. Finds the right party from a short name or small typo, keeps same-name shops apart, and asks when unsure. RECOVERED shows how much came back this month.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.4</span><span class="t">Knows when a customer promises to pay</span></summary>
+      <p>When a customer says they've paid or promises a date, ASVA pauses that party's reminders and shows you why, with the customer's own message.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8.3</span><span class="t">Steadier, and updates itself</span></summary>
+      <p>Auto-updates. Dark mode. A clearer dashboard showing party and outstanding count. A do-not-chase list. One-tap connection check that reports issues in plain words.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.8</span><span class="t">Promise-to-Pay</span></summary>
+      <p>ASVA reads your customer's WhatsApp reply. If they've paid or promise a date like '5 tareek', reminders pause and you're nudged to record it in Tally.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.7</span><span class="t">Morning checkpoint</span></summary>
+      <p>Before the day's reminders go out, ASVA shows you the list so you can hold anyone who already paid.</p>
+    </details>
+    <details class="item"><summary><span class="v">v1.6</span><span class="t">One-click installer</span></summary>
+      <p>A single Windows installer with no keys to type. Type a short code, pick your Tally company, scan WhatsApp, live in about five minutes.</p>
+    </details>
+    <details class="item coming"><summary><span class="v">Coming next</span><span class="t">Reads payment screenshots</span></summary>
+      <p>ASVA will soon read the amount off a UPI screenshot the customer sends, so recording it in Tally is one tap.</p>
+    </details>
+  </div>
  </section>
 </div>
 <div class="wrap"><div class="band reveal">
@@ -441,10 +1280,57 @@ a:focus-visible,.btn:focus-visible,.buy:focus-visible,.navcta:focus-visible,summ
 </div></footer>
 
 <script>
+// Scroll reveals
 (function(){var els=document.querySelectorAll('.reveal');
 if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{rootMargin:'0px 0px -8% 0px'});
 els.forEach(function(e){io.observe(e)});})();
+
+// Cursor spotlight on hero
+(function(){var h=document.querySelector('.dhero'),s=h&&h.querySelector('.spot');if(!s)return;
+h.addEventListener('pointermove',function(e){var r=h.getBoundingClientRect();
+  s.style.left=(e.clientX-r.left)+'px';s.style.top=(e.clientY-r.top)+'px';s.style.opacity='1';});
+h.addEventListener('pointerleave',function(){s.style.opacity='0';});
+})();
+
+// Card tilt on pointer (subtle)
+(function(){var cards=document.querySelectorAll('.bcell,.hnode,.card,.pain,.hurtcell');
+cards.forEach(function(c){c.addEventListener('pointermove',function(e){
+  var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  c.style.transform='translateY(-4px) rotateX('+(-y*2.5)+'deg) rotateY('+(x*2.5)+'deg)';
+});
+c.addEventListener('pointerleave',function(){c.style.transform='';});
+});})();
+
+// Countdown (nav LIVE chip = compact days, hero pill = live seconds)
+(function(){
+  var els=document.querySelectorAll('[data-countdown]');if(!els.length)return;
+  var t=new Date(els[0].getAttribute('data-countdown')).getTime();
+  function fmt(ms,compact){
+    if(ms<0)return 'ended';
+    var d=Math.floor(ms/86400000),
+        h=Math.floor(ms%86400000/3600000),
+        m=Math.floor(ms%3600000/60000),
+        s=Math.floor(ms%60000/1000);
+    return compact ? d+'d' : d+'d '+h+'h '+m+'m '+String(s).padStart(2,'0')+'s';
+  }
+  function tk(){var ms=t-Date.now();
+    els.forEach(function(el){
+      var compact=(el.tagName==='B'&&el.parentElement.classList.contains('navlive'));
+      el.textContent=fmt(ms, compact);
+    });}
+  tk();setInterval(tk,1000);
+})();
+
+// Count-up on hero live number
+(function(){var el=document.querySelector('.livetick .n b');if(!el)return;
+var target=4300000,dur=1800,start=null;
+function fmt(n){return '₹'+n.toLocaleString('en-IN')+'+';}
+function step(t){if(!start)start=t;var p=Math.min(1,(t-start)/dur);
+  var eased=1-Math.pow(1-p,3);el.textContent=fmt(Math.floor(target*eased));
+  if(p<1)requestAnimationFrame(step);}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){requestAnimationFrame(step);io.unobserve(el);}});});
+io.observe(el);})();
 </script>
 
 </body></html>
