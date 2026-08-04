@@ -989,7 +989,7 @@ header.nav .logo .mark{width:26px;height:26px}
 /* Hero pill, eye-catcher above H1 (single line, CTA pushed right) */
 /* Hero artwork frame */
 .heroart{position:relative;margin:0;border-radius:22px;overflow:hidden;
-  border:1px solid rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.08);align-self:center;
   box-shadow:0 30px 80px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05)}
 .heroart::before{content:"";position:absolute;inset:-1px;border-radius:22px;padding:1px;
   background:linear-gradient(135deg, rgba(37,211,102,.4), transparent 40%, transparent 60%, rgba(37,211,102,.2));
@@ -1011,6 +1011,37 @@ header.nav .logo .mark{width:26px;height:26px}
   transition:transform .18s cubic-bezier(.16,1,.3,1), background .18s, border-color .18s;
   text-decoration:none;box-shadow:0 8px 28px rgba(37,211,102,.10);
   white-space:nowrap;flex-wrap:nowrap;width:auto;max-width:100%}
+
+/* Mobile pass: uncle-friendly tap sizes, readable copy */
+@media(max-width:720px){
+  .dhero{padding:100px 0 60px}
+  .dhero h1{font-size:clamp(2.4rem,10vw,3.4rem)}
+  .dhero .lede{font-size:1.02rem}
+  .dhero .cta-row .btn{width:100%;justify-content:center;padding:16px 20px;font-size:1rem}
+  .cta-row{flex-direction:column;gap:10px}
+  .livetick{width:100%;justify-content:center;text-align:center;flex-wrap:wrap}
+  .hero-pill{font-size:.66rem;gap:8px;padding:5px 6px 5px 14px;margin-bottom:26px}
+  .hero-pill .m:first-of-type,.hero-pill .sep:first-of-type{display:none}
+  .heroart .caption{font-size:.58rem;padding:5px 10px;bottom:10px;left:10px}
+  .hurt{padding:60px 0}
+  .hurtcell{padding:28px 20px}
+  .hurtcell .bignum{font-size:clamp(2.6rem,10vw,3.6rem)}
+  .baf .side,.pain,.bcell{padding:22px}
+  .band{padding:36px 22px;margin:16px 0 32px}
+  section{padding:44px 0}
+}
+@media(max-width:520px){
+  .hero-pill .m,.hero-pill .sep{display:none}
+  .hero-pill{padding:5px 6px 5px 14px}
+  .dhero{padding:90px 0 44px}
+  .money-quote{padding:22px 16px;margin-top:32px}
+  .money-quote p{font-size:1.05rem}
+  .marq{padding:14px 0}
+  .marq .track{font-size:.8rem}
+  .footer .cols{gap:20px}
+  h1,h2{text-wrap:balance}
+}
+
 .hero-pill:hover{background:rgba(37,211,102,.10);transform:translateY(-2px);
   border-color:rgba(37,211,102,.5);color:#fff}
 .hero-pill .d{width:8px;height:8px;border-radius:50%;background:var(--wa);
@@ -1033,7 +1064,7 @@ header.nav .logo .mark{width:26px;height:26px}
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><img class="mark" src="/logo.png" alt="ASVA logo" width="30" height="30">ASVA</a>
   <nav class="navlinks"><a class="hidem on" href="/">Home</a><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/guide">Guide</a><a class="hidem" href="/use-cases">Use cases</a>
-    <a class="navlive" href="/download"><span class="d"></span>LIVE <b data-countdown="2026-09-15T23:59:59+05:30">42d</b></a>
+    <a class="navlive" href="/download"><span class="d"></span>LIVE PILOT</a>
     <a class="navcta" href="/download">Download app</a>
   </nav></div></div></header>
 <main>
@@ -1214,52 +1245,6 @@ header.nav .logo .mark{width:26px;height:26px}
   <a class="morelink" href="/features">Explore all features &rarr;</a>
  </section>
 
- <section>
-  <div class="sechead"><span class="eyebrow">What's new</span>
-   <h2>Shipping improvements, version after version.</h2>
-   <p>The last few updates, newest first. Your app updates itself, so you always have the latest.</p></div>
-  <div class="vtime reveal">
-    <details class="item live" open><summary><span class="v">v1.9.0 &middot; latest</span><span class="t">See your cash coming in, know who pays on time</span></summary>
-      <p>A weekly Cash Coming In view shows how much is likely to arrive. A monthly Recovery Report Card shows how much came back versus last month. Every customer gets a reliability grade built from real data. Ask on WhatsApp with CASH, CARD or SCORE. WhatsApp is steadier, and duplicate phone numbers no longer trip up the Payments tab.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.10</span><span class="t">Shop WhatsApp stays quiet with customers</span></summary>
-      <p>Your shop's own WhatsApp number never auto-replies to a customer. It quietly reads paid confirmations and payment screenshots, matches them to the right party, and drops them into your Payments tab, telling you privately. Customers only ever hear from you.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.9</span><span class="t">Steadier WhatsApp, payments capture themselves</span></summary>
-      <p>WhatsApp rides out brief hiccups without asking for a new QR scan. Customer "paid" messages and UPI screenshots are read automatically, amounts matched, and dropped into Payments ready to post into Tally.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.8</span><span class="t">New customers sync on their own</span></summary>
-      <p>Add a customer in Tally and raise their first bill, ASVA picks them up on the next refresh with the bill. It reads the customer's number in the expected order: WhatsApp field, then Primary Mobile, then address.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.7</span><span class="t">Smoother payments, clearer chat, a guided tour</span></summary>
-      <p>Recording a payment into Tally is rock solid, with no double entries. Same-name parties show a numbered list. The phone app is redesigned with a Chase-today list and one-tap calling. A skippable guided tour walks new owners through every feature.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.6</span><span class="t">Enter a payment into Tally in one tap</span></summary>
-      <p>Customer "paid" replies show up in a new Payments tab. Confirm the amount, the deposit account and the bill it clears, then post the receipt straight into Tally in one tap. Reminders now always carry your bank details.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.5</span><span class="t">Speaks your language, finds the right party</span></summary>
-      <p>English or Hinglish, in the app and on WhatsApp. Finds the right party from a short name or small typo, keeps same-name shops apart, and asks when unsure. RECOVERED shows how much came back this month.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.4</span><span class="t">Knows when a customer promises to pay</span></summary>
-      <p>When a customer says they've paid or promises a date, ASVA pauses that party's reminders and shows you why, with the customer's own message.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.3</span><span class="t">Steadier, and updates itself</span></summary>
-      <p>Auto-updates. Dark mode. A clearer dashboard showing party and outstanding count. A do-not-chase list. One-tap connection check that reports issues in plain words.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8</span><span class="t">Promise-to-Pay</span></summary>
-      <p>ASVA reads your customer's WhatsApp reply. If they've paid or promise a date like '5 tareek', reminders pause and you're nudged to record it in Tally.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.7</span><span class="t">Morning checkpoint</span></summary>
-      <p>Before the day's reminders go out, ASVA shows you the list so you can hold anyone who already paid.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.6</span><span class="t">One-click installer</span></summary>
-      <p>A single Windows installer with no keys to type. Type a short code, pick your Tally company, scan WhatsApp, live in about five minutes.</p>
-    </details>
-    <details class="item coming"><summary><span class="v">Coming next</span><span class="t">Reads payment screenshots</span></summary>
-      <p>ASVA will soon read the amount off a UPI screenshot the customer sends, so recording it in Tally is one tap.</p>
-    </details>
-  </div>
- </section>
 </div>
 <div class="wrap"><div class="band reveal">
   <span class="eyebrow">Get started</span><h2>See your first reminders go out today</h2><p>Send us a message and we will connect your Tally and set up your first batch together.</p>
