@@ -510,6 +510,34 @@ header.nav .logo .mark{width:26px;height:26px}
   box-shadow:0 0 10px rgba(37,211,102,.6);animation:pulseDot 1.8s ease-out infinite;flex:none}
 .navlive b{color:#fff;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 @media(max-width:900px){.navlive{display:none !important}}
+
+/* ===== clean pass (non-slop): calm surfaces, no bounce, no gimmick motion ===== */
+:root{
+  --sh:0 1px 2px rgba(0,0,0,.35),0 14px 34px -20px rgba(0,0,0,.55);
+  --sh-lift:0 16px 36px -20px rgba(0,0,0,.6);
+}
+/* no hover-lift anywhere - a quiet colour/border shift reads calmer and less generated */
+.card:hover,.btn-p:hover,.btn-s:hover,.navcta:hover,.buy:hover,.hero-pill:hover,
+.dhero .cta-row .btn-p:hover,.dhero .cta-row .btn-s:hover,.plan.best:hover,.morelink:hover{transform:none}
+.card:hover{box-shadow:var(--sh);border-color:rgba(255,255,255,.18)}
+.navcta:hover,.btn-p:hover,.dhero .cta-row .btn-p:hover{box-shadow:var(--sh)}
+/* still the phone + halo: no bob, no pulse */
+.mock .phone,.mock .halo{animation:none}
+.mock .halo{opacity:.4}
+.mock .phone{box-shadow:0 20px 44px -26px rgba(0,0,0,.7)}
+/* highlight stays a solid accent, never a gradient box */
+.hl{background:none!important;padding:0}
+/* the quote strip: clean emphasis, no shadowed green pill on inline words */
+.plain p b{background:none;color:var(--wa);box-shadow:none;padding:0;font-weight:800}
+/* strip light-theme leftovers that bleed onto the dark pages */
+.cmd{background:var(--paper);border-color:var(--hair)}
+.cmd code{background:var(--wash);color:var(--accent)}
+.cmd .hi{background:var(--wash);color:var(--accent)}
+.cmd p{color:var(--muted)}
+.compare tbody tr:nth-child(even){background:rgba(255,255,255,.03)}
+.plan li.no::before{background:rgba(226,196,106,.14);border-color:#8a7326}
+/* calmer marquee */
+.marq .track{animation-duration:52s;font-weight:600}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tryasva.com/"}, {"@type": "ListItem", "position": 2, "name": "Download", "item": "https://tryasva.com/download"}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">

@@ -1059,6 +1059,34 @@ header.nav .logo .mark{width:26px;height:26px}
 .hero-pill:hover .go::after{transform:translateX(3px)}
 @media(max-width:860px){.hero-pill .m:nth-of-type(2), .hero-pill .sep:nth-of-type(2){display:none}}
 @media(max-width:520px){.hero-pill .m:first-of-type, .hero-pill .sep:first-of-type{display:none}}
+
+/* ===== clean pass (non-slop): calm surfaces, no bounce, no gimmick motion ===== */
+:root{
+  --sh:0 1px 2px rgba(0,0,0,.35),0 14px 34px -20px rgba(0,0,0,.55);
+  --sh-lift:0 16px 36px -20px rgba(0,0,0,.6);
+}
+/* no hover-lift anywhere - a quiet colour/border shift reads calmer and less generated */
+.card:hover,.btn-p:hover,.btn-s:hover,.navcta:hover,.buy:hover,.hero-pill:hover,
+.dhero .cta-row .btn-p:hover,.dhero .cta-row .btn-s:hover,.plan.best:hover,.morelink:hover{transform:none}
+.card:hover{box-shadow:var(--sh);border-color:rgba(255,255,255,.18)}
+.navcta:hover,.btn-p:hover,.dhero .cta-row .btn-p:hover{box-shadow:var(--sh)}
+/* still the phone + halo: no bob, no pulse */
+.mock .phone,.mock .halo{animation:none}
+.mock .halo{opacity:.4}
+.mock .phone{box-shadow:0 20px 44px -26px rgba(0,0,0,.7)}
+/* highlight stays a solid accent, never a gradient box */
+.hl{background:none!important;padding:0}
+/* the quote strip: clean emphasis, no shadowed green pill on inline words */
+.plain p b{background:none;color:var(--wa);box-shadow:none;padding:0;font-weight:800}
+/* strip light-theme leftovers that bleed onto the dark pages */
+.cmd{background:var(--paper);border-color:var(--hair)}
+.cmd code{background:var(--wash);color:var(--accent)}
+.cmd .hi{background:var(--wash);color:var(--accent)}
+.cmd p{color:var(--muted)}
+.compare tbody tr:nth-child(even){background:rgba(255,255,255,.03)}
+.plan li.no::before{background:rgba(226,196,106,.14);border-color:#8a7326}
+/* calmer marquee */
+.marq .track{animation-duration:52s;font-weight:600}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://tryasva.com/#org", "name": "ASVA", "url": "https://tryasva.com", "email": "almmatix@gmail.com", "slogan": "Collect faster. Stop chasing.", "logo": "https://tryasva.com/og.png", "description": "ASVA is a Windows desktop app that connects to TallyPrime and sends bills and payment reminders on WhatsApp from the shop's own number, for Indian distributors."}, {"@type": "WebSite", "@id": "https://tryasva.com/#website", "url": "https://tryasva.com", "name": "ASVA", "publisher": {"@id": "https://tryasva.com/#org"}, "inLanguage": "en-IN"}, {"@type": "SoftwareApplication", "name": "ASVA", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows 10, Windows 11", "description": "ASVA is a small Windows desktop app installed next to TallyPrime. It automatically sends bills and payment reminders on WhatsApp from the shop's own number and reconciles payments back to Tally, for Indian distributors selling on credit.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free for every shop until 15 September 2026"}, "featureList": ["Tally sync", "WhatsApp bills and reminders", "WhatsApp owner assistant", "UPI pay links", "End-of-day digest", "Photo-bill capture"]}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
@@ -1098,10 +1126,20 @@ header.nav .logo .mark{width:26px;height:26px}
         </div>
       </div>
 
-      <figure class="heroart reveal">
-        <img src="/hero-artwork.png" alt="A weary distributor at his shop counter checking his phone while an indifferent customer scrolls beside him, WhatsApp reminder bubbles glowing between them.">
-        <figcaption class="caption"><span class="d"></span> Every day, every shop</figcaption>
-      </figure>
+      <div class="mock reveal" role="img" aria-label="A WhatsApp chat where ASVA sends a bill and a payment reminder from the shop's own number, and pauses the moment the customer replies.">
+        <div class="halo"></div>
+        <span class="tag2">from your own number</span>
+        <div class="phone"><div class="scr">
+          <div class="top"><span class="av">ST</span>
+            <div><div class="nm">Sharma Traders</div><div class="st">online</div></div></div>
+          <div class="body">
+            <div class="bub out">Namaste &#128591; Bill #4021, &#8377;18,400, due 15 Aug. Pay by UPI &#128071;</div>
+            <div class="bub out">Reminder: &#8377;18,400 is still pending on bill #4021.</div>
+            <div class="bub in">paisa 5 tareek ko bhej dunga sir &#128591;</div>
+            <div class="bub out">Noted, dhanyavaad. Reminders paused till the 5th &#9989;</div>
+          </div>
+        </div></div>
+      </div>
     </div>
   </div>
  </section>

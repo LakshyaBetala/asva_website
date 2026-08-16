@@ -468,6 +468,34 @@ header.nav .logo .mark{width:26px;height:26px}
   box-shadow:0 0 10px rgba(37,211,102,.6);animation:pulseDot 1.8s ease-out infinite;flex:none}
 .navlive b{color:#fff;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 @media(max-width:900px){.navlive{display:none !important}}
+
+/* ===== clean pass (non-slop): calm surfaces, no bounce, no gimmick motion ===== */
+:root{
+  --sh:0 1px 2px rgba(0,0,0,.35),0 14px 34px -20px rgba(0,0,0,.55);
+  --sh-lift:0 16px 36px -20px rgba(0,0,0,.6);
+}
+/* no hover-lift anywhere - a quiet colour/border shift reads calmer and less generated */
+.card:hover,.btn-p:hover,.btn-s:hover,.navcta:hover,.buy:hover,.hero-pill:hover,
+.dhero .cta-row .btn-p:hover,.dhero .cta-row .btn-s:hover,.plan.best:hover,.morelink:hover{transform:none}
+.card:hover{box-shadow:var(--sh);border-color:rgba(255,255,255,.18)}
+.navcta:hover,.btn-p:hover,.dhero .cta-row .btn-p:hover{box-shadow:var(--sh)}
+/* still the phone + halo: no bob, no pulse */
+.mock .phone,.mock .halo{animation:none}
+.mock .halo{opacity:.4}
+.mock .phone{box-shadow:0 20px 44px -26px rgba(0,0,0,.7)}
+/* highlight stays a solid accent, never a gradient box */
+.hl{background:none!important;padding:0}
+/* the quote strip: clean emphasis, no shadowed green pill on inline words */
+.plain p b{background:none;color:var(--wa);box-shadow:none;padding:0;font-weight:800}
+/* strip light-theme leftovers that bleed onto the dark pages */
+.cmd{background:var(--paper);border-color:var(--hair)}
+.cmd code{background:var(--wash);color:var(--accent)}
+.cmd .hi{background:var(--wash);color:var(--accent)}
+.cmd p{color:var(--muted)}
+.compare tbody tr:nth-child(even){background:rgba(255,255,255,.03)}
+.plan li.no::before{background:rgba(226,196,106,.14);border-color:#8a7326}
+/* calmer marquee */
+.marq .track{animation-duration:52s;font-weight:600}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is ASVA a mobile app or a desktop app?", "acceptedAnswer": {"@type": "Answer", "text": "ASVA is a Windows desktop app. You install it once on the same computer where you run TallyPrime. There is no mobile app to install, and your customers install nothing. They simply receive a normal WhatsApp message from your own number."}}, {"@type": "Question", "name": "Which Windows do I need, and what else?", "acceptedAnswer": {"@type": "Answer", "text": "A Windows 10 or Windows 11 computer with TallyPrime, and your WhatsApp. Download one installer, type the short setup code we read out to you, pick your company and scan WhatsApp. About five minutes, and there is nothing else to install."}}, {"@type": "Question", "name": "Do my customers need to install anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your customers just get a normal WhatsApp message from your own number. Nothing for them to install, download or learn."}}, {"@type": "Question", "name": "How do I pay for ASVA?", "acceptedAnswer": {"@type": "Answer", "text": "Directly by UPI each month. We share a pay link near your renewal date, and once the payment is received your cycle continues automatically."}}, {"@type": "Question", "name": "Is there a setup fee?", "acceptedAnswer": {"@type": "Answer", "text": "No. Onboarding is free, we set up your first batch with you, and you can cancel anytime."}}, {"@type": "Question", "name": "What counts as an active debtor?", "acceptedAnswer": {"@type": "Answer", "text": "A customer with an outstanding balance that ASVA can chase. Your plan is sized to that count, not to how many messages you send."}}, {"@type": "Question", "name": "Does ASVA change my Tally data?", "acceptedAnswer": {"@type": "Answer", "text": "Never. ASVA reads your ledger and confirms payments back from Tally. It does not post or edit vouchers."}}, {"@type": "Question", "name": "Do messages come from my number or ASVA's?", "acceptedAnswer": {"@type": "Answer", "text": "Your own WhatsApp number, so customers recognise your shop and trust the message."}}, {"@type": "Question", "name": "Will it spam my customers?", "acceptedAnswer": {"@type": "Answer", "text": "No. Reminders follow each party's credit terms, respect a daily cap, and stop as soon as a customer replies."}}, {"@type": "Question", "name": "Does ASVA hold or route my money?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every reminder carries a UPI link straight to your own account. ASVA never touches the payment and takes no cut."}}, {"@type": "Question", "name": "Is it hard to set up?", "acceptedAnswer": {"@type": "Answer", "text": "No. There are no files to edit and no settings to figure out. If you can link WhatsApp Web, you can set up ASVA, and we stay on the phone with you while you do it."}}, {"@type": "Question", "name": "Can I try it first?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Message us and we will connect your Tally and set up your first batch with you."}}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
