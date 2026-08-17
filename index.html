@@ -1165,6 +1165,15 @@ header.nav .logo .mark{width:26px;height:26px}
 .card .cico{margin-bottom:12px}
 .card h3 .dot{display:none}
 .card h3{gap:0}
+
+/* ===== clean pass 4: less-boxy editorial card grids ===== */
+.grid{gap:32px 30px}
+.grid .card{background:transparent;border:0;border-top:1px solid var(--hair);border-radius:0;
+  box-shadow:none;padding:22px 2px 0}
+.grid .card:hover{transform:none;box-shadow:none;background:transparent;border-color:var(--hair)}
+.grid .card .cico{margin-bottom:12px}
+.grid .card h3{margin-top:0}
+@media(max-width:560px){.grid{gap:26px}}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://tryasva.com/#org", "name": "ASVA", "url": "https://tryasva.com", "email": "almmatix@gmail.com", "slogan": "Collect faster. Stop chasing.", "logo": "https://tryasva.com/og.png", "description": "ASVA is a Windows desktop app that connects to TallyPrime and sends bills and payment reminders on WhatsApp from the shop's own number, for Indian distributors."}, {"@type": "WebSite", "@id": "https://tryasva.com/#website", "url": "https://tryasva.com", "name": "ASVA", "publisher": {"@id": "https://tryasva.com/#org"}, "inLanguage": "en-IN"}, {"@type": "SoftwareApplication", "name": "ASVA", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows 10, Windows 11", "description": "ASVA is a small Windows desktop app installed next to TallyPrime. It automatically sends bills and payment reminders on WhatsApp from the shop's own number and reconciles payments back to Tally, for Indian distributors selling on credit.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free for every shop until 15 September 2026"}, "featureList": ["Tally sync", "WhatsApp bills and reminders", "WhatsApp owner assistant", "UPI pay links", "End-of-day digest", "Photo-bill capture"]}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
