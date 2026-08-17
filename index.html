@@ -1087,6 +1087,37 @@ header.nav .logo .mark{width:26px;height:26px}
 .plan li.no::before{background:rgba(226,196,106,.14);border-color:#8a7326}
 /* calmer marquee */
 .marq .track{animation-duration:52s;font-weight:600}
+
+/* ===== clean pass 2: a live dot is a solid dot, not a radar ping ===== */
+@keyframes pulseDot{0%,100%{box-shadow:none}}
+.livetick .dot,.feed .fh .l .p,.ledger .lh .live,.hero-pill .d,.navlive .d,
+.promo.v3 .seg.live::before,.heroart .caption .d,.navcta .d{animation:none!important;box-shadow:none!important}
+/* the accent marker on card headings reads calmer as a small round dot, no ring */
+.card h3 .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);border:0}
+
+/* ===== product mockups (clean, on-brand, no photos) ===== */
+.pm{background:var(--paper);border:1px solid var(--hair);border-radius:16px;overflow:hidden}
+.pm .pm-top{display:flex;align-items:center;gap:9px;padding:12px 15px;border-bottom:1px solid var(--hair);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pm .pm-top .d{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.pm .pm-b{padding:16px}
+/* digest lines */
+.pm-digest .ln{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:.9rem}
+.pm-digest .ln:last-child{border-bottom:0}
+.pm-digest .ln .lbl{color:var(--muted)}
+.pm-digest .ln .val{font-family:var(--mono);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.pm-digest .ln .val.up{color:var(--accent)}
+/* chase-today list */
+.pm-chase .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+.pm-chase .row:last-child{border-bottom:0}
+.pm-chase .n{width:24px;height:24px;border-radius:7px;background:var(--wash);color:var(--accent);
+  font-family:var(--mono);font-weight:700;font-size:.8rem;display:grid;place-items:center;flex:none}
+.pm-chase .nm{font-weight:600;font-size:.92rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-chase .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.pm-chase .days{font-family:var(--mono);font-size:.66rem;color:var(--faint);letter-spacing:.04em}
+/* mockup pair grid */
+.pmpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:8px}
+@media(max-width:720px){.pmpair{grid-template-columns:1fr}}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://tryasva.com/#org", "name": "ASVA", "url": "https://tryasva.com", "email": "almmatix@gmail.com", "slogan": "Collect faster. Stop chasing.", "logo": "https://tryasva.com/og.png", "description": "ASVA is a Windows desktop app that connects to TallyPrime and sends bills and payment reminders on WhatsApp from the shop's own number, for Indian distributors."}, {"@type": "WebSite", "@id": "https://tryasva.com/#website", "url": "https://tryasva.com", "name": "ASVA", "publisher": {"@id": "https://tryasva.com/#org"}, "inLanguage": "en-IN"}, {"@type": "SoftwareApplication", "name": "ASVA", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows 10, Windows 11", "description": "ASVA is a small Windows desktop app installed next to TallyPrime. It automatically sends bills and payment reminders on WhatsApp from the shop's own number and reconciles payments back to Tally, for Indian distributors selling on credit.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free for every shop until 15 September 2026"}, "featureList": ["Tally sync", "WhatsApp bills and reminders", "WhatsApp owner assistant", "UPI pay links", "End-of-day digest", "Photo-bill capture"]}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
@@ -1154,20 +1185,20 @@ header.nav .logo .mark{width:26px;height:26px}
 
    <div class="hurtgrid">
     <div class="hurtcell">
-      <span class="k">01 &middot; Credit cycle</span>
-      <div class="bignum">160<span class="unit">days</span></div>
+      <span class="k">Credit cycle</span>
+      <div class="bignum"><span class="num" data-to="160">0</span><span class="unit">days</span></div>
       <h3>You're their banker</h3>
       <p>Every rupee sold sits stuck for weeks, sometimes months, before it comes home. Interest-free.</p>
     </div>
     <div class="hurtcell">
-      <span class="k">02 &middot; Ledger</span>
-      <div class="bignum">1,966</div>
+      <span class="k">Ledger</span>
+      <div class="bignum"><span class="num" data-to="1966" data-comma="1">0</span></div>
       <h3>Too many to chase</h3>
       <p>Debtors in a single Tally test. Manual follow-up breaks: small parties slip through, big ones get chased twice.</p>
     </div>
     <div class="hurtcell">
-      <span class="k">03 &middot; Live pilot</span>
-      <div class="bignum">&#8377;43L<span class="unit">+</span></div>
+      <span class="k">Live pilot</span>
+      <div class="bignum">&#8377;<span class="num" data-to="43">0</span>L<span class="unit">+</span></div>
       <h3>Recovered already</h3>
       <p>In the first live pilot. Money the distributor already earned, just waiting to be asked for from the right number, at the right time.</p>
     </div>
@@ -1354,6 +1385,18 @@ function step(t){if(!start)start=t;var p=Math.min(1,(t-start)/dur);
   if(p<1)requestAnimationFrame(step);}
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){requestAnimationFrame(step);io.unobserve(el);}});});
 io.observe(el);})();
+
+// Count-up on the problem-section headline numbers
+(function(){var nums=document.querySelectorAll('.num[data-to]');if(!nums.length)return;
+var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function run(el){var to=parseInt(el.getAttribute('data-to'),10),comma=el.getAttribute('data-comma'),dur=1400,start=null;
+  if(reduce){el.textContent=comma?to.toLocaleString('en-IN'):to;return;}
+  function step(t){if(!start)start=t;var p=Math.min(1,(t-start)/dur);var e=1-Math.pow(1-p,3);
+    var v=Math.floor(to*e);el.textContent=comma?v.toLocaleString('en-IN'):v;
+    if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);}
+var io2=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){run(x.target);io2.unobserve(x.target);}});},{threshold:.4});
+nums.forEach(function(n){io2.observe(n);});})();
 </script>
 
 </body></html>

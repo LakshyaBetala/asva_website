@@ -693,6 +693,37 @@ header.nav .logo .mark{width:26px;height:26px}
 .plan li.no::before{background:rgba(226,196,106,.14);border-color:#8a7326}
 /* calmer marquee */
 .marq .track{animation-duration:52s;font-weight:600}
+
+/* ===== clean pass 2: a live dot is a solid dot, not a radar ping ===== */
+@keyframes pulseDot{0%,100%{box-shadow:none}}
+.livetick .dot,.feed .fh .l .p,.ledger .lh .live,.hero-pill .d,.navlive .d,
+.promo.v3 .seg.live::before,.heroart .caption .d,.navcta .d{animation:none!important;box-shadow:none!important}
+/* the accent marker on card headings reads calmer as a small round dot, no ring */
+.card h3 .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);border:0}
+
+/* ===== product mockups (clean, on-brand, no photos) ===== */
+.pm{background:var(--paper);border:1px solid var(--hair);border-radius:16px;overflow:hidden}
+.pm .pm-top{display:flex;align-items:center;gap:9px;padding:12px 15px;border-bottom:1px solid var(--hair);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pm .pm-top .d{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.pm .pm-b{padding:16px}
+/* digest lines */
+.pm-digest .ln{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:.9rem}
+.pm-digest .ln:last-child{border-bottom:0}
+.pm-digest .ln .lbl{color:var(--muted)}
+.pm-digest .ln .val{font-family:var(--mono);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.pm-digest .ln .val.up{color:var(--accent)}
+/* chase-today list */
+.pm-chase .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+.pm-chase .row:last-child{border-bottom:0}
+.pm-chase .n{width:24px;height:24px;border-radius:7px;background:var(--wash);color:var(--accent);
+  font-family:var(--mono);font-weight:700;font-size:.8rem;display:grid;place-items:center;flex:none}
+.pm-chase .nm{font-weight:600;font-size:.92rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-chase .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.pm-chase .days{font-family:var(--mono);font-size:.66rem;color:var(--faint);letter-spacing:.04em}
+/* mockup pair grid */
+.pmpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:8px}
+@media(max-width:720px){.pmpair{grid-template-columns:1fr}}
 </style>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">

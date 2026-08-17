@@ -496,6 +496,37 @@ header.nav .logo .mark{width:26px;height:26px}
 .plan li.no::before{background:rgba(226,196,106,.14);border-color:#8a7326}
 /* calmer marquee */
 .marq .track{animation-duration:52s;font-weight:600}
+
+/* ===== clean pass 2: a live dot is a solid dot, not a radar ping ===== */
+@keyframes pulseDot{0%,100%{box-shadow:none}}
+.livetick .dot,.feed .fh .l .p,.ledger .lh .live,.hero-pill .d,.navlive .d,
+.promo.v3 .seg.live::before,.heroart .caption .d,.navcta .d{animation:none!important;box-shadow:none!important}
+/* the accent marker on card headings reads calmer as a small round dot, no ring */
+.card h3 .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);border:0}
+
+/* ===== product mockups (clean, on-brand, no photos) ===== */
+.pm{background:var(--paper);border:1px solid var(--hair);border-radius:16px;overflow:hidden}
+.pm .pm-top{display:flex;align-items:center;gap:9px;padding:12px 15px;border-bottom:1px solid var(--hair);
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.pm .pm-top .d{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:none}
+.pm .pm-b{padding:16px}
+/* digest lines */
+.pm-digest .ln{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--hair);font-size:.9rem}
+.pm-digest .ln:last-child{border-bottom:0}
+.pm-digest .ln .lbl{color:var(--muted)}
+.pm-digest .ln .val{font-family:var(--mono);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.pm-digest .ln .val.up{color:var(--accent)}
+/* chase-today list */
+.pm-chase .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+.pm-chase .row:last-child{border-bottom:0}
+.pm-chase .n{width:24px;height:24px;border-radius:7px;background:var(--wash);color:var(--accent);
+  font-family:var(--mono);font-weight:700;font-size:.8rem;display:grid;place-items:center;flex:none}
+.pm-chase .nm{font-weight:600;font-size:.92rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-chase .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.pm-chase .days{font-family:var(--mono);font-size:.66rem;color:var(--faint);letter-spacing:.04em}
+/* mockup pair grid */
+.pmpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:8px}
+@media(max-width:720px){.pmpair{grid-template-columns:1fr}}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is ASVA a mobile app or a desktop app?", "acceptedAnswer": {"@type": "Answer", "text": "ASVA is a Windows desktop app. You install it once on the same computer where you run TallyPrime. There is no mobile app to install, and your customers install nothing. They simply receive a normal WhatsApp message from your own number."}}, {"@type": "Question", "name": "Which Windows do I need, and what else?", "acceptedAnswer": {"@type": "Answer", "text": "A Windows 10 or Windows 11 computer with TallyPrime, and your WhatsApp. Download one installer, type the short setup code we read out to you, pick your company and scan WhatsApp. About five minutes, and there is nothing else to install."}}, {"@type": "Question", "name": "Do my customers need to install anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your customers just get a normal WhatsApp message from your own number. Nothing for them to install, download or learn."}}, {"@type": "Question", "name": "How do I pay for ASVA?", "acceptedAnswer": {"@type": "Answer", "text": "Directly by UPI each month. We share a pay link near your renewal date, and once the payment is received your cycle continues automatically."}}, {"@type": "Question", "name": "Is there a setup fee?", "acceptedAnswer": {"@type": "Answer", "text": "No. Onboarding is free, we set up your first batch with you, and you can cancel anytime."}}, {"@type": "Question", "name": "What counts as an active debtor?", "acceptedAnswer": {"@type": "Answer", "text": "A customer with an outstanding balance that ASVA can chase. Your plan is sized to that count, not to how many messages you send."}}, {"@type": "Question", "name": "Does ASVA change my Tally data?", "acceptedAnswer": {"@type": "Answer", "text": "Never. ASVA reads your ledger and confirms payments back from Tally. It does not post or edit vouchers."}}, {"@type": "Question", "name": "Do messages come from my number or ASVA's?", "acceptedAnswer": {"@type": "Answer", "text": "Your own WhatsApp number, so customers recognise your shop and trust the message."}}, {"@type": "Question", "name": "Will it spam my customers?", "acceptedAnswer": {"@type": "Answer", "text": "No. Reminders follow each party's credit terms, respect a daily cap, and stop as soon as a customer replies."}}, {"@type": "Question", "name": "Does ASVA hold or route my money?", "acceptedAnswer": {"@type": "Answer", "text": "No. Every reminder carries a UPI link straight to your own account. ASVA never touches the payment and takes no cut."}}, {"@type": "Question", "name": "Is it hard to set up?", "acceptedAnswer": {"@type": "Answer", "text": "No. There are no files to edit and no settings to figure out. If you can link WhatsApp Web, you can set up ASVA, and we stay on the phone with you while you do it."}}, {"@type": "Question", "name": "Can I try it first?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Message us and we will connect your Tally and set up your first batch with you."}}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
