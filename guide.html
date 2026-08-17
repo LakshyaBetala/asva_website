@@ -739,6 +739,17 @@ header.nav .logo .mark{width:26px;height:26px}
 .pm-pay .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
 .pm-pay .chip{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
   color:var(--accent);background:var(--wash);border-radius:999px;padding:3px 9px;flex:none}
+
+/* ===== clean pass 3: drop the three redundant green status dots ===== */
+.navlive .d,.hero-pill .d,.livetick .dot{display:none}
+.hero-pill{padding-left:18px}
+
+/* ===== global box refinement: de-chip icons, calmer cards (matches home) ===== */
+/* drop the accent-tinted rounded icon chip everywhere - keep the green mark, keep the slot */
+.svgico{background:transparent;border:0}
+.card .cico{margin-bottom:12px}
+.card h3 .dot{display:none}
+.card h3{gap:0}
 </style>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">

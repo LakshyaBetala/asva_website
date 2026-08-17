@@ -1133,6 +1133,38 @@ header.nav .logo .mark{width:26px;height:26px}
 .pm-pay .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
 .pm-pay .chip{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
   color:var(--accent);background:var(--wash);border-radius:999px;padding:3px 9px;flex:none}
+
+/* ===== home box refinement: editorial columns, cleaner icons ===== */
+/* four steps: no boxes, no chips, no arrows - a numbered editorial row */
+.hflow2{counter-reset:st;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px}
+.hflow2 .hnode{counter-increment:st;background:transparent;border:0;border-top:1px solid var(--hair);
+  border-radius:0;padding:22px 0 0;box-shadow:none;margin:0;gap:8px}
+.hflow2 .hnode::before{content:counter(st,decimal-leading-zero);font-family:var(--mono);font-size:1.5rem;
+  font-weight:700;color:var(--accent);line-height:1;margin-bottom:6px}
+.hflow2 .hnode:hover{transform:none;box-shadow:none;border-color:var(--hair)}
+.hflow2 .hnode:not(:last-child)::after{display:none}
+.hflow2 .hnode .step{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--faint);font-weight:700}
+.hflow2 .hnode h3{font-size:1.1rem;margin:2px 0 0}
+.hflow2 .hnode p{font-size:.92rem}
+@media(max-width:900px){.hflow2{grid-template-columns:1fr 1fr;gap:26px}}
+@media(max-width:520px){.hflow2{grid-template-columns:1fr;gap:22px}}
+/* card icons: drop the accent-tinted rounded chip (a known AI tell), keep the mark */
+.card .cico{background:transparent;border:0;border-radius:0;width:auto;height:auto;margin-bottom:12px;color:var(--accent)}
+.card .cico svg{width:26px;height:26px}
+.card .cico.lg svg{width:30px;height:30px}
+.card h3 .dot{display:none}
+
+/* ===== clean pass 3: drop the three redundant green status dots ===== */
+.navlive .d,.hero-pill .d,.livetick .dot{display:none}
+.hero-pill{padding-left:18px}
+
+/* ===== global box refinement: de-chip icons, calmer cards (matches home) ===== */
+/* drop the accent-tinted rounded icon chip everywhere - keep the green mark, keep the slot */
+.svgico{background:transparent;border:0}
+.card .cico{margin-bottom:12px}
+.card h3 .dot{display:none}
+.card h3{gap:0}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://tryasva.com/#org", "name": "ASVA", "url": "https://tryasva.com", "email": "almmatix@gmail.com", "slogan": "Collect faster. Stop chasing.", "logo": "https://tryasva.com/og.png", "description": "ASVA is a Windows desktop app that connects to TallyPrime and sends bills and payment reminders on WhatsApp from the shop's own number, for Indian distributors."}, {"@type": "WebSite", "@id": "https://tryasva.com/#website", "url": "https://tryasva.com", "name": "ASVA", "publisher": {"@id": "https://tryasva.com/#org"}, "inLanguage": "en-IN"}, {"@type": "SoftwareApplication", "name": "ASVA", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows 10, Windows 11", "description": "ASVA is a small Windows desktop app installed next to TallyPrime. It automatically sends bills and payment reminders on WhatsApp from the shop's own number and reconciles payments back to Tally, for Indian distributors selling on credit.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR", "description": "Free for every shop until 15 September 2026"}, "featureList": ["Tally sync", "WhatsApp bills and reminders", "WhatsApp owner assistant", "UPI pay links", "End-of-day digest", "Photo-bill capture"]}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
@@ -1264,28 +1296,24 @@ header.nav .logo .mark{width:26px;height:26px}
   <div class="sechead"><span class="eyebrow">How it works</span>
    <h2>Four steps. Then it runs on its own.</h2>
    <p>No new habits. You keep using Tally and WhatsApp exactly as you do today.</p></div>
-  <div class="hflow reveal">
+  <div class="hflow hflow2 reveal">
     <div class="hnode">
-      <div class="svgico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
-      <div class="step">Step 01 &middot; Read</div>
+      <div class="step">Read</div>
       <h3>Tally is the truth</h3>
-      <p>ASVA sits next to Tally and reads what's outstanding. Nothing is uploaded, nothing is edited.</p>
+      <p>ASVA sits next to Tally and reads what's outstanding. It only reads, so your books are never changed.</p>
     </div>
     <div class="hnode">
-      <div class="svgico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M8 12l3 3 5-6"/></svg></div>
-      <div class="step">Step 02 &middot; Decide</div>
+      <div class="step">Decide</div>
       <h3>ASVA composes</h3>
       <p>It picks who to nudge today by each party's credit terms, then drafts a message in their language.</p>
     </div>
     <div class="hnode">
-      <div class="svgico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
-      <div class="step">Step 03 &middot; Send</div>
+      <div class="step">Send</div>
       <h3>Your own WhatsApp</h3>
       <p>The bill and reminder go out from your shop's number, with a UPI pay link. Customers install nothing.</p>
     </div>
     <div class="hnode">
-      <div class="svgico"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
-      <div class="step">Step 04 &middot; Reconcile</div>
+      <div class="step">Reconcile</div>
       <h3>Payment posts back</h3>
       <p>A "paid" reply pauses reminders. You confirm the amount and post the receipt into Tally in one tap.</p>
     </div>
