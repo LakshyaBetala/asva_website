@@ -529,6 +529,21 @@ header.nav .logo .mark{width:26px;height:26px}
 /* mockup pair grid */
 .pmpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:8px}
 @media(max-width:720px){.pmpair{grid-template-columns:1fr}}
+
+/* ===== product mockups 2: chat + payments ===== */
+.pm-chat .pm-b{display:flex;flex-direction:column;gap:9px;background:var(--dark)}
+.pm-chat .bx{max-width:84%;font-size:.86rem;line-height:1.45;padding:9px 12px;border-radius:13px}
+.pm-chat .bx.out{align-self:flex-end;background:var(--wash);border:1px solid rgba(34,197,94,.28);color:var(--ink);border-bottom-right-radius:4px}
+.pm-chat .bx.in{align-self:flex-start;background:var(--paper);border:1px solid var(--hair);color:var(--ink);border-bottom-left-radius:4px}
+.pm-chat .bx .mt{display:block;margin-top:5px;font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+.pm-pay .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+.pm-pay .row:last-child{border-bottom:0}
+.pm-pay .tick{width:22px;height:22px;border-radius:50%;background:var(--wash);color:var(--accent);
+  display:grid;place-items:center;font-size:.8rem;font-weight:800;flex:none}
+.pm-pay .nm{font-weight:600;font-size:.92rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-pay .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.pm-pay .chip{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--accent);background:var(--wash);border-radius:999px;padding:3px 9px;flex:none}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tryasva.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://tryasva.com/use-cases"}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
@@ -579,6 +594,28 @@ header.nav .logo .mark{width:26px;height:26px}
       <div class="svgico cico"><svg viewBox="0 0 24 24"><path d="M3 12c0-4 3-6 6-6h6c3 0 6 2 6 6s-3 6-6 6H9c-3 0-6-2-6-6z"/><path d="M9 6v12M15 6v12"/></svg></div>
       <h3>Pipes &amp; fittings</h3>
       <p>Project-based buyers on extended credit. Timed reminders keep those cycles moving.</p>
+    </div>
+  </div>
+ </section>
+
+ <section>
+  <div class="sechead"><span class="eyebrow">In their language</span>
+   <h2>Reminders that read like you wrote them</h2>
+   <p class="sub">English, Hindi, Gujarati or Marathi, always from your own number, so customers read them and reply.</p></div>
+  <div class="pmpair reveal">
+    <div class="pm pm-chat">
+      <div class="pm-top"><span class="d"></span> Hindi</div>
+      <div class="pm-b">
+        <div class="bx out">Namaste. Sharma Traders se: bill #4021 ka &#8377;18,400 baaki hai. UPI se bhej dijiye.<span class="mt">seen</span></div>
+        <div class="bx in">theek hai bhaiya, aaj bhej deta hoon<span class="mt">reminders paused</span></div>
+      </div>
+    </div>
+    <div class="pm pm-chat">
+      <div class="pm-top"><span class="d"></span> English</div>
+      <div class="pm-b">
+        <div class="bx out">A gentle reminder from Verma Distributors: &#8377;96,400 is pending, 62 days overdue. Pay by UPI below.<span class="mt">seen</span></div>
+        <div class="bx in">will clear half today, rest on Monday<span class="mt">promise noted</span></div>
+      </div>
     </div>
   </div>
  </section>

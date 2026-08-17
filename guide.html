@@ -724,6 +724,21 @@ header.nav .logo .mark{width:26px;height:26px}
 /* mockup pair grid */
 .pmpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:8px}
 @media(max-width:720px){.pmpair{grid-template-columns:1fr}}
+
+/* ===== product mockups 2: chat + payments ===== */
+.pm-chat .pm-b{display:flex;flex-direction:column;gap:9px;background:var(--dark)}
+.pm-chat .bx{max-width:84%;font-size:.86rem;line-height:1.45;padding:9px 12px;border-radius:13px}
+.pm-chat .bx.out{align-self:flex-end;background:var(--wash);border:1px solid rgba(34,197,94,.28);color:var(--ink);border-bottom-right-radius:4px}
+.pm-chat .bx.in{align-self:flex-start;background:var(--paper);border:1px solid var(--hair);color:var(--ink);border-bottom-left-radius:4px}
+.pm-chat .bx .mt{display:block;margin-top:5px;font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+.pm-pay .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+.pm-pay .row:last-child{border-bottom:0}
+.pm-pay .tick{width:22px;height:22px;border-radius:50%;background:var(--wash);color:var(--accent);
+  display:grid;place-items:center;font-size:.8rem;font-weight:800;flex:none}
+.pm-pay .nm{font-weight:600;font-size:.92rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-pay .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.pm-pay .chip{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--accent);background:var(--wash);border-radius:999px;padding:3px 9px;flex:none}
 </style>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
@@ -870,6 +885,14 @@ header.nav .logo .mark{width:26px;height:26px}
     <div class="st"><div class="n">1</div><h3>Open ASVA on your computer</h3><p>Click the <b>Phone app</b> button at the top. A QR code appears.</p></div>
     <div class="st"><div class="n">2</div><h3>Scan it with your phone camera</h3><p>It opens your shop's app, already linked to the same live data as your computer. No login, no code to type.</p></div>
     <div class="st"><div class="n">3</div><h3>Add to Home Screen</h3><p>Tap your browser menu and "Add to Home Screen". Now it opens like an app, any time.</p></div>
+  </div>
+  <div class="pm reveal" style="max-width:420px;margin:22px auto 0">
+    <div class="pm-top"><span class="d"></span> Phone app &middot; chase today</div>
+    <div class="pm-b pm-chase">
+      <div class="row"><span class="n">1</span><span class="nm">Verma Distributors</span><span class="amt">&#8377;96,400</span><span class="days">62d</span></div>
+      <div class="row"><span class="n">2</span><span class="nm">Sharma Traders</span><span class="amt">&#8377;18,400</span><span class="days">21d</span></div>
+      <div class="row"><span class="n">3</span><span class="nm">Iqbal &amp; Sons</span><span class="amt">&#8377;11,200</span><span class="days">9d</span></div>
+    </div>
   </div>
   <p class="undernote">The phone app is view-only, so you can hand your phone to anyone safely. Everything is controlled from WhatsApp or your computer.</p>
  </section>

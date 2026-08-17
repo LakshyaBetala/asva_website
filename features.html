@@ -546,6 +546,21 @@ header.nav .logo .mark{width:26px;height:26px}
 /* mockup pair grid */
 .pmpair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:8px}
 @media(max-width:720px){.pmpair{grid-template-columns:1fr}}
+
+/* ===== product mockups 2: chat + payments ===== */
+.pm-chat .pm-b{display:flex;flex-direction:column;gap:9px;background:var(--dark)}
+.pm-chat .bx{max-width:84%;font-size:.86rem;line-height:1.45;padding:9px 12px;border-radius:13px}
+.pm-chat .bx.out{align-self:flex-end;background:var(--wash);border:1px solid rgba(34,197,94,.28);color:var(--ink);border-bottom-right-radius:4px}
+.pm-chat .bx.in{align-self:flex-start;background:var(--paper);border:1px solid var(--hair);color:var(--ink);border-bottom-left-radius:4px}
+.pm-chat .bx .mt{display:block;margin-top:5px;font-family:var(--mono);font-size:.62rem;color:var(--faint)}
+.pm-pay .row{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--hair)}
+.pm-pay .row:last-child{border-bottom:0}
+.pm-pay .tick{width:22px;height:22px;border-radius:50%;background:var(--wash);color:var(--accent);
+  display:grid;place-items:center;font-size:.8rem;font-weight:800;flex:none}
+.pm-pay .nm{font-weight:600;font-size:.92rem;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-pay .amt{font-family:var(--mono);font-weight:700;font-size:.9rem;font-variant-numeric:tabular-nums}
+.pm-pay .chip{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--accent);background:var(--wash);border-radius:999px;padding:3px 9px;flex:none}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tryasva.com/"}, {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://tryasva.com/features"}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
@@ -595,6 +610,30 @@ header.nav .logo .mark{width:26px;height:26px}
     <p>One installer, no keys. Type an 8-char code, pick the Tally company, scan WhatsApp. Self-updating.</p>
   </div>
  </div></section>
+
+ <section>
+  <div class="sechead"><span class="eyebrow">Payments tab</span>
+   <h2>A "paid" reply becomes a Tally receipt</h2>
+   <p class="sub">Customers reply or send a screenshot. ASVA matches it to the right party and lines it up. You confirm the amount and post it, in one tap.</p></div>
+  <div class="pmpair reveal">
+    <div class="pm pm-chat">
+      <div class="pm-top"><span class="d"></span> From your own number</div>
+      <div class="pm-b">
+        <div class="bx out">Reminder from Sharma Traders: &#8377;18,400 is pending on bill #4021. Pay by UPI.<span class="mt">10:12</span></div>
+        <div class="bx in">done sir, paid just now &#128591;<span class="mt">10:31</span></div>
+        <div class="bx out">Received, thank you. Reminders paused. &#9989;<span class="mt">10:31</span></div>
+      </div>
+    </div>
+    <div class="pm">
+      <div class="pm-top"><span class="d"></span> Payments &middot; ready to post</div>
+      <div class="pm-b pm-pay">
+        <div class="row"><span class="tick">&#10003;</span><span class="nm">Sharma Traders</span><span class="amt">&#8377;18,400</span><span class="chip">post</span></div>
+        <div class="row"><span class="tick">&#10003;</span><span class="nm">Iqbal &amp; Sons</span><span class="amt">&#8377;11,200</span><span class="chip">post</span></div>
+        <div class="row"><span class="tick">&#10003;</span><span class="nm">Verma Distributors</span><span class="amt">&#8377;40,000</span><span class="chip">post</span></div>
+      </div>
+    </div>
+  </div>
+ </section>
 
  <section>
   <div class="sechead"><span class="eyebrow">Why ASVA wins</span>
