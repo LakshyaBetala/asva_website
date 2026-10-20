@@ -251,3 +251,20 @@ figure.msg .reply small{display:block;color:var(--color-paid);font-weight:600;fo
 @media(min-width:860px){.plans{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none !important;animation:none !important;scroll-behavior:auto !important}}
+
+/* ── Hero phone (home): the real reminder, as the customer chat looks ── */
+.stat{margin-top:var(--space-m);font-size:1.05rem;color:var(--color-ink-2)}
+.stat b{font-family:var(--font-display);font-size:1.9rem;font-weight:700;color:var(--color-ink);letter-spacing:-.01em;margin-right:6px;font-variant-numeric:tabular-nums}
+.phone-wrap{margin:0;display:flex;flex-direction:column;align-items:center;gap:var(--space-s)}
+.phone{width:min(100%,360px);border:10px solid var(--color-ink);border-radius:36px;background:var(--color-paper-2);overflow:hidden;box-shadow:0 24px 50px -24px rgba(18,27,40,.35)}
+.ph-top{display:flex;align-items:center;gap:10px;padding:14px 16px;background:var(--color-paper);border-bottom:1px solid var(--color-rule-2)}
+.ph-av{width:34px;height:34px;border-radius:50%;background:var(--color-paper-3);color:var(--color-ink-2);font-size:.8rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.ph-nm{font-weight:640;font-size:.98rem;line-height:1.2}
+.ph-st{font-size:.78rem;color:var(--color-muted)}
+.ph-chat{padding:14px 12px 18px;display:flex;flex-direction:column;gap:8px}
+.ph-b{max-width:88%;padding:9px 12px 18px;border-radius:12px;font-size:.92rem;line-height:1.42;white-space:pre-line;position:relative;box-shadow:0 1px 0 rgba(18,27,40,.06)}
+.ph-b.out{align-self:flex-end;background:var(--color-paid-bg);border-top-right-radius:4px}
+.ph-b.in{align-self:flex-start;background:var(--color-paper);border-top-left-radius:4px}
+.ph-b .link{color:var(--color-accent);overflow-wrap:anywhere}
+.ph-t{position:absolute;right:10px;bottom:4px;font-size:.7rem;color:var(--color-muted)}
+.phone-wrap figcaption{max-width:360px;color:var(--color-muted);font-size:var(--text-small);text-align:center}

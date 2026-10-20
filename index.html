@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://tryasva.com/#org", "name": "ASVA", "url": "https://tryasva.com", "email": "almmatix@gmail.com", "slogan": "Collect faster. Stop chasing.", "logo": "https://tryasva.com/logo.png", "description": "ASVA is a Windows desktop app that connects to TallyPrime and sends bills and payment reminders on WhatsApp from the shop's own number, for Indian distributors."}, {"@type": "WebSite", "@id": "https://tryasva.com/#website", "url": "https://tryasva.com", "name": "ASVA", "publisher": {"@id": "https://tryasva.com/#org"}, "inLanguage": "en-IN"}, {"@type": "SoftwareApplication", "name": "ASVA", "applicationCategory": "BusinessApplication", "operatingSystem": "Windows 10, Windows 11", "description": "ASVA is a small Windows desktop app installed next to TallyPrime. It automatically sends bills and payment reminders on WhatsApp from the shop's own number and reconciles payments back to Tally, for Indian distributors selling on credit.", "offers": {"@type": "AggregateOffer", "lowPrice": "699", "highPrice": "1499", "priceCurrency": "INR", "description": "14-day free trial, then Lite Rs 699, Collect Rs 999 or Recover Rs 1,499 a month"}, "featureList": ["Tally sync", "WhatsApp bills and reminders", "WhatsApp owner assistant", "UPI pay links", "End-of-day digest", "Photo-bill capture"]}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do my customers need to install anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. They get a normal WhatsApp message from your shop's number. The pay link opens in their phone's browser and hands off to any UPI app."}}, {"@type": "Question", "name": "Will WhatsApp block my number?", "acceptedAnswer": {"@type": "Answer", "text": "ASVA sends the way a careful person would: one message per customer that combines all their bills, a capped number per hour, and only in the daytime. No tool can promise zero risk, but these limits keep your number looking like a normal shop."}}, {"@type": "Question", "name": "Does ASVA change my Tally data?", "acceptedAnswer": {"@type": "Answer", "text": "ASVA reads your outstanding from TallyPrime. The only thing it ever adds is a receipt voucher, and only after you confirm the amount. It never edits or deletes your vouchers."}}, {"@type": "Question", "name": "Which languages do the reminders use?", "acceptedAnswer": {"@type": "Answer", "text": "English by default. You can switch a group of customers to Hinglish. ASVA understands replies in English, Hinglish, Hindi and Tamil."}}, {"@type": "Question", "name": "What counts as an active party for the plans?", "acceptedAnswer": {"@type": "Answer", "text": "A customer who still owes you and has a WhatsApp number, so ASVA can actually remind them. Fully paid customers and customers without a number do not count."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do my customers need to install anything?", "acceptedAnswer": {"@type": "Answer", "text": "No. They get a normal WhatsApp message from your shop's number. The pay link opens in their phone's browser and hands off to any UPI app."}}, {"@type": "Question", "name": "Will WhatsApp block my number?", "acceptedAnswer": {"@type": "Answer", "text": "ASVA sends the way a careful person would: one message per customer that combines all their bills, a capped number per hour, and only in the daytime. No tool can promise zero risk, but these limits keep your number looking like a normal shop."}}, {"@type": "Question", "name": "Does ASVA change my Tally data?", "acceptedAnswer": {"@type": "Answer", "text": "ASVA reads your bills and balances from TallyPrime. When a customer pays and you confirm the amount, ASVA posts the receipt voucher into Tally for you. It never changes or deletes your existing vouchers."}}, {"@type": "Question", "name": "Which languages do the reminders use?", "acceptedAnswer": {"@type": "Answer", "text": "English by default. You can switch a group of customers to Hinglish. ASVA understands replies in English, Hinglish, Hindi and Tamil."}}, {"@type": "Question", "name": "What counts as an active party for the plans?", "acceptedAnswer": {"@type": "Answer", "text": "A customer who still owes you and has a WhatsApp number, so ASVA can actually remind them. Fully paid customers and customers without a number do not count."}}]}</script>
 </head>
 <body>
 <header class="nav"><div class="wrap"><div class="row">
@@ -39,16 +39,19 @@
  <section class="hero"><div class="wrap"><div class="hero-grid">
   <div>
    <h1>Get paid on time without chasing anyone.</h1>
-   <p class="lede">ASVA reads what each customer owes in TallyPrime and sends them a polite WhatsApp reminder from your own number, timed to their credit terms. When they pay, it tells you and lines up the receipt for Tally.</p>
+   <p class="lede">ASVA sends every new Tally bill to your customer on WhatsApp, reminds them politely from your own number when it falls due, and posts the receipt voucher into Tally when they pay.</p>
    <div class="cta-row">
     <a class="btn btn-p" href="/download">Start 14-day free trial</a>
     <a class="btn btn-s" href="/how-it-works">See how it works</a>
    </div>
    <p class="note">Windows app for TallyPrime. Free for 14 days from the day you start, then from &#8377;699 a month.</p>
+   <p class="stat"><b>&#8377;52 lakh+</b> collected by shops on ASVA</p>
   </div>
-  <figure class="msg" aria-label="The exact reminder a customer receives">
-   <figcaption><span>What your customer receives</span><span>From your shop's WhatsApp</span></figcaption>
-   <div class="text">Dear Sharma Traders,
+  <figure class="phone-wrap" aria-label="A payment reminder sent from the shop's own WhatsApp, and the customer's reply">
+   <div class="phone">
+    <div class="ph-top"><span class="ph-av">ST</span><div><div class="ph-nm">Sharma Traders</div><div class="ph-st">customer</div></div></div>
+    <div class="ph-chat">
+     <div class="ph-b out">Dear Sharma Traders,
 A payment reminder from Gupta Electricals.
 
 Invoice GE/2526/0412: &#8377;18,400 outstanding (38 days).
@@ -56,8 +59,11 @@ Invoice GE/2526/0412: &#8377;18,400 outstanding (38 days).
 Pay online (UPI, GPay, PhonePe or bank transfer):
 <span class="link">app.tryasva.com/pay/k3f9q2</span>
 
-Once paid, kindly reply PAID. Thank you.</div>
-   <div class="reply"><small>Customer replies</small>"Will pay on the 5th."<br>ASVA pauses reminders until the 5th and tells you. If the money does not come, reminders start again.</div>
+Once paid, kindly reply PAID. Thank you.<span class="ph-t">10:12</span></div>
+     <div class="ph-b in">Will pay on the 5th.<span class="ph-t">10:31</span></div>
+    </div>
+   </div>
+   <figcaption>Sent from your shop's own number. When the customer replies, ASVA pauses reminders until the 5th and tells you. If the money does not come, reminders start again.</figcaption>
   </figure>
  </div></div></section>
 
@@ -66,9 +72,9 @@ Once paid, kindly reply PAID. Thank you.</div>
    <p>You keep using Tally and WhatsApp exactly as you do now. ASVA works in between.</p></div>
   <ol class="steps">
    <li><h3>Reads your Tally</h3><p>Every few minutes ASVA reads what is outstanding, party by party and bill by bill, straight from TallyPrime. Nothing to export, no add-on to install.</p></li>
-   <li><h3>Sends bills and reminders</h3><p>New bills reach the customer a few minutes after you make them. Reminders follow each party's credit days, one message per customer with all their bills and a pay link.</p></li>
+   <li><h3>Sends bills and reminders</h3><p>Every new bill you make in Tally reaches the customer on WhatsApp a few minutes later. Reminders follow each party's credit days, one message per customer with all their bills and a pay link.</p></li>
    <li><h3>Reads the reply</h3><p>"Paid", a screenshot, or "next Monday": ASVA understands it, pauses reminders where it should, and tells you. Unclear replies come to you, never guessed.</p></li>
-   <li><h3>Closes the loop in Tally</h3><p>Payments line up in one list. Check the amount, tap once, and the receipt goes into Tally against the oldest bills first.</p></li>
+   <li><h3>Posts the payment in Tally</h3><p>Payments line up in one list. Check the amount, tap once, and ASVA posts the receipt voucher in Tally against the oldest bills first.</p></li>
   </ol>
   <a class="morelink" href="/how-it-works">Read the full walkthrough</a>
  </div></section>
@@ -81,7 +87,7 @@ Once paid, kindly reply PAID. Thank you.</div>
     <tr><td>Someone phones parties one by one from a list</td><td>Reminders go out on their own, timed to each party's credit days</td></tr>
     <tr><td>Some customers get chased twice, some never</td><td>Each customer gets one reminder at a time, with every open bill in it</td></tr>
     <tr><td>You find out about a payment days later</td><td>A "paid" reply or screenshot reaches your Payments list the same minute</td></tr>
-    <tr><td>Receipts are typed into Tally by hand</td><td>You confirm the amount and the receipt posts to Tally in one tap</td></tr>
+    <tr><td>Receipts are typed into Tally by hand</td><td>You confirm the amount and ASVA posts the receipt voucher in Tally</td></tr>
     <tr><td>You check the books to know who to call</td><td>Every evening, one WhatsApp summary: who paid and who to call tomorrow</td></tr>
    </tbody></table></div>
  </div></section>
@@ -91,8 +97,8 @@ Once paid, kindly reply PAID. Thank you.</div>
   <div class="safe">
    <div><h3>Your own WhatsApp number</h3><p>Customers hear from your shop, not from an unknown company, so they read it. Sending is slow and spaced out, in the daytime only.</p></div>
    <div><h3>ASVA never touches the money</h3><p>Customers pay you directly by UPI or bank transfer. No payment gateway, no cut, no wallet in the middle.</p></div>
-   <div><h3>Tally stays your book</h3><p>ASVA reads from Tally and adds a receipt only after you confirm it. It never edits or deletes a voucher.</p></div>
-   <div><h3>Built on real shops</h3><p>Tested against live Tally data, including a shop with more than 2,000 parties spread across 150 route groups.</p></div>
+   <div><h3>Tally stays your book</h3><p>ASVA reads your bills from Tally and posts a receipt voucher only after you confirm the payment. It never changes or deletes your existing vouchers.</p></div>
+   <div><h3>Built on real shops</h3><p>Shops on ASVA have collected more than &#8377;52 lakh so far, tracked bill by bill from Tally. It runs on live books, including a shop with more than 2,000 parties.</p></div>
   </div>
  </div></section>
 
@@ -110,7 +116,7 @@ Once paid, kindly reply PAID. Thank you.</div>
 
  <section><div class="wrap">
   <div class="sechead"><h2>Questions shop owners ask</h2></div>
-  <div class="faq"><details><summary>Do my customers need to install anything?</summary><p>No. They get a normal WhatsApp message from your shop's number. The pay link opens in their phone's browser and hands off to any UPI app.</p></details><details><summary>Will WhatsApp block my number?</summary><p>ASVA sends the way a careful person would: one message per customer that combines all their bills, a capped number per hour, and only in the daytime. No tool can promise zero risk, but these limits keep your number looking like a normal shop.</p></details><details><summary>Does ASVA change my Tally data?</summary><p>ASVA reads your outstanding from TallyPrime. The only thing it ever adds is a receipt voucher, and only after you confirm the amount. It never edits or deletes your vouchers.</p></details><details><summary>Which languages do the reminders use?</summary><p>English by default. You can switch a group of customers to Hinglish. ASVA understands replies in English, Hinglish, Hindi and Tamil.</p></details><details><summary>What counts as an active party for the plans?</summary><p>A customer who still owes you and has a WhatsApp number, so ASVA can actually remind them. Fully paid customers and customers without a number do not count.</p></details></div>
+  <div class="faq"><details><summary>Do my customers need to install anything?</summary><p>No. They get a normal WhatsApp message from your shop's number. The pay link opens in their phone's browser and hands off to any UPI app.</p></details><details><summary>Will WhatsApp block my number?</summary><p>ASVA sends the way a careful person would: one message per customer that combines all their bills, a capped number per hour, and only in the daytime. No tool can promise zero risk, but these limits keep your number looking like a normal shop.</p></details><details><summary>Does ASVA change my Tally data?</summary><p>ASVA reads your bills and balances from TallyPrime. When a customer pays and you confirm the amount, ASVA posts the receipt voucher into Tally for you. It never changes or deletes your existing vouchers.</p></details><details><summary>Which languages do the reminders use?</summary><p>English by default. You can switch a group of customers to Hinglish. ASVA understands replies in English, Hinglish, Hindi and Tamil.</p></details><details><summary>What counts as an active party for the plans?</summary><p>A customer who still owes you and has a WhatsApp number, so ASVA can actually remind them. Fully paid customers and customers without a number do not count.</p></details></div>
  </div></section>
 
  <div class="wrap"><div class="band">
