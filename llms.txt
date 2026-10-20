@@ -25,8 +25,10 @@ ASVA is a Windows desktop application (Windows 10 or 11) that you install on the
 Distributors and wholesalers selling on credit in India: electrical, hardware, chemical, steel, paint, and pipe trades running TallyPrime on Windows, typically carrying 30 to 160 days of credit.
 
 ## Pricing
-ASVA is in an open pilot and is FREE for every shop until 30 September 2026. Full
-product, no card, no setup fee. Paid plans will be introduced after the pilot.
+7-day free trial on the full product, then priced by active debtors (customers with a
+WhatsApp number who still owe money): Lite Rs 699 a month (150 active debtors), Collect
+Rs 999 (400), Recover Rs 1,499 (1,000, adds automatic customer replies, promise
+follow-up and multi-company). Custom pricing above 1,000. No setup fee.
 
 ## Key pages
 - Home: https://tryasva.com/
