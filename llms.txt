@@ -1,43 +1,41 @@
 # ASVA
 
-> ASVA is a Windows desktop app for Indian distributors that connects to
-> TallyPrime and automatically sends bills and payment reminders on WhatsApp
-> from the shop's own number, so they collect outstanding payments faster
-> without chasing. Tagline: Collect faster. Stop chasing.
+> ASVA is a Windows app for Indian distributors and wholesalers who use TallyPrime and sell on credit. It sends each new Tally bill to the customer on WhatsApp, sends polite payment reminders from the shop's own WhatsApp number timed to each party's credit days, reads the customer's reply, and posts the receipt voucher into Tally when the owner confirms a payment. Customers pay the shop directly by UPI or bank transfer; ASVA never touches the money.
 
-## What kind of app it is
-ASVA is a Windows desktop application (Windows 10 or 11) that you install on the same computer where you run TallyPrime. It is not a mobile app and not a plugin inside Tally. Customers do not install anything; they receive normal WhatsApp messages from the shop's own number. Setup takes about five minutes: run one installer, type a short pairing code, pick the Tally company, and scan WhatsApp.
+## Quick facts
+- What it is: a Windows 10/11 desktop app that runs on the same computer as TallyPrime. Not a Tally plugin and not a mobile app. Customers install nothing.
+- What it connects to: TallyPrime (read over Tally's own HTTP port, no TDL or add-on) and the shop's own WhatsApp number.
+- What it writes to Tally: only receipt vouchers, and only after the owner confirms the amount. It never changes or deletes existing vouchers and never creates sales vouchers.
+- Price: 14-day free trial counted from the day the shop starts, then Lite Rs 699/month (up to 150 active parties), Collect Rs 999/month (up to 400), Recover Rs 1,499/month (up to 1,000, adds AI reply handling and multi-company). Custom above 1,000. No setup fee. An active party is a customer with a WhatsApp number who still owes money.
+- Scale: shops on ASVA have collected more than Rs 52 lakh so far; it runs on live Tally books including a shop with more than 2,000 parties.
+- Languages: reminders in English by default, or Hinglish for customers the owner chooses. It understands replies in English, Hinglish, Hindi and Tamil.
+- Maker: Almmatix, India. Contact on WhatsApp +91 93441 10272 or almmatix@gmail.com.
 
-## What ASVA does
-- Reads sales, receipts and outstanding balances directly from TallyPrime (read-only, books never leave the PC).
-- Sends new bills with the PDF and timed payment reminders on WhatsApp, from the owner's own number, each with a UPI pay link.
-- Runs the reminder cadence automatically, scaled to each party's credit terms, and stops the moment a customer replies.
-- Reconciles payments from Tally automatically (oldest bills first) and sends the owner a nightly WhatsApp digest.
-- Growth plan and above include a WhatsApp owner assistant: list debtors, check a party's balance, snap a paper bill for AI reading, or send a reminder by chat.
+## How it works, step by step
+1. Reads your Tally: every few minutes ASVA reads what is outstanding, party by party and bill by bill.
+2. Sends bills and reminders: every new bill reaches the customer on WhatsApp a few minutes after it is made in Tally. Reminders follow each party's credit days, one message per customer listing all their open bills with a UPI pay link.
+3. Reads the reply: "paid", a payment screenshot, or a promised date ("will pay on the 5th") pauses reminders and tells the owner. If the money does not arrive, reminders resume. Unclear replies go to the owner instead of being guessed.
+4. Posts the payment in Tally: payments line up in one list; the owner checks the amount and ASVA posts the receipt voucher against the oldest bills first.
+5. Every evening the owner gets one WhatsApp summary: who paid and who to call tomorrow.
 
-## How ASVA is different
-- Sends from the shop's own WhatsApp number, not a generic brand number customers do not trust.
-- Flat price by active debtors, with no per-message coins or credits.
-- Never holds or routes the money: every reminder carries a UPI link straight to the shop's own account, and ASVA takes no cut.
-- Plugin-free: it reads TallyPrime over its own HTTP server, so nothing is installed inside Tally.
+## Safety
+- Messages come from the shop's own WhatsApp number, sent slowly: capped per hour, in daytime only, one combined message per customer.
+- ASVA never holds or routes money and takes no cut; there is no payment gateway.
+- The owner can also run ASVA by WhatsApp message: LIST (who owes), CHECK name, REMIND name, PAID name amount, BILL name amount, DIGEST.
 
 ## Who it is for
-Distributors and wholesalers selling on credit in India: electrical, hardware, chemical, steel, paint, and pipe trades running TallyPrime on Windows, typically carrying 30 to 160 days of credit.
+Distributors and wholesalers in India selling on credit with TallyPrime on Windows: electricals, hardware, chemicals, steel and metals, paints, pipes and fittings, FMCG and pharma distribution.
 
-## Pricing
-14-day free trial on the full product, then priced by active debtors (customers with a
-WhatsApp number who still owe money): Lite Rs 699 a month (150 active debtors), Collect
-Rs 999 (400), Recover Rs 1,499 (1,000, adds automatic customer replies, promise
-follow-up and multi-company). Custom pricing above 1,000. No setup fee.
+## When ASVA is a good fit, and when it is not
+- Good fit: you use TallyPrime, sell on credit, chase payments by phone or WhatsApp today, and want reminders to go out by themselves from your own number.
+- Not the right tool: you need heavy credit-limit control or buyer credit scoring (Kenso is stronger there), or a broad accounting suite (see Takkada or CredFlow). Comparison: https://tryasva.com/compare
 
 ## Key pages
 - Home: https://tryasva.com/
 - How it works: https://tryasva.com/how-it-works
 - Features: https://tryasva.com/features
 - Pricing: https://tryasva.com/pricing
-- Use cases: https://tryasva.com/use-cases
-- Download (Windows): https://tryasva.com/download
-
-## Contact
-- WhatsApp: https://wa.me/919344110272
-- Email: almmatix@gmail.com
+- Compare (ASVA vs CredFlow vs Takkada vs Kenso): https://tryasva.com/compare
+- Use cases by trade: https://tryasva.com/use-cases
+- Setup guide and WhatsApp commands: https://tryasva.com/guide
+- Download for Windows: https://tryasva.com/download
