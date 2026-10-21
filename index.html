@@ -667,6 +667,38 @@ h1,h2,h3{color:var(--ink)}
 .baf .before li::before{background:rgba(226,196,106,.15);border-color:rgba(226,196,106,.6)}
 .baf .after li::before{background:var(--wa);border-color:var(--wa);box-shadow:inset 0 0 0 3px rgba(37,211,102,.15)}
 
+ /* Before/after: paired rows, so each old habit sits beside what replaces it */
+ .baf{display:block;border:1px solid var(--hair);border-radius:18px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));box-shadow:var(--sh)}
+ .bafhead{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+ .bafhead .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:14px 22px;font-weight:700}
+ .bafhead .before{color:#e2c46a}
+ .bafhead .after{color:var(--wa);background:rgba(37,211,102,.07);border-left:1px solid var(--line)}
+ .bafrow{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.05)}
+ .bafrow:first-of-type{border-top:0}
+ .bafrow>div{padding:15px 22px 15px 48px;font-size:.95rem;line-height:1.5;position:relative;
+  transition:background-color .18s ease,color .18s ease}
+ .bafrow .b{color:var(--faint)}
+ .bafrow .a{color:var(--ink);background:rgba(37,211,102,.05);border-left:1px solid var(--line)}
+ .bafrow>div::before{position:absolute;left:20px;top:15px;width:18px;height:18px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;
+  font-family:var(--mono);line-height:1}
+ .bafrow .b::before{content:"\00d7";color:#e2c46a;background:rgba(226,196,106,.12);
+  border:1px solid rgba(226,196,106,.4)}
+ .bafrow .a::before{content:"\2713";color:var(--dark);background:var(--wa);border:1px solid var(--wa)}
+ .bafrow:hover .b{color:var(--muted)}
+ .bafrow:hover .a{background:rgba(37,211,102,.1)}
+ .baffoot{padding:16px 22px;border-top:1px solid var(--line);color:var(--faint);font-size:.9rem}
+ @media(max-width:760px){
+  .bafhead{display:none}
+  .bafrow{grid-template-columns:1fr;border-top:1px solid var(--line)}
+  .bafrow .a{border-left:0}
+  .bafrow>div{padding:13px 18px 13px 44px}
+  .bafrow>div::before{left:16px;top:13px}
+ }
+
+
 /* Horizontal flow */
 .hnode{background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
   border-color:rgba(255,255,255,.08)}
@@ -1273,30 +1305,9 @@ header.nav .logo .mark{width:26px;height:26px}
    <h2>What ASVA changes.</h2>
    <p>Same Tally. Same WhatsApp. A quiet loop between them that runs by itself.</p></div>
   <div class="baf reveal">
-    <div class="side before">
-      <div class="k">Before ASVA</div>
-      <h3>Chase, forget, chase again</h3>
-      <ul>
-        <li>Staff sits with a call list and dials one by one</li>
-        <li>The same customer gets nudged twice, or not at all</li>
-        <li>Someone paid last week, you don't know until you check</li>
-        <li>Bills sent by email, most never opened</li>
-        <li>Reminders sent from an unknown number, ignored</li>
-        <li>Evenings spent on the phone, mornings on Tally</li>
-      </ul>
-    </div>
-    <div class="side after">
-      <div class="k">After ASVA</div>
-      <h3>A quiet, self-running loop</h3>
-      <ul>
-        <li>Bills go out on WhatsApp the moment they're raised in Tally</li>
-        <li>Reminders time themselves to each party's credit terms</li>
-        <li>A customer replies "paid", reminders pause automatically</li>
-        <li>Messages come from your own number, so they get read</li>
-        <li>Payments post to Tally in one tap, no double entry</li>
-        <li>One evening WhatsApp digest: who paid, who to call tomorrow</li>
-      </ul>
-    </div>
+    <div class="bafhead"><div class="k before">Before ASVA</div><div class="k after">After ASVA</div></div>
+    <div class="bafrow"><div class="b">Staff sits with a call list and dials one by one</div><div class="a">Reminders go out on their own, timed to each party's credit days</div></div><div class="bafrow"><div class="b">The same customer gets nudged twice, or not at all</div><div class="a">One message per customer, with every open bill in it</div></div><div class="bafrow"><div class="b">Someone paid last week and you find out when you check</div><div class="a">A "paid" reply or screenshot reaches you the same minute</div></div><div class="bafrow"><div class="b">Bills sent by email, most never opened</div><div class="a">Bills reach the customer on WhatsApp minutes after Tally</div></div><div class="bafrow"><div class="b">Reminders from an unknown number, ignored</div><div class="a">Messages come from your own number, so they get read</div></div><div class="bafrow"><div class="b">Evenings on the phone, mornings on Tally</div><div class="a">One evening digest: who paid, who to call tomorrow</div></div>
+    <div class="baffoot">Same Tally, same WhatsApp, same customers. The work moves off your evenings.</div>
   </div>
  </section>
 
