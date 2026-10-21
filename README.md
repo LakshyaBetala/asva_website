@@ -1,10 +1,15 @@
-# ASVA marketing website (tryasva.com)
+# tryasva.com
 
-Static site auto-deployed by Cloudflare Pages. Do NOT edit these
-files by hand - they are generated from `app/site.py` in the ASVA
-backend repo.
+Static site for tryasva.com, served by Cloudflare Pages (project `asva`).
 
-## Update on a new version
-1. In the backend repo: `python build_zip.py website-repo`
-2. Here: `git add -A && git commit -m "site update" && git push`
-3. Cloudflare Pages auto-deploys the push. Done.
+## Deploying
+
+Push to `main`. A `pre-push` hook publishes the pushed commit to Cloudflare Pages with wrangler.
+
+Cloudflare's own git builds are connected but have not fired since 2026-08-30 (GitHub stopped delivering push events). To restore them, reinstall the "Cloudflare Workers and Pages" GitHub App on this repo, confirm a `github:push` deployment appears, then delete `.git/hooks/pre-push`.
+
+Deploy by hand:
+
+```
+npx wrangler@4 pages deploy . --project-name asva --branch main
+```
