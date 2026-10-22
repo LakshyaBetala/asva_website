@@ -110,7 +110,10 @@ h1,h2,h3{font-family:var(--display)}
 h1{font-weight:800;letter-spacing:-.035em;line-height:1.02;margin:0 0 20px;text-wrap:balance}
 h2{font-weight:800;letter-spacing:-.03em;line-height:1.06;margin:0 0 10px;text-wrap:balance}
 .hl{color:var(--accent-d);background:linear-gradient(transparent 60%, var(--wash) 60%);padding:0 .06em}
-.page-hero{padding:70px 0 24px;max-width:900px}
+/* Clear the floating nav: it is pulled 64px over the page, and the pill
+     itself is ~74px tall from the top of the viewport. */
+  .page-hero{padding:132px 0 24px;max-width:900px}
+  @media(max-width:760px){.page-hero{padding-top:104px}}
 .page-hero .eyebrow{display:inline-block;margin-bottom:16px}
 .page-hero h1{font-size:clamp(2.5rem,6.4vw,4.4rem)}
 .lede{font-size:1.2rem;color:var(--muted);max-width:60ch;margin:0 0 28px;line-height:1.5}
