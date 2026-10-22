@@ -303,6 +303,12 @@ footer.ft{border-top:2px solid var(--ink);padding:44px 0 56px}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
+  /* Anything that fades in from opacity:0 must still be VISIBLE when a
+     visitor turns motion off, or the hero copy and the download button
+     never appear at all. */
+  .dhero h1 .word,.dhero .lede,.dhero .cta-row,.dhero .livetick,.hero-pill,
+  .dhero .mock,.reveal.in,[class*="fadeUp"]{opacity:1!important;transform:none!important;
+  filter:none!important;animation:none!important}
   .marq .track,.mock .phone,.mock .halo{animation:none}
 }
 
@@ -344,9 +350,7 @@ a:focus-visible,.btn:focus-visible,.buy:focus-visible,.navcta:focus-visible,summ
   <span class="go">See plans &rarr;</span></span></a>
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><img class="mark" src="/logo-mark.png" alt="ASVA logo" width="30" height="30">ASVA</a>
-  <nav class="navlinks"><a class="hidem" href="/">Home</a><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/guide">Guide</a><a class="hidem" href="/use-cases">Use cases</a><a class="hidem" href="/compare">Compare</a>
-    <a class="navcta" href="/download">Download app</a>
-  </nav></div></div></header>
+  <nav class="navlinks"><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/pricing">Pricing</a><a class="hidem" href="/compare">Compare</a><a class="navcta" href="/download">Download ASVA</a></nav></div></div></header>
 <main><section class="sec"><div class="wrap"><div class="legal"><h1>Terms of Service</h1><div class="upd">Last updated 21 August 2026</div>
 <p>These terms cover the use of ASVA, a collections assistant for shops using TallyPrime, provided by
 Almmatix. By installing or using ASVA, the shop agrees to these terms.</p>
@@ -403,7 +407,7 @@ these terms.</p>
     <p>The recovery agent for Indian distributors on TallyPrime. Collect faster. Stop chasing.</p>
     <p style="margin-top:8px;color:var(--faint);font-size:.85rem">An Almmatix product.</p></div>
   <div class="col"><div class="h">Product</div>
-    <a href="/how-it-works">How it works</a><a href="/features">Features</a>
+    <a href="/how-it-works">How it works</a><a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/guide">Setup guide</a>
     <a href="/use-cases">Use cases</a></div>
   <div class="col"><div class="h">Get started</div>
     <a href="/download">Download for Windows</a><a href="https://wa.me/919344110272?text=I%20want%20to%20try%20ASVA">Talk to us on WhatsApp</a>

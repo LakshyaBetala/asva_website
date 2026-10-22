@@ -305,6 +305,12 @@ footer.ft{border-top:2px solid var(--ink);padding:44px 0 56px}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
+  /* Anything that fades in from opacity:0 must still be VISIBLE when a
+     visitor turns motion off, or the hero copy and the download button
+     never appear at all. */
+  .dhero h1 .word,.dhero .lede,.dhero .cta-row,.dhero .livetick,.hero-pill,
+  .dhero .mock,.reveal.in,[class*="fadeUp"]{opacity:1!important;transform:none!important;
+  filter:none!important;animation:none!important}
   .marq .track,.mock .phone,.mock .halo{animation:none}
 }
 
@@ -1211,10 +1217,7 @@ header.nav .logo .mark{width:26px;height:26px}
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><img class="mark" src="/logo-mark.png" alt="ASVA logo" width="30" height="30">ASVA</a>
-  <nav class="navlinks"><a class="hidem on" href="/">Home</a><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/guide">Guide</a><a class="hidem" href="/use-cases">Use cases</a><a class="hidem" href="/compare">Compare</a>
-    
-    <a class="navcta" href="/download">Download app</a>
-  </nav></div></div></header>
+  <nav class="navlinks"><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/pricing">Pricing</a><a class="hidem" href="/compare">Compare</a><a class="navcta" href="/download">Download ASVA</a></nav></div></div></header>
 <main>
  <section class="dhero">
   <div class="spot"></div>
@@ -1262,7 +1265,7 @@ header.nav .logo .mark{width:26px;height:26px}
   </div>
  </section>
 
-<div class="marq"><div class="track"><div class="g"><span>PLUGIN-FREE TALLY</span><span class="di">&#9670;</span><span>SHOP'S OWN NUMBER</span><span class="di">&#9670;</span><span>UPI PAY LINKS</span><span class="di">&#9670;</span><span>ENGLISH · HINGLISH</span><span class="di">&#9670;</span><span>NEVER TOUCHES THE MONEY</span><span class="di">&#9670;</span><span>FIFO RECONCILE</span><span class="di">&#9670;</span></div><div class="g"><span>PLUGIN-FREE TALLY</span><span class="di">&#9670;</span><span>SHOP'S OWN NUMBER</span><span class="di">&#9670;</span><span>UPI PAY LINKS</span><span class="di">&#9670;</span><span>ENGLISH · HINGLISH</span><span class="di">&#9670;</span><span>NEVER TOUCHES THE MONEY</span><span class="di">&#9670;</span><span>FIFO RECONCILE</span><span class="di">&#9670;</span></div></div></div>
+
 
  <section class="hurt">
   <div class="wrap">
@@ -1340,40 +1343,21 @@ header.nav .logo .mark{width:26px;height:26px}
   <a class="morelink" href="/how-it-works">See the full walkthrough &rarr;</a>
  </section>
 
- <section class="bento-sec">
-  <div class="sechead">
-   <span class="eyebrow">Why ASVA</span>
-   <h2>Not another reminder app.</h2>
-   <p>One job: getting your outstanding paid, without annoying your customers.</p>
+ <section>
+  <div class="sechead"><span class="eyebrow">Why ASVA</span>
+   <h2>Built so your customers stay yours.</h2></div>
+  <div class="grid g3 reveal">
+   <div class="card"><h3>Your own WhatsApp number</h3>
+    <p>Customers hear from your shop, not an unknown brand, so the message gets read.
+    Sending is paced and daytime only.</p></div>
+   <div class="card"><h3>ASVA never touches the money</h3>
+    <p>Every reminder carries a UPI link straight to your account. No gateway, no cut,
+    no wallet in between.</p></div>
+   <div class="card"><h3>Tally stays your book</h3>
+    <p>ASVA reads your bills and only ever writes a receipt voucher, after you confirm
+    the payment.</p></div>
   </div>
-  <div class="bento reveal">
-    <div class="bcell b-hero">
-      <span class="bsticker">Your number</span>
-      <div class="bnum">100%</div>
-      <h3>From <span class="glow">your own</span> WhatsApp.</h3>
-      <p>Customers hear from your shop, not an unknown brand. Trust and relationships stay intact.</p>
-    </div>
-    <div class="bcell b-timed">
-      <div class="svgico cico lg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-      <h3>Timed, never spammy</h3>
-      <p>Reminders follow each party's credit terms and back off the moment they reply.</p>
-    </div>
-    <div class="bcell b-truth">
-      <div class="svgico cico lg"><svg viewBox="0 0 24 24"><path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg></div>
-      <h3>Tally stays the truth</h3>
-      <p>ASVA reads what's outstanding and confirms payments back from Tally. Never edits your books.</p>
-    </div>
-    <div class="bcell b-digest">
-      <span class="bsticker sec">Every night</span>
-      <div class="digest-preview">
-        <div class="dline"><span>Bills sent</span><b>7</b></div>
-        <div class="dline"><span>Reminders</span><b>12</b></div>
-        <div class="dline hot"><span>Collected</span><b>&#8377;36,650</b></div>
-      </div>
-      <h3>One WhatsApp. Then you sleep.</h3>
-    </div>
-  </div>
-  <a class="morelink" href="/features">Explore all features &rarr;</a>
+  <a class="morelink" href="/features">See everything ASVA does &rarr;</a>
  </section>
 
 </div>
@@ -1385,7 +1369,7 @@ header.nav .logo .mark{width:26px;height:26px}
     <p>The recovery agent for Indian distributors on TallyPrime. Collect faster. Stop chasing.</p>
     <p style="margin-top:8px;color:var(--faint);font-size:.85rem">An Almmatix product.</p></div>
   <div class="col"><div class="h">Product</div>
-    <a href="/how-it-works">How it works</a><a href="/features">Features</a>
+    <a href="/how-it-works">How it works</a><a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/guide">Setup guide</a>
     <a href="/use-cases">Use cases</a></div>
   <div class="col"><div class="h">Get started</div>
     <a href="/download">Download for Windows</a><a href="https://wa.me/919344110272?text=I%20want%20to%20try%20ASVA">Talk to us on WhatsApp</a>

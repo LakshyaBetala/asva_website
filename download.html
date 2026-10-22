@@ -305,6 +305,12 @@ footer.ft{border-top:2px solid var(--ink);padding:44px 0 56px}
 .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
+  /* Anything that fades in from opacity:0 must still be VISIBLE when a
+     visitor turns motion off, or the hero copy and the download button
+     never appear at all. */
+  .dhero h1 .word,.dhero .lede,.dhero .cta-row,.dhero .livetick,.hero-pill,
+  .dhero .mock,.reveal.in,[class*="fadeUp"]{opacity:1!important;transform:none!important;
+  filter:none!important;animation:none!important}
   .marq .track,.mock .phone,.mock .halo{animation:none}
 }
 
@@ -608,10 +614,7 @@ header.nav .logo .mark{width:26px;height:26px}
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><img class="mark" src="/logo-mark.png" alt="ASVA logo" width="30" height="30">ASVA</a>
-  <nav class="navlinks"><a class="hidem" href="/">Home</a><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/guide">Guide</a><a class="hidem" href="/use-cases">Use cases</a><a class="hidem" href="/compare">Compare</a>
-    
-    <a class="navcta" href="/download">Download app</a>
-  </nav></div></div></header>
+  <nav class="navlinks"><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/pricing">Pricing</a><a class="hidem" href="/compare">Compare</a><a class="navcta" href="/download">Download ASVA</a></nav></div></div></header>
 <script>(function(){var els=document.querySelectorAll('[data-countdown]');if(!els.length)return;var t=new Date(els[0].getAttribute('data-countdown')).getTime();function tk(){var ms=t-Date.now();var d=Math.floor(ms/86400000);els.forEach(function(el){el.textContent=ms<0?'ended':d+'d';});}tk();setInterval(tk,60000);})();</script>
 <main><div class="wrap">
  <section class="page-hero reveal">
@@ -663,79 +666,31 @@ header.nav .logo .mark{width:26px;height:26px}
   <div class="vtime reveal">
     <details class="item live" open><summary><span class="v">v2.2.4 &middot; latest</span><span class="t">Exported bills always send, and updates install cleanly</span></summary><p>A bill PDF you export into the ASVA bills folder is sent however old the bill is, and an old bill you re-export goes out as a payment reminder with the balance and a pay link. Sent files move to the sent folder; anything that could not go moves to skipped with the reason. Customers no longer see &ldquo;Waiting for this message&rdquo; in WhatsApp. Closing ASVA now stops the Tally reader every time, so updates install cleanly, and the left menu folds away with three looks to choose from.</p></details> <details class="item"><summary><span class="v">v2.2.2</span><span class="t">A menu that folds away, three looks, and help after a quiet payment</span></summary><p>Click the ASVA mark (or press Ctrl+B) and the left menu folds into a slim strip of icons; a narrow window folds it by itself. Three looks under More: Green, Blue and Midnight. Reminder batches can start from 9 AM. Fixed: a reminder due today no longer shows as a date on one row and &ldquo;Today&rdquo; on the next, and the top bar follows your language. New: if a customer opens your payment link and nothing arrives, ASVA offers them help once, politely.</p></details> <details class="item"><summary><span class="v">v2.2.1</span><span class="t">Today and Payments fixed, clearer bills, the familiar green ASVA</span></summary><p>Fixed: the Today screen no longer gets stuck on loading, and Add a payment works again on the Payments tab. Bills on a party page now make sense: one row per bill, nothing marked paid while it still shows a balance, and bills already cleared in Tally sit under &ldquo;Settled bills&rdquo;. The familiar green ASVA is back, with the simpler layout kept.</p></details> <details class="item"><summary><span class="v">v2.2.0</span><span class="t">A simpler ASVA: five places on the left, one language menu</span></summary><p>Today, Parties, Payments, Reminders and Settings on the left, with WhatsApp and Reports at the bottom. One language menu at the top; ASVA is in English unless you pick Hinglish or Hindi, and customer messages stay in English unless you set a batch to Hinglish. Tour, Phone app, update check and dark mode moved under More.</p></details> <details class="item"><summary><span class="v">v2.1.1</span><span class="t">Clean up parties you removed from Tally, plus all the 2.1.0 fixes</span></summary>
       <p>If you created a party in Tally and later deleted it, open Status and press "Clean up parties removed from Tally". After a confirmation, any customer no longer in your Tally is hidden and stops getting reminders. Nothing is deleted: their history is kept, and they come back on their own if they return to Tally. Includes all the 2.1.0 fixes below.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.1.0</span><span class="t">Reliable payments, Tally never crashes, your work is never wiped by a sync</span></summary>
-      <p>Recording a payment by hand now works every time (no more "could not save"). If you open Tally after ASVA, ASVA waits for Tally to finish loading before reading it, so it no longer makes Tally close with a memory error. While you tick parties for reminders or type in the search box, a background Tally sync no longer reloads the page and loses your work. Payments you received in Tally now show correctly on the customer page (the latest ones, newest first), even if the name had a small difference. And there is a new "Name A to Z (owing only)" filter to see just who owes you.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.9</span><span class="t">WhatsApp button works, version always shown, updates never get stuck</span></summary>
-      <p>The WhatsApp button on Today now opens the chat with that customer instead of doing nothing. You can always see which version you are on at the bottom of the left menu, and if an update ever stalls a "Download manually" link appears so you are never left waiting. The installer keeps your Start-menu and Desktop shortcuts on every install and update, so searching "ASVA" always opens the real app. On a small laptop the customer list folds into clean cards so the WhatsApp and action buttons never slide off the edge, the Today and Payments screens open correctly in every language, and recording a payment saves right away, can be retried if it failed, and keeps your selection while you fill it in.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.8</span><span class="t">Always findable, cleaner tables on small screens</span></summary>
-      <p>The installer creates your Start-menu and Desktop shortcuts on every install and update, and on a small laptop the customer list folds into clean cards so the WhatsApp and action buttons never slide off the edge.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.7</span><span class="t">Three languages, reliable payments to Tally</span></summary>
-      <p>Choose English, Hinglish or हिंदी (Devanagari) from the top bar, and the whole app follows your choice, including the Today screen and the phone app, so it never mixes languages with itself. Recording a payment now saves it right away and posts to Tally when your PC and Tally are open; a payment that failed can be retried, and your selection no longer disappears while you fill it in.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.6</span><span class="t">Never blank while updating, findable app, search a customer for payments</span></summary>
-      <p>Updating no longer goes blank: a clear "Updating ASVA, it will reopen in a minute, your data is safe" window now stays on screen through the whole update, so it never looks like the app was deleted. ASVA also keeps its Start-menu shortcut every time it opens, so you can always search "ASVA" and open the real app instead of an old setup file. Recording a payment now lets you type a name to find the customer instantly, and Windows shows "Almmatix" as the publisher.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.5</span><span class="t">A wait screen you can see, clearer Escalate, quiet credit health</span></summary>
-      <p>Updating now shows a full "Updating, I will reopen by myself in a minute, your data is safe" screen for the whole update, not just a flash, so it never feels like the app vanished. Sending a firm formal reminder to one customer is easier to read and confirm, with a clear Send button. On the computer you get the customer number to dial and a WhatsApp button to reach them, instead of a Call button that did nothing on a PC. And when you open a customer, ASVA quietly shows how exposed you are before you give more credit, only when it matters, with no pop-ups or flags on every bill.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.4</span><span class="t">Smoother updates you can always see</span></summary>
-      <p>ASVA now always shows the clear "Updating, I will reopen by myself in a minute, your data is safe" screen while it updates, and a note when it is back. It never installs quietly in the background any more, so the app never seems to vanish. Everything from 2.0.3 is included: your shop name shows on its own in customer messages, first-time setup is easy to read, WhatsApp stays steady if a second copy starts, and firm follow-ups go out only when you decide.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.3</span><span class="t">Cleaner messages, clearer setup, steadier WhatsApp</span></summary>
-      <p>Your shop name now shows on its own in every customer message, without the financial-year tag that used to appear after it. At first sync the company you pick is easy to read. If a second copy of ASVA ever starts, it steps aside instead of knocking your WhatsApp offline. And you stay in control: a firm, formal reminder to one customer goes out only when you decide, ASVA never gets harsher on its own.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0.2</span><span class="t">Smarter payment reading, steadier reminders</span></summary>
-      <p>When a customer sends a photo, ASVA now checks whether it is really a payment (a UPI, bank or cheque proof) before doing anything, so a product photo, a selfie or a bill is never mistaken for a payment and your reminders are never paused by accident. If it is a payment but the amount is not clear, ASVA shows it to you to confirm. Reminders keep flowing even if one message cannot be delivered, and old queued messages clear on their own.</p>
-    </details>
-    <details class="item"><summary><span class="v">v2.0</span><span class="t">Your privacy, locked down</span></summary>
-      <p>Messages from anyone who is not your customer, family, friends, groups or unknown numbers, now never leave your computer. ASVA only ever receives a message when your own customer replies about a payment. A smarter assistant welcomes a new lead once and then stays quiet, handing the chat to you the moment someone is interested. A new Today home shows the money that came in, who to chase first with a one-tap call, and how much cash is likely this week. Updates are calmer too: ASVA shows a clear screen while it updates and tells you nothing was lost.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.9.5</span><span class="t">Quieter, safer, and it waits for you</span></summary>
-      <p>If you do not open ASVA for a few days, it pauses on its own and sends nothing, so a customer never gets a stale reminder. When it reopens, it picks up where it left off. If a customer asks to stop, it stays stopped until they ask again. Reminders now go out steadily through the day instead of in a burst, which keeps your own WhatsApp number safe. The phone app has a cleaner Chase-today view.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.9.0</span><span class="t">See your cash coming in, know who pays on time</span></summary>
-      <p>A weekly Cash Coming In view shows how much is likely to arrive. A monthly Recovery Report Card shows how much came back versus last month. Every customer gets a reliability grade built from real data. Ask on WhatsApp with CASH, CARD or SCORE. WhatsApp is steadier, and duplicate phone numbers no longer trip up the Payments tab.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.10</span><span class="t">Shop WhatsApp stays quiet with customers</span></summary>
-      <p>Your shop's own WhatsApp number never auto-replies to a customer. It quietly reads paid confirmations and payment screenshots, matches them to the right party, and drops them into your Payments tab, telling you privately.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.9</span><span class="t">Steadier WhatsApp, payments capture themselves</span></summary>
-      <p>WhatsApp rides out brief hiccups without asking for a new QR scan. Customer "paid" messages and UPI screenshots are read automatically, amounts matched, and dropped into Payments ready to post into Tally.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.8</span><span class="t">New customers sync on their own</span></summary>
-      <p>Add a customer in Tally and raise their first bill, ASVA picks them up on the next refresh with the bill. It reads the customer's number in the expected order: WhatsApp field, then Primary Mobile, then address.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.7</span><span class="t">Smoother payments, clearer chat, a guided tour</span></summary>
-      <p>Recording a payment into Tally is rock solid, with no double entries. Same-name parties show a numbered list. The phone app is redesigned with a Chase-today list and one-tap calling.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.6</span><span class="t">Enter a payment into Tally in one tap</span></summary>
-      <p>Customer "paid" replies show up in a new Payments tab. Confirm and post the receipt straight into Tally in one tap. Reminders now always carry your bank details.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.5</span><span class="t">Speaks your language, finds the right party</span></summary>
-      <p>English or Hinglish, in the app and on WhatsApp. Finds the right party from a short name or small typo. RECOVERED shows how much came back this month.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.4</span><span class="t">Knows when a customer promises to pay</span></summary>
-      <p>When a customer says they've paid or promises a date, ASVA pauses that party's reminders and shows you why, with the customer's own message.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8.3</span><span class="t">Steadier, and updates itself</span></summary>
-      <p>Auto-updates. Dark mode. A clearer dashboard. A do-not-chase list. One-tap connection check in plain words.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.8</span><span class="t">Promise-to-Pay</span></summary>
-      <p>ASVA reads your customer's WhatsApp reply. If they've paid or promise a date like '5 tareek', reminders pause and you're nudged to record it in Tally.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.7</span><span class="t">Morning checkpoint</span></summary>
-      <p>Before the day's reminders go out, ASVA shows you the list so you can hold anyone who already paid.</p>
-    </details>
-    <details class="item"><summary><span class="v">v1.6</span><span class="t">One-click installer</span></summary>
-      <p>A single Windows installer with no keys to type. Live in about five minutes.</p>
-    </details>
-    <details class="item coming"><summary><span class="v">Coming next</span><span class="t">Reads payment screenshots</span></summary>
-      <p>ASVA will soon read the amount off a UPI screenshot the customer sends, so recording it in Tally is one tap.</p>
-    </details>
+    </details><p class="undernote">Older versions are not listed. ASVA updates itself, so you are always on the newest one.</p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   </div>
  </section>
 </div>
@@ -747,7 +702,7 @@ header.nav .logo .mark{width:26px;height:26px}
     <p>The recovery agent for Indian distributors on TallyPrime. Collect faster. Stop chasing.</p>
     <p style="margin-top:8px;color:var(--faint);font-size:.85rem">An Almmatix product.</p></div>
   <div class="col"><div class="h">Product</div>
-    <a href="/how-it-works">How it works</a><a href="/features">Features</a>
+    <a href="/how-it-works">How it works</a><a href="/features">Features</a><a href="/pricing">Pricing</a><a href="/guide">Setup guide</a>
     <a href="/use-cases">Use cases</a></div>
   <div class="col"><div class="h">Get started</div>
     <a href="/download">Download for Windows</a><a href="https://wa.me/919344110272?text=I%20want%20to%20try%20ASVA">Talk to us on WhatsApp</a>
