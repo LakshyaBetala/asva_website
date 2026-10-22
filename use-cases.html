@@ -573,11 +573,48 @@ header.nav .logo .mark{width:26px;height:26px}
 .grid .card .cico{margin-bottom:12px}
 .grid .card h3{margin-top:0}
 @media(max-width:560px){.grid{gap:26px}}
+
+/* ── Nav: reachable on a phone, out of the way while reading ───────────── */
+.navtoggle{display:none;margin-left:10px;width:40px;height:40px;flex:0 0 auto;
+  align-items:center;justify-content:center;flex-direction:column;gap:4px;
+  background:transparent;border:1px solid rgba(128,140,134,.32);border-radius:12px;
+  cursor:pointer;padding:0;position:relative;z-index:2}
+.navtoggle span{display:block;width:16px;height:1.5px;background:var(--ink);
+  border-radius:2px;transition:transform .22s ease,opacity .18s ease}
+header.nav.open .navtoggle span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+header.nav.open .navtoggle span:nth-child(2){opacity:0}
+header.nav.open .navtoggle span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+header.nav{transition:transform .28s cubic-bezier(.16,1,.3,1)}
+header.nav.tuck{transform:translateY(-150%)}
+@media(prefers-reduced-motion:reduce){header.nav{transition:none}
+  header.nav.tuck{transform:none}}
+@media(max-width:860px){
+  .navtoggle{display:flex}
+  header.nav .row{overflow:visible !important}
+  header.nav.open .row{height:auto !important;align-items:flex-start;
+    padding-top:9px !important;padding-bottom:12px !important}
+  header.nav.open .logo{margin-top:5px}
+  header.nav.open .navtoggle{margin-top:2px}
+  header.nav.open .navlinks{flex-wrap:wrap;justify-content:flex-end;
+    gap:2px !important;padding-top:4px}
+  header.nav.open .navlinks a.hidem{display:block;flex:0 0 100%;text-align:right;
+    padding:11px 14px !important;font-size:1rem}
+  header.nav.open .navcta{margin:8px 0 2px auto !important}
+}
+
+/* Open on a phone: the links get their own row under the logo, instead of the
+   first one sitting beside it like a page title. */
+@media(max-width:860px){
+  header.nav.open .row{flex-wrap:wrap}
+  header.nav.open .navtoggle{order:2;margin-left:auto}
+  header.nav.open .navlinks{order:3;flex:0 0 100%;margin-left:0;
+    border-top:1px solid rgba(255,255,255,.07);margin-top:8px;padding-top:8px}
+}
 </style><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://tryasva.com/"}, {"@type": "ListItem", "position": 2, "name": "Use cases", "item": "https://tryasva.com/use-cases"}]}</script>
 </head><body>
 <header class="nav"><div class="wrap"><div class="row">
   <a class="logo" href="/"><img class="mark" src="/logo-mark.png" alt="ASVA logo" width="30" height="30">ASVA</a>
-  <nav class="navlinks"><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/pricing">Pricing</a><a class="hidem" href="/compare">Compare</a><a class="navcta" href="/download">Download ASVA</a></nav></div></div></header>
+  <nav class="navlinks" id="navlinks"><a class="hidem" href="/how-it-works">How it works</a><a class="hidem" href="/features">Features</a><a class="hidem" href="/pricing">Pricing</a><a class="hidem" href="/compare">Compare</a><a class="navcta" href="/download">Download ASVA</a></nav><button class="navtoggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button></div></div></header>
 <script>(function(){var els=document.querySelectorAll('[data-countdown]');if(!els.length)return;var t=new Date(els[0].getAttribute('data-countdown')).getTime();function tk(){var ms=t-Date.now();var d=Math.floor(ms/86400000);els.forEach(function(el){el.textContent=ms<0?'ended':d+'d';});}tk();setInterval(tk,60000);})();</script>
 <main><div class="wrap">
  <section class="page-hero reveal">
@@ -699,4 +736,27 @@ var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isInter
 els.forEach(function(e){io.observe(e)});})();
 </script>
 
+<script>
+/* The pill hides as you scroll down and returns as you scroll up, so it is
+   never parked on the heading you came to read. It stays put while the phone
+   menu is open, and while the page has barely moved. */
+(function(){
+  var h=document.querySelector('header.nav'); if(!h) return;
+  var t=h.querySelector('.navtoggle'), last=window.pageYOffset||0, tick=false;
+  if(t){t.addEventListener('click',function(){
+    var open=h.classList.toggle('open');
+    t.setAttribute('aria-expanded', open?'true':'false');
+    if(open) h.classList.remove('tuck');
+  });}
+  addEventListener('scroll',function(){
+    if(tick) return; tick=true;
+    requestAnimationFrame(function(){
+      var y=window.pageYOffset||0;
+      if(!h.classList.contains('open'))
+        h.classList.toggle('tuck', y>last+4 && y>340);
+      last=y; tick=false;
+    });
+  },{passive:true});
+})();
+</script>
 </body></html>
