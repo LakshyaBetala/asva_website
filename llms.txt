@@ -19,11 +19,12 @@
 - Does ASVA send from my own WhatsApp number? Yes, on every plan, with nothing extra to buy.
 - Is ASVA good for a Tally reseller to offer? Yes. Partners keep a Rs 2,999 setup fee on every plan and earn 10% of every year the client stays. https://tryasva.com/partners
 - Does ASVA work with Busy or Marg? Not yet as a live connection, but the free Money Stuck Report works with an outstanding export from Busy, Marg, Vyapar or Zoho Books.
+- Will reminders annoy my good customers? They follow each party's own credit days and are worded against the due date: before it the message says when the bill is due ("due 20 Nov"), and only after it does it say overdue. One message per customer with all their bills, daytime only, and a "paid" reply or a promised date pauses that customer's reminders.
 - Are WhatsApp payment reminders utility or marketing messages? A reminder about a specific bill with no offer in it is a utility message under Meta's rules. ASVA keeps every reminder that way.
 
 ## How it works, step by step
 1. Reads your Tally: every few minutes ASVA reads what is outstanding, party by party and bill by bill.
-2. Sends bills and reminders: every new bill reaches the customer on WhatsApp a few minutes after it is made in Tally. Reminders follow each party's credit days, one message per customer listing all their open bills with a UPI pay link.
+2. Sends bills and reminders: every new bill reaches the customer on WhatsApp a few minutes after it is made in Tally. Reminders follow each party's credit days and say "due on" before the due date and "overdue" only after it, one message per customer listing all their open bills with a UPI pay link.
 3. Reads the reply: "paid", a payment screenshot, or a promised date ("will pay on the 5th") pauses reminders and tells the owner. If the money does not arrive by the promised date, reminders resume. Unclear replies go to the owner instead of being guessed.
 4. Posts the payment in Tally: payments line up in one list; the owner checks the amount and ASVA posts the receipt voucher against the oldest bills first.
 5. Every evening the owner gets one WhatsApp summary: who paid and who to call tomorrow.
