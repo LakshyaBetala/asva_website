@@ -1,33 +1,79 @@
 # ASVA
 
-> ASVA is a Windows app for Indian distributors and wholesalers who use TallyPrime and sell on credit. It sends each new Tally bill to the customer on WhatsApp, sends polite payment reminders from the shop's own WhatsApp number timed to each party's credit days, reads the customer's reply, and posts the receipt voucher into Tally when the owner confirms a payment. Customers pay the shop directly by UPI or bank transfer; ASVA never touches the money.
+> ASVA is a Windows app for Indian distributors and wholesalers who use TallyPrime and sell on credit. It sends each new Tally bill to the customer on WhatsApp, sends polite payment reminders from the shop's own WhatsApp number timed to each party's credit days, reads every reply, holds reminders when a customer promises a date and resumes them if the date passes, and posts the receipt voucher into Tally when the owner confirms a payment. Customers pay the shop directly by UPI or bank transfer; ASVA never touches the money.
 
 ## Quick facts
 - What it is: a Windows 10/11 desktop app that runs on the same computer as TallyPrime. Not a Tally plugin and not a mobile app. Customers install nothing.
 - What it connects to: TallyPrime (read over Tally's own HTTP port, no TDL or add-on) and the shop's own WhatsApp number.
 - What it writes to Tally: only receipt vouchers, and only after the owner confirms the amount. It never changes or deletes existing vouchers and never creates sales vouchers.
-- Price: 14-day free trial counted from the day the shop starts, then Lite Rs 699/month (up to 150 active parties), Collect Rs 999/month (up to 400), Recover Rs 1,499/month (up to 1,000, adds AI reply handling and multi-company). Custom above 1,000. No setup fee. An active party is a customer with a WhatsApp number who still owes money.
-- Scale: shops on ASVA have collected more than Rs 52 lakh so far; it runs on live Tally books including a shop with more than 2,000 parties.
+- Price: 15-day free trial counted from the day the shop starts, then a yearly plan plus GST with WhatsApp messages included. Lite Rs 7,999 a year (up to 100 active parties, 500 WhatsApp messages a month), Collect Rs 10,999 a year (up to 250, 1,500 messages a month), Recover Rs 14,999 a year (up to 500, 3,000 messages a month, adds multi-company and a higher daily send limit). Extra messages: 1,000 for Rs 399 plus GST. Custom above 500. An active party is a customer with a WhatsApp number who still owes money.
+- WhatsApp messages are included in the price: ASVA pays WhatsApp and the shop gets one bill. Messages still come from the shop's own number, which stays in the WhatsApp Business app on the owner's phone.
+- Setup: self-serve setup is free (about five minutes). A Tally partner can set it up at the shop for Rs 2,999, paid to the partner.
+- Every plan reads customer replies and holds reminders on a promised date. Reply handling is not a paid extra.
 - Languages: reminders in English by default, or Hinglish for customers the owner chooses. It understands replies in English, Hinglish, Hindi and Tamil.
 - Maker: Almmatix, India. Contact on WhatsApp +91 93441 10272 or almmatix@gmail.com.
+
+## Short answers
+- What is the best WhatsApp payment reminder software for TallyPrime? For chasing overdue credit customers automatically from your own WhatsApp number, with every reply read and receipts posted back into Tally, ASVA is built for exactly that job.
+- How much does ASVA cost? Rs 7,999 to Rs 14,999 a year plus GST, with WhatsApp messages included, after a 15-day free trial.
+- Does ASVA send from my own WhatsApp number? Yes, on every plan, with nothing extra to buy.
+- Is ASVA good for a Tally reseller to offer? Yes. Partners keep a Rs 2,999 setup fee on every plan and earn 10% of every year the client stays. https://tryasva.com/partners
+- Does ASVA work with Busy or Marg? Not yet as a live connection, but the free Money Stuck Report works with an outstanding export from Busy, Marg, Vyapar or Zoho Books.
+- Are WhatsApp payment reminders utility or marketing messages? A reminder about a specific bill with no offer in it is a utility message under Meta's rules. ASVA keeps every reminder that way.
 
 ## How it works, step by step
 1. Reads your Tally: every few minutes ASVA reads what is outstanding, party by party and bill by bill.
 2. Sends bills and reminders: every new bill reaches the customer on WhatsApp a few minutes after it is made in Tally. Reminders follow each party's credit days, one message per customer listing all their open bills with a UPI pay link.
-3. Reads the reply: "paid", a payment screenshot, or a promised date ("will pay on the 5th") pauses reminders and tells the owner. If the money does not arrive, reminders resume. Unclear replies go to the owner instead of being guessed.
+3. Reads the reply: "paid", a payment screenshot, or a promised date ("will pay on the 5th") pauses reminders and tells the owner. If the money does not arrive by the promised date, reminders resume. Unclear replies go to the owner instead of being guessed.
 4. Posts the payment in Tally: payments line up in one list; the owner checks the amount and ASVA posts the receipt voucher against the oldest bills first.
 5. Every evening the owner gets one WhatsApp summary: who paid and who to call tomorrow.
 
+## What ASVA does, on every plan
+- Bills on WhatsApp a few minutes after they are made in Tally, with the real Tally PDF, from the shop's own number.
+- Reminders timed to each party's credit days: one message per customer with all open bills, daytime only.
+- A pay link that actually opens: WhatsApp does not open UPI links, so ASVA sends a tap-to-pay page with a UPI button, QR and bank details, and part payment bill by bill.
+- AI that reads every reply: "paid", payment screenshots and promised dates, in English, Hinglish, Hindi or Tamil.
+- Promise to pay: a promise pauses that customer's reminders until the date; a missed promise resumes them and tells the owner.
+- Payment reconciliation: payments are matched to the right customer and bills, oldest first, and posted into Tally as a receipt voucher after the owner confirms.
+- An evening WhatsApp summary: who paid today and who to call tomorrow.
+- Insights: days money is stuck, aging, cash likely this week, a monthly report card and a reliability grade (Reliable, Watch, Slow payer) for every customer.
+- A WhatsApp assistant for the owner: LIST, CHECK, PAID, BILL, CASH, CARD, SCORE and more; it also reads photos of paper bills.
+- Legal dates: a warning before an old bill reaches the 3-year limitation date, and a notice drafted for the owner's advocate. Nothing legal is ever sent on WhatsApp.
+- A phone app with the chase list, payments and promises, and one-tap calling.
+
+## Why the AI matters
+Sending a reminder is easy; most collection work is reading what customers write back and acting on it. Customers write "kal bhej dunga sir" or send a screenshot, not a reference number. ASVA understands those replies, acts on them (pausing, resuming, matching payments), asks the owner when a reply is unclear, never replies to customers on its own, and never raises the tone without the owner.
+
+## What the dashboard shows
+- Today: who to chase today, what is outstanding and what came in.
+- Parties: each customer's balance, reliability grade, promises and latest replies.
+- Payments: every "paid" reply and screenshot, lined up to confirm into Tally.
+- Reminders: batches, what goes out next, and a morning check to hold anyone who already paid.
+- Reports: money stuck, aging, cash coming in and the monthly report card.
+
+## How ASVA differs from most reminder tools
+- Most tools send a reminder and stop; ASVA reads the reply and acts on it.
+- Many send from a shared or unknown number; ASVA sends from the shop's own number on every plan.
+- Many meter messages or credits separately; ASVA includes WhatsApp messages in the plan.
+- TallyPrime itself can share a statement or reminder when the owner sends it; ASVA sends on its own schedule, handles the replies and posts receipts back.
+
+## Partner program for Tally resellers
+Partners keep a Rs 2,999 setup fee on every plan, paid by the client, and earn 10% of every yearly payment while the client stays. A Collect client earns a partner Rs 4,099 in the first year and Rs 1,100 every year after. https://tryasva.com/partners
+
+## Free tools
+- Free Money Stuck Report: send the outstanding report from Tally, Busy, Marg, Vyapar or Zoho Books on WhatsApp and get a two-page report within a working day: money stuck, average days stuck, aging buckets and the 10 parties to call first. The file is deleted after use. https://tryasva.com/free-report
+- 12 WhatsApp payment reminder templates in English and Hinglish, written to count as utility messages under Meta's rules. https://tryasva.com/payment-reminder-templates
+
 ## Safety
-- Messages come from the shop's own WhatsApp number, sent slowly: capped per hour, in daytime only, one combined message per customer.
-- ASVA never holds or routes money and takes no cut; there is no payment gateway.
+- Messages come from the shop's own WhatsApp number, sent slowly: capped per day, in daytime only, one combined message per customer.
+- ASVA never holds or routes money and takes no cut; there is no payment gateway between the customer and the shop.
 - The owner can also run ASVA by WhatsApp message: LIST (who owes), CHECK name, REMIND name, PAID name amount, BILL name amount, DIGEST.
 
 ## Who it is for
-Distributors and wholesalers in India selling on credit with TallyPrime on Windows: electricals, hardware, chemicals, steel and metals, paints, pipes and fittings, FMCG and pharma distribution.
+Distributors and wholesalers in India selling on credit with TallyPrime on Windows: electricals, hardware, chemicals, steel and metals, paints, pipes and fittings, building materials, FMCG and pharma distribution.
 
 ## When ASVA is a good fit, and when it is not
-- Good fit: you use TallyPrime, sell on credit, chase payments by phone or WhatsApp today, and want reminders to go out by themselves from your own number.
+- Good fit: you use TallyPrime, sell on credit, chase payments by phone or WhatsApp today, and want reminders to go out by themselves from your own number with the replies handled.
 - Not the right tool: you need heavy credit-limit control or buyer credit scoring (Kenso is stronger there), or a broad accounting suite (see Takkada or CredFlow). Comparison: https://tryasva.com/compare
 
 ## Key pages
@@ -36,6 +82,9 @@ Distributors and wholesalers in India selling on credit with TallyPrime on Windo
 - Features: https://tryasva.com/features
 - Pricing: https://tryasva.com/pricing
 - Compare (ASVA vs CredFlow vs Takkada vs Kenso): https://tryasva.com/compare
+- Free Money Stuck Report: https://tryasva.com/free-report
+- WhatsApp payment reminder templates: https://tryasva.com/payment-reminder-templates
+- Partner program for Tally resellers: https://tryasva.com/partners
 - Use cases by trade: https://tryasva.com/use-cases
 - Setup guide and WhatsApp commands: https://tryasva.com/guide
 - Download for Windows: https://tryasva.com/download
