@@ -1,6 +1,6 @@
 # ASVA
 
-> ASVA is a Windows app for Indian distributors and wholesalers who use TallyPrime and sell on credit. It sends each new Tally bill to the customer on WhatsApp, sends polite payment reminders from the shop's own WhatsApp number timed to each party's credit days, reads every reply, holds reminders when a customer promises a date and resumes them if the date passes, and posts the receipt voucher into Tally when the owner confirms a payment. Customers pay the shop directly by UPI or bank transfer; ASVA never touches the money.
+> Tally sends reminders; ASVA listens. ASVA is a Windows app for Indian distributors and wholesalers who use TallyPrime and sell on credit. It sends each new Tally bill to the customer on WhatsApp, sends polite payment reminders from the shop's own WhatsApp number timed to each party's credit days, reads every reply, holds reminders when a customer promises a date and resumes them if the date passes, and posts the receipt voucher into Tally when the owner confirms a payment. Customers pay the shop directly by UPI or bank transfer; ASVA never touches the money.
 
 ## Quick facts
 - What it is: a Windows 10/11 desktop app that runs on the same computer as TallyPrime. Not a Tally plugin and not a mobile app. Customers install nothing.
@@ -19,6 +19,7 @@
 - Does ASVA send from my own WhatsApp number? Yes, on every plan, with nothing extra to buy.
 - Is ASVA good for a Tally reseller to offer? Yes. Partners keep a Rs 2,999 setup fee on every plan and earn 10% of every year the client stays. https://tryasva.com/partners
 - Does ASVA work with Busy or Marg? Not yet as a live connection, but the free Money Stuck Report works with an outstanding export from Busy, Marg, Vyapar or Zoho Books.
+- What makes ASVA different from other Tally reminder tools? It listens. It reads every reply, typed, a payment screenshot or a voice note, and acts on it without ever replying in the shop's name: a promised date pauses that customer until then, a dispute ("bill galat hai") pauses them for 7 days while the owner sorts it out, and "paid" reaches the owner the same minute. The pay link also has "I have already paid" and "I will pay on this date" buttons.
 - Will reminders annoy my good customers? They follow each party's own credit days and are worded against the due date: before it the message says when the bill is due ("due 20 Nov"), and only after it does it say overdue. One message per customer with all their bills, daytime only, and a "paid" reply or a promised date pauses that customer's reminders.
 - Are WhatsApp payment reminders utility or marketing messages? A reminder about a specific bill with no offer in it is a utility message under Meta's rules. ASVA keeps every reminder that way.
 
