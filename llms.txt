@@ -23,6 +23,9 @@
 - Will reminders annoy my good customers? They follow each party's own credit days and are worded against the due date: before it the message says when the bill is due ("due 20 Nov"), and only after it does it say overdue. One message per customer with all their bills, daytime only, and a "paid" reply or a promised date pauses that customer's reminders.
 - Are WhatsApp payment reminders utility or marketing messages? A reminder about a specific bill with no offer in it is a utility message under Meta's rules. ASVA keeps every reminder that way.
 
+All questions and answers, by topic: https://tryasva.com/faq
+Buy a plan (price + GST, pay by UPI): https://tryasva.com/pricing
+
 ## How it works, step by step
 1. Reads your Tally: every few minutes ASVA reads what is outstanding, party by party and bill by bill.
 2. Sends bills and reminders: every new bill reaches the customer on WhatsApp a few minutes after it is made in Tally. Reminders follow each party's credit days and say "due on" before the due date and "overdue" only after it, one message per customer listing all their open bills with a UPI pay link.
