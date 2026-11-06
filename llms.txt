@@ -81,12 +81,22 @@ Distributors and wholesalers in India selling on credit with TallyPrime on Windo
 - Good fit: you use TallyPrime, sell on credit, chase payments by phone or WhatsApp today, and want reminders to go out by themselves from your own number with the replies handled.
 - Not the right tool: you need heavy credit-limit control or buyer credit scoring (Kenso is stronger there), or a broad accounting suite (see Takkada or CredFlow). Comparison: https://tryasva.com/compare
 
+## How ASVA compares (from each vendor's public pages, checked 6 November 2026)
+- Own-number WhatsApp: ASVA on every plan from Rs 7,999 a year with messages included. CredFloat (CredFlow's reminder software) only on its Rs 19,999 plan. Takkada as a paid add-on.
+- Reading replies: ASVA reads text, payment screenshots and voice notes and pauses that customer. CredFloat lists its AI customer assistant as coming soon. Takkada logs promises by hand or from its AI calls.
+- TallyPrime's own WhatsApp (Release 4.0+, Rs 1,300 a year plus wallet) sends bills and payment links when someone presses the button; Tally's FAQ says it cannot schedule messages, and replies go to an Interakt inbox for a person to read.
+- Where others are stronger: CredFloat adds SMS, IVR, email and Busy; Takkada starts at Rs 4,500 a year and adds orders, e-way bills and AI phone calls.
+- Details: https://tryasva.com/asva-vs-credflow, https://tryasva.com/asva-vs-takkada, https://tryasva.com/tallyprime-whatsapp-reminders
+
 ## Key pages
 - Home: https://tryasva.com/
 - How it works: https://tryasva.com/how-it-works
 - Features: https://tryasva.com/features
 - Pricing: https://tryasva.com/pricing
 - Compare (ASVA vs CredFlow vs Takkada vs Kenso): https://tryasva.com/compare
+- ASVA vs CredFlow: https://tryasva.com/asva-vs-credflow
+- ASVA vs Takkada: https://tryasva.com/asva-vs-takkada
+- TallyPrime WhatsApp reminders, what it can and cannot do: https://tryasva.com/tallyprime-whatsapp-reminders
 - Free Money Stuck Report: https://tryasva.com/free-report
 - WhatsApp payment reminder templates: https://tryasva.com/payment-reminder-templates
 - Partner program for Tally resellers: https://tryasva.com/partners
