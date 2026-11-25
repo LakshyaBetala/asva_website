@@ -227,7 +227,7 @@ const num = n => Math.round(n).toLocaleString('en-IN');
 function mulberry32(a){return () => {a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296;};}
 const NA = ['Sharma','Mehta','Gupta','Iyer','Patel','Khan','Reddy','Jain','Agarwal','Nair','Singh','Verma','Rao','Shah','Das','Bose','Pillai','Kulkarni','Desai','Chopra','Menon','Naidu','Joshi','Saxena','Thakur','Bhatia','Fernandes','Mishra','Kapoor','Sethi'];
 const NB = ['Traders','Agencies','Stores','Enterprises','Distributors','Medicals','Electricals','Hardware','Textiles','and Sons','Marketing','Provisions','Paints','Supplies','Mart'];
-const PARTIES = 2000; // a sample shop; every party here is invented
+const PARTIES = 500; // a sample shop; every party here is invented
 const rnd = mulberry32(2000), dots = [];
 for (let i = 0; i < PARTIES; i++) {
   const g = Math.sqrt(-2 * Math.log(1 - rnd())) * Math.cos(6.2832 * rnd());
@@ -263,7 +263,7 @@ function layout() {
   dpr = Math.min(window.devicePixelRatio || 1, 2);
   canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
   const phone = phoneMQ.matches, g = phone ? 1.2 : 1.5;
-  shown = phone ? dots.filter((d, i) => i % 4 === 0) : dots; // fewer, larger dots on a phone
+  shown = dots; // 500 is few enough to draw every party on a phone too
   const R = Math.min(W, H) / 2 - 4, cx = W / 2, cy = H / 2;
   const s = R * Math.sqrt(.56 / shown.reduce((a, d) => a + d.amount, 0));
   for (const d of shown) d.r = clamp(s * Math.sqrt(d.amount), phone ? 2.2 : 1.7, R * .085);
@@ -411,7 +411,7 @@ const TALK = {
   disputed: () => [['in', 'Two cartons came short.'], ['note', 'Reminders paused. This one comes to you.']],
   paid: d => [['in', `Paid Rs ${num(d.amount)} by UPI.`], ['note', 'Receipt posted into Tally.']]
 };
-const NEXT = { notdue: ['Skip to the due date', 'waiting'], waiting: ['See the reply', 'promised'], promised: ['Jump to the 5th', 'paid'], disputed: ['You sort it out', 'paid'], paid: ['Back to all 2,000', null] };
+const NEXT = { notdue: ['Skip to the due date', 'waiting'], waiting: ['See the reply', 'promised'], promised: ['Jump to the 5th', 'paid'], disputed: ['You sort it out', 'paid'], paid: ['Back to all 500', null] };
 const PAST = { notdue: [], waiting: [], promised: ['waiting'], disputed: ['waiting'], paid: ['waiting', 'promised'] };
 const NAMES = { notdue: 'Not due yet', waiting: 'Reminded', promised: 'Promised a date', disputed: 'Disputed', paid: 'Paid' };
 function say(list, from) {
