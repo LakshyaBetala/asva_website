@@ -8,7 +8,7 @@
 - What it writes to Tally: only receipt vouchers, and only after the owner confirms the amount. It never changes or deletes existing vouchers and never creates sales vouchers.
 - Price: 15-day free trial counted from the day the shop starts, then a yearly plan plus GST with WhatsApp messages included. Lite Rs 7,999 a year (up to 100 active parties, 500 WhatsApp messages a month), Collect Rs 10,999 a year (up to 250, 1,500 messages a month), Recover Rs 14,999 a year (up to 500, 3,000 messages a month, adds multi-company and a higher daily send limit). Extra messages: 1,000 for Rs 399 plus GST. Custom above 500. An active party is a customer with a WhatsApp number who still owes money.
 - WhatsApp messages are included in the price: ASVA pays WhatsApp and the shop gets one bill. Messages still come from the shop's own number, which stays in the WhatsApp Business app on the owner's phone.
-- Setup: self-serve setup is free (about five minutes). A Tally partner can set it up at the shop for Rs 2,999, paid to the partner.
+- Setup: self-serve setup is free (about five minutes). An ASVA partner can set it up at the shop; ask on WhatsApp.
 - Every plan reads customer replies and holds reminders on a promised date. Reply handling is not a paid extra.
 - Languages: reminders in English by default, or Hinglish for customers the owner chooses. It understands replies in English, Hinglish, Hindi and Tamil.
 - Maker: Almmatix, India. Contact on WhatsApp +91 93441 10272 or almmatix@gmail.com.
@@ -17,7 +17,7 @@
 - What is the best WhatsApp payment reminder software for TallyPrime? For chasing overdue credit customers automatically from your own WhatsApp number, with every reply read and receipts posted back into Tally, ASVA is built for exactly that job.
 - How much does ASVA cost? Rs 7,999 to Rs 14,999 a year plus GST, with WhatsApp messages included, after a 15-day free trial.
 - Does ASVA send from my own WhatsApp number? Yes, on every plan, with nothing extra to buy.
-- Is ASVA good for a Tally reseller to offer? Yes. Partners keep a Rs 2,999 setup fee on every plan and earn 10% of every year the client stays. https://tryasva.com/partners
+- Is ASVA good for a Tally reseller to offer? Yes. Partners earn at setup and on every yearly renewal; terms are shared on request. https://tryasva.com/partners
 - Does ASVA work with Busy or Marg? Not yet as a live connection, but the free Money Stuck Report works with an outstanding export from Busy, Marg, Vyapar or Zoho Books.
 - What makes ASVA different from other Tally reminder tools? It listens. It reads every reply, typed, a payment screenshot or a voice note, and acts on it without ever replying in the shop's name: a promised date pauses that customer until then, a dispute ("bill galat hai") pauses them for 7 days while the owner sorts it out, and "paid" reaches the owner the same minute. The pay link also has "I have already paid" and "I will pay on this date" buttons.
 - Will reminders annoy my good customers? They follow each party's own credit days and are worded against the due date: before it the message says when the bill is due ("due 20 Nov"), and only after it does it say overdue. One message per customer with all their bills, daytime only, and a "paid" reply or a promised date pauses that customer's reminders.
@@ -63,7 +63,7 @@ Sending a reminder is easy; most collection work is reading what customers write
 - TallyPrime itself can share a statement or reminder when the owner sends it; ASVA sends on its own schedule, handles the replies and posts receipts back.
 
 ## Partner program for Tally resellers
-Partners keep a Rs 2,999 setup fee on every plan, paid by the client, and earn 10% of every yearly payment while the client stays. A Collect client earns a partner Rs 4,099 in the first year and Rs 1,100 every year after. https://tryasva.com/partners
+Partners earn when they set a client up and on every yearly renewal while the client stays. The partner price list is shared on request. https://tryasva.com/partners
 
 ## Free tools
 - Free Money Stuck Report: send the outstanding report from Tally, Busy, Marg, Vyapar or Zoho Books on WhatsApp and get a two-page report within a working day: money stuck, average days stuck, aging buckets and the 10 parties to call first. The file is deleted after use. https://tryasva.com/free-report
