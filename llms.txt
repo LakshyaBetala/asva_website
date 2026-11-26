@@ -103,3 +103,11 @@ Distributors and wholesalers in India selling on credit with TallyPrime on Windo
 - Use cases by trade: https://tryasva.com/use-cases
 - Setup guide and WhatsApp commands: https://tryasva.com/guide
 - Download for Windows: https://tryasva.com/download
+
+## More guides
+- Customers not paying on time? How to get stuck payments paid: https://tryasva.com/stuck-payments
+- The MSME 45-day payment rule and section 43B(h), and why traders are not covered: https://tryasva.com/msme-45-day-payment-rule
+- ASVA vs Khatabook, for businesses that keep their books in TallyPrime: https://tryasva.com/asva-vs-khatabook
+
+## Who makes ASVA
+ASVA is a product of Almmatix (https://www.almmatix.in), a software agency in India. Founder: Lakshya Betala (https://www.almmatix.in/lakshya-betala).
